@@ -1,10 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { BandsInTownApi, LastFMApi } from './utils/API'
+
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(function () {
+    // Last FM API Test
+    // BandsInTown API test
+
+    BandsInTownApi()
+    LastFMApi()
+
+  }, [])
+
 
   return (
     <>
@@ -16,7 +28,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <Artist artistData={lastFMData} />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
