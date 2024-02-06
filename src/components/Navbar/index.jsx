@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
 import './style.css';
+import {runScript} from '../../utils/Api';
 
 const CustomNavbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -12,7 +13,8 @@ const CustomNavbar = () => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     console.log('Search Query:', searchQuery);
-    // last.fm API logic needed here
+    // This is the updated artistName that is triggered by the search box
+    runScript(searchQuery); 
   };
 
   return (
@@ -35,18 +37,3 @@ const CustomNavbar = () => {
 };
 
 export default CustomNavbar;
-
-
-
-
-
-// const Navbar = () => {
-//   return (
-//     <div className="navbar-container">
-//       <span className="brand">eventify</span>
-//       {/* need to add search box component here */}
-//     </div>
-//   );
-// };
-
-// export default Navbar;
