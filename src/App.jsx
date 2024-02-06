@@ -16,9 +16,12 @@ const App = () => {
     // Last FM API Test
     // BandsInTown API test
 
+
+   
     LastFMApi()
 
-  }, [])
+  }, []);
+  
 
   return (
     <div className="app-container">
@@ -31,8 +34,6 @@ const App = () => {
     </div>
   );
 };
-
-
 
 
 
