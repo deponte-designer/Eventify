@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import ArtistSection from './components/ArtistSection';
 import EventsSection from './components/EventsSection';
@@ -11,6 +11,15 @@ import { BandsInTownApi, LastFMApi } from './utils/API'
 
 
 const App = () => {
+  useEffect(function () {
+    // Last FM API Test
+    // BandsInTown API test
+
+    BandsInTownApi()
+    LastFMApi()
+
+  }, []);
+  
   return (
     <div className="app-container">
       <Navbar />
@@ -24,14 +33,7 @@ const App = () => {
 };
 
   
-  useEffect(function () {
-    // Last FM API Test
-    // BandsInTown API test
 
-    BandsInTownApi()
-    LastFMApi()
-
-  }, [])
 
     
 
