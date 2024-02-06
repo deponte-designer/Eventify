@@ -42,50 +42,50 @@ async function fetchKeywordData(endpoint, keyword) {
 }
 
 
-// Function to display Ticketmaster events for a specific artist
-async function displayTicketmasterEvents(artistName) {
-    try {
-        const ticketmasterData = await fetchKeywordData(ticketmasterEndpoint, artistName);
+// // Function to display Ticketmaster events for a specific artist
+// async function displayTicketmasterEvents(artistName) {
+//     try {
+//         const ticketmasterData = await fetchKeywordData(ticketmasterEndpoint, artistName);
 
-        // Display relevant Ticketmaster event information
-        console.log('Ticketmaster Events for', artistName + ':');
-        ticketmasterData._embedded.events.forEach((event, index) => {
-            console.log(`${index + 1}. Event Name: ${event.name}, Date: ${event.dates.start.localDate}`);
-        });
-    } catch (error) {
-        console.error('Error displaying Ticketmaster events:', error);
-    }
-}
+//         // Display relevant Ticketmaster event information
+//         console.log('Ticketmaster Events for', artistName + ':');
+//         ticketmasterData._embedded.events.forEach((event, index) => {
+//             console.log(`${index + 1}. Event Name: ${event.name}, Date: ${event.dates.start.localDate}`);
+//         });
+//     } catch (error) {
+//         console.error('Error displaying Ticketmaster events:', error);
+//     }
+// }
 
-// Function to display Last.fm artist information for a specific artist
-async function displayLastfmArtistInfo(artistName) {
-    try {
-        const lastfmData = await fetchArtistData(lastfmEndpoint, artistName);
+// // Function to display Last.fm artist information for a specific artist
+// async function displayLastfmArtistInfo(artistName) {
+//     try {
+//         const lastfmData = await fetchArtistData(lastfmEndpoint, artistName);
 
-        // Display relevant Last.fm artist information
-        console.log('\nLast.fm Artist Information for', artistName + ':');
-        console.log('Name:', lastfmData.artist.name);
-        console.log('Bio:', lastfmData.artist.bio.summary);
-        console.log('Listeners:', lastfmData.artist.stats.listeners);
-    } catch (error) {
-        console.error('Error displaying Last.fm artist information:', error);
-    }
-}
+//         // Display relevant Last.fm artist information
+//         console.log('\nLast.fm Artist Information for', artistName + ':');
+//         console.log('Name:', lastfmData.artist.name);
+//         console.log('Bio:', lastfmData.artist.bio.summary);
+//         console.log('Listeners:', lastfmData.artist.stats.listeners);
+//     } catch (error) {
+//         console.error('Error displaying Last.fm artist information:', error);
+//     }
+// }
 
-// Function to display Deezer artist information for a specific artist
-async function displayDeezerArtistInfo(artistName) {
-    try {
-        const deezerData = await fetchArtistData(deezerEndpoint, artistName);
+// // Function to display Deezer artist information for a specific artist
+// async function displayDeezerArtistInfo(artistName) {
+//     try {
+//         const deezerData = await fetchArtistData(deezerEndpoint, artistName);
 
-        // Display relevant Deezer artist information
-        console.log('\nDeezer Artist Information for', artistName + ':');
-        deezerData.data.forEach((artist, index) => {
-            console.log(`${index + 1}. Artist Name: ${artist.name}`);
-        });
-    } catch (error) {
-        console.error('Error displaying Deezer artist information:', error);
-    }
-}
+//         // Display relevant Deezer artist information
+//         console.log('\nDeezer Artist Information for', artistName + ':');
+//         deezerData.data.forEach((artist, index) => {
+//             console.log(`${index + 1}. Artist Name: ${artist.name}`);
+//         });
+//     } catch (error) {
+//         console.error('Error displaying Deezer artist information:', error);
+//     }
+// }
 
 // Function to run the script for each API
 export async function runScript() {

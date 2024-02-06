@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import ArtistSection from './components/ArtistSection';
 import EventsSection from './components/EventsSection';
@@ -9,8 +9,8 @@ import DiscoverSection from './components/DiscoverSection';
 import Footer from './components/Footer';
 
 
-
 const App = () => {
+
   return (
     <div className="app-container">
       <Navbar />
@@ -23,7 +23,5 @@ const App = () => {
   );
 };
 
-
-    
 
 export default App;
