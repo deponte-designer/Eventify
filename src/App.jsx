@@ -1,13 +1,29 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import React from 'react';
+import { useState, useEffect } from 'react'
+import Navbar from './components/Navbar';
+import ArtistSection from './components/ArtistSection';
+import EventsSection from './components/EventsSection';
+import SuggestionsSection from './components/SuggestionsSection';
+import DiscoverSection from './components/DiscoverSection';
+import Footer from './components/Footer';
 import { BandsInTownApi, LastFMApi } from './utils/API'
 
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  return (
+    <div className="app-container">
+      <Navbar />
+      <ArtistSection />
+      <EventsSection />
+      <DiscoverSection />
+      <SuggestionsSection />
+      <Footer />
+    </div>
+  );
+};
 
+  
   useEffect(function () {
     // Last FM API Test
     // BandsInTown API test
@@ -17,31 +33,6 @@ function App() {
 
   }, [])
 
+    
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <Artist artistData={lastFMData} />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+export default App;
