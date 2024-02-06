@@ -42,7 +42,7 @@ async function fetchKeywordData(endpoint, keyword) {
 export async function runScript(artistName) {
     // Define API endpoints
     const ticketmasterEndpoint = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${artistName}&apikey=${ticketmasterApiKey}`;
-    const lastfmEndpoint = `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artistName}&api_key=${lastfmApiKey}&format=json`;
+    const lastfmEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artistName}&api_key=${lastfmApiKey}&format=json`;
     const deezerEndpoint = `https://api.deezer.com/search/artist?q=${artistName}&api_key=${deezerApiKey}`;
 
     try {
