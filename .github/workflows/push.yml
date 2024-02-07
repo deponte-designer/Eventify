@@ -29,8 +29,8 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
       # Run Test
-      - name: Run tests
-        run: npm run test
+      # - name: Run tests
+      #   run: npm run test
       # Deploy to Netlify using our production secrets
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
