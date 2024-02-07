@@ -4,10 +4,6 @@ const ticketmasterApiKey = 'qAOcJsOSzwjbeqGxkHPjP6svF2rmPQAD';
 const lastfmApiKey = 'cf9774362d390975d10497a4ac2f0c64';
 const deezerApiKey = '61d9c85765513cff4b3fdcd6179b9ace';
 
-// const artistName = '';
-
-
-
 // Last.fm and deezer use artist as parameter
 async function fetchArtistData(endpoint, artistName) {
     try {
@@ -54,6 +50,12 @@ export async function runScript(artistName) {
         // COMMENTED OUT AS WAS GETTING CORS ERROR - possibly due to axios?
         //   const deezerData = await fetchArtistData(deezerEndpoint, artistName);
         //   console.log('Deezer Artist Information:', deezerData);
+        // Return the fetched data
+        return {
+            ticketmaster: ticketmasterData,
+            lastfm: lastfmData,
+            // Add more data if needed
+        };
     } catch (error) {
         console.error('Error running the script:', error);
     }
