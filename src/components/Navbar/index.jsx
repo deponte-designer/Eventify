@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
 import './style.css';
-import {runScript} from '../../utils/Api';
 
-const CustomNavbar = () => {
+const CustomNavbar = ({onSearchSubmit }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearchChange = (event) => {
@@ -13,8 +12,7 @@ const CustomNavbar = () => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     console.log('Search Query:', searchQuery);
-    // This is the updated artistName that is triggered by the search box
-    runScript(searchQuery); 
+    onSearchSubmit(searchQuery);
   };
 
   return (
