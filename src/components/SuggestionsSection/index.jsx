@@ -15,7 +15,6 @@ const SuggestionsSection = ({ artistData }) => {
       <h2>Similar Artists:</h2>
       <ul>
         {similarTags.map((tag, index) => (
-          <li key={index}>{tag.name}</li>
         ))}
       </ul>
     </div>

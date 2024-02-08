@@ -4,54 +4,81 @@ import Card from 'react-bootstrap/Card';
 // import axios from 'axios';
 // import Holder from 'holderjs';
 import './style.css';
+import EventCard from '../EventCard';
+
+// const SuggestionsSection = ({ artistData }) => {
+//   // Check if artistData and Last.fm data exist
+//   if (!artistData || !artistData.lastfm || !artistData.lastfm.artist|| !artistData.lastfm.artist.similar) {
+//     return null;
+//   }
+
+//   // Access the similar tags array
+//   const similarTags = artistData.lastfm.artist.similar.artist;
+//   console.log('similarTags:',similarTags);
+//   return (
+//     <div className="suggestions-section">
+//       <h2>Similar Artists:</h2>
+//       <ul>
+//         {similarTags.map((tag, index) => (
+//           <li key={index}>{tag.name}</li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
 
 
-const DiscoverSection = () => {
 
-  // console.log(ticketmaster.page.size)
+
+const DiscoverSection = ({ artistData }) => {
+
+
+  // Check if artistData and Last.fm data exist
+  if (!artistData || !artistData.ticketmaster) {
+    return null;
+  };
+
+  console.log("DISCOVER SECTION: ")
+  console.log(artistData.ticketmaster)
+  console.log(artistData.ticketmaster._embedded.events[0].name)
+
+  const eventName = artistData.ticketmaster._embedded.events[0].name;
+  const eventImg = artistData.ticketmaster._embedded.events[0].images[0].url;
+
 
   // Sample data
-  const discoverData = {
-    upcomingEvents: [
-      { name: 'Concert 1', date: '2024-03-15' },
-      { name: 'Festival 1', date: '2024-04-20' },
-    ]
+  // const discoverData = {
+  //   upcomingEvents: [
+  //     { name: 'Concert 1', date: '2024-03-15' },
+  //     { name: 'Festival 1', date: '2024-04-20' },
+  //   ]
 
-  };
+  // };
 
   return (
 
     <div className="discover-section-container">
       <h2>Discover</h2>
-
-      {/* Upcoming events */}
-      <div>
-        <h3>Upcoming Events</h3>
-        <ul>
-          {discoverData.upcomingEvents.map((event, index) => (
-            <li key={index}>
-              {event.name} - {event.date}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
-        <Card.Body>
-          <Card.Title>Event title ticketmaster._embedded.events/0.name</Card.Title>
-          <Card.Text>
-            Event img: ticketmaster._embedded.events/0.images/0.url
-            About the event.. Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-            Date: ticketmaster._embedded.events/0.dates.start.localDate
-            
-          </Card.Text>
-          <Button variant="primary">Buy Tickets</Button>
-          <Button variant="primary">Read more</Button>
-        </Card.Body>
-      </Card>
+      <h4>Upcoming Events</h4>
+      <EventCard eventImg={eventImg} eventName={eventName}/>
+      
+      
     </div>
   );
 };
 export default DiscoverSection;
+
+
+// <h2>Discover</h2>
+
+// {/* Upcoming events */}
+// <div>
+//   <h3>Upcoming Events</h3>
+//   <ul>
+//     {discoverData.upcomingEvents.map((event, index) => (
+//       <li key={index}>
+//         {event.name} - {event.date}
+//       </li>
+//     ))}
+//   </ul>
+// </div>
