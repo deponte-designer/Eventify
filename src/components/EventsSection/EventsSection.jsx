@@ -15,11 +15,15 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 const EventsSection = ({ artistData }) => {
-  // Sample data
+
+  if (!artistData || !artistData.ticketmaster) {
+    return null;
+  }
+
   const eventsData = {
     upcomingEvents: [
-      { name: 'Concert 1', date: '2024-03-15' },
-      { name: 'Festival 1', date: '2024-04-20' },
+      { name: 'eventName', date: 'eventDate' },
+      { city: 'eventCity', venue: 'eventVenue' },
     ]
   };
 
@@ -28,7 +32,6 @@ const EventsSection = ({ artistData }) => {
   // const { ticketmasterURL } = artistData.ticketmaster._embedded.events[0].url;
   // const { eventCity } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].city.name;
   // const { eventVenue } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].name;
-
 
 
   return (
@@ -42,6 +45,7 @@ const EventsSection = ({ artistData }) => {
           {eventsData.upcomingEvents.map((event, index) => (
             <li key={index}>
               {event.name} - {event.date}
+              {event.city} - {event.venue}
             </li>
           ))}
         </ul>
