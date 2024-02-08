@@ -4,59 +4,85 @@ const ticketmasterApiKey = 'qAOcJsOSzwjbeqGxkHPjP6svF2rmPQAD';
 const lastfmApiKey = 'cf9774362d390975d10497a4ac2f0c64';
 const deezerApiKey = '61d9c85765513cff4b3fdcd6179b9ace';
 
-// Last.fm and deezer use artist as parameter
-async function fetchArtistData(endpoint, artistName) {
-    try {
-        const response = await axios.get(endpoint, {
-            params: {
-                artist: artistName
-            }
-        });
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        throw error;
-    }
+// Function to fetch data from Last.fm API
+async function fetchLastfmData(endpoint) {
+  try {
+    const response = await axios.get(endpoint);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching Last.fm data:', error);
+    throw error;
+  }
 }
 
-// Ticketmaster uses keyword as parameter
-async function fetchKeywordData(endpoint, keyword) {
-    try {
-        const response = await axios.get(endpoint, {
-            params: {
-                keyword: keyword
-            }
-        });
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        throw error;
-    }
+// Function to fetch data from Ticketmaster API
+async function fetchTicketmasterData(endpoint) {
+  try {
+    const response = await axios.get(endpoint);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching Ticketmaster data:', error);
+    throw error;
+  }
 }
 
-// Function to run the script for each API
+// Commented out as was getting 500 error
+async function fetchArtistImage(mbid) {
+    // const endpoint = `https://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels&fmt=json`;
+
+    // try {
+    //     const response = await axios.get(endpoint);
+    //     const relations = response.data.relations;
+    //     const imageUrl = relations.find(relation => relation.type === 'image')?.url.resource;
+
+    //     return imageUrl;
+    // } catch (error) {
+    //     console.error('Error fetching artist image:', error);
+    //     throw error;
+    // }
+    const imageUrl = `toreplace`
+    return imageUrl 
+}
+
 export async function runScript(artistName) {
-    // Define API endpoints
-    const ticketmasterEndpoint = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${artistName}&apikey=${ticketmasterApiKey}`;
+    // Define Last.fm endpoint to get artist information
     const lastfmEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artistName}&api_key=${lastfmApiKey}&format=json`;
-    const deezerEndpoint = `https://api.deezer.com/search/artist?q=${artistName}&api_key=${deezerApiKey}`;
-
+  
     try {
-        const ticketmasterData = await fetchKeywordData(ticketmasterEndpoint, artistName);
-        console.log('Ticketmaster Events:', ticketmasterData);
-
-        const lastfmData = await fetchArtistData(lastfmEndpoint, artistName);
-        console.log('Last.fm Artist Information:', lastfmData);
-        // COMMENTED OUT AS WAS GETTING CORS ERROR - possibly due to axios?
-        //   const deezerData = await fetchArtistData(deezerEndpoint, artistName);
-        //   console.log('Deezer Artist Information:', deezerData);
-        // Return the fetched data
-        return {
-            ticketmaster: ticketmasterData,
-            lastfm: lastfmData,
-            // Add more data if needed
-        };
+      // Fetch data from Last.fm API to get artist information
+      const lastfmData = await fetchLastfmData(lastfmEndpoint);
+  
+      // Extract MBID from Last.fm response
+      const mbid = lastfmData.artist.mbid;
+  
+      // Use MBID to construct the artist image URL
+      const artistImageUrl = await fetchArtistImage(mbid);
+  
+      // Define API endpoints for Ticketmaster, Last.fm albums, and tracks
+      const ticketmasterEndpoint = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${artistName}&apikey=${ticketmasterApiKey}`;
+      const lastfmAlbumsEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&mbid=${mbid}&api_key=${lastfmApiKey}&format=json`;
+      const lastfmTracksEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&mbid=${mbid}&api_key=${lastfmApiKey}&format=json`;
+  
+      // Fetch data from Ticketmaster API
+      const ticketmasterData = await fetchTicketmasterData(ticketmasterEndpoint);
+  
+      // Fetch data from Last.fm API for top albums and tracks
+      const lastfmAlbumsData = await fetchLastfmData(lastfmAlbumsEndpoint);
+      const lastfmTracksData = await fetchLastfmData(lastfmTracksEndpoint);
+  
+      // Wait for 1 second before returning data to ensure rate limiting
+      await new Promise(resolve => setTimeout(resolve, 1000));
+  
+      return {
+        ticketmaster: ticketmasterData,
+        lastfm: lastfmData,
+        albums: lastfmAlbumsData,
+        tracks: lastfmTracksData,
+        artistImage: artistImageUrl // Include artist image in the returned data
+      };
     } catch (error) {
-        console.error('Error running the script:', error);
+      console.error('Error running the script:', error);
+      throw error;
     }
-}
+  }
+  
