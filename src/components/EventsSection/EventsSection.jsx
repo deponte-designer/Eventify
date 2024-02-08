@@ -13,7 +13,9 @@ import './EventsSection.css';
 // console.log(ticketmaster._embedded.events[0].start.localDate)
 
 
-const EventsSection = () => {
+
+
+const EventsSection = ({ artistData }) => {
   // Sample data
   const eventsData = {
     upcomingEvents: [
