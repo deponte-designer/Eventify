@@ -2,18 +2,11 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
-import './EventsSection.css';
 
 
-//.ticketmaster API data  want event/artist name, date, location, url to ticketmaster - button? 
-// .ticketmaster._embedded.events[0].start.localDate   -  date of event
-// .ticketmaster._embedded.events[0 , url]   -   link to ticketmaster tickets
-// .ticketmaster._embedded.events[0 , _]
-
-console.log(ticketmaster._embedded.events[0].start.localDate)
 
 
-const EventsSection = () => {
+const EventsSection = ({ artistData }) => {
   // Sample data
   const eventsData = {
     upcomingEvents: [
