@@ -39,12 +39,16 @@ const DiscoverSection = () => {
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src="holder.js/100px180" />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title>Event title ticketmaster._embedded.events/0.name</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
+            Event img: ticketmaster._embedded.events/0.images/0.url
+            About the event.. Some quick example text to build on the card title and make up the
             bulk of the card's content.
+            Date: ticketmaster._embedded.events/0.dates.start.localDate
+            
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">Buy Tickets</Button>
+          <Button variant="primary">Read more</Button>
         </Card.Body>
       </Card>
     </div>
