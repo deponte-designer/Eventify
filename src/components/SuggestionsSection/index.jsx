@@ -1,30 +1,25 @@
 import React from 'react';
 import './style.css'; 
 
-const SuggestionsSection = () => {
-    // Sample data for demonstration purposes
-    const suggestionsData = [
-      'Suggestion 1',
-      'Suggestion 2',
-      'Suggestion 3',
-      'Suggestion 4',
-    ];
-  
-    return (
-      <div className="suggestions-section-container">
-        <h2>Suggestions</h2>
-  
-        {/*Suggestions */}
-        <ul>
-          {suggestionsData.map((suggestion, index) => (
-            <li key={index}>{suggestion}</li>
-          ))}
-        </ul>
-  
-      </div>
-    );
-  };
-
-
+const SuggestionsSection = ({ artistData }) => {
+  // Check if artistData and Last.fm data exist
+  if (!artistData || !artistData.lastfm || !artistData.lastfm.artist|| !artistData.lastfm.artist.similar) {
+    return null;
+  }
+ 
+  // Access the similar tags array
+  const similarTags = artistData.lastfm.artist.similar.artist;
+  console.log('similarTags:',similarTags);
+  return (
+    <div className="suggestions-section">
+      <h2>Similar Artists:</h2>
+      <ul>
+        {similarTags.map((tag, index) => (
+          <li key={index}>{tag.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default SuggestionsSection;
