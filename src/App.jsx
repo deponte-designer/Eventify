@@ -3,7 +3,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import ArtistSection from './components/ArtistSection';
-import EventsSection from './components/EventsSection';
+import EventsSection from './components/EventsSection/EventsSection';
 import SuggestionsSection from './components/SuggestionsSection';
 import DiscoverSection from './components/DiscoverSection';
 import Footer from './components/Footer';
