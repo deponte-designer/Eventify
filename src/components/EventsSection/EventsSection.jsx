@@ -2,7 +2,6 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
-import './EventsSection.css';
 
 
 //.ticketmaster API data  want event/artist name, date, location, url to ticketmaster - button? 
