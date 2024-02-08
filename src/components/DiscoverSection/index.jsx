@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+// import axios from 'axios';
+// import Holder from 'holderjs';
 import './style.css';
 
 
 const DiscoverSection = () => {
+
+  // console.log(ticketmaster.page.size)
+
   // Sample data
   const discoverData = {
     upcomingEvents: [
       { name: 'Concert 1', date: '2024-03-15' },
       { name: 'Festival 1', date: '2024-04-20' },
     ]
+
   };
 
   return (
+
     <div className="discover-section-container">
       <h2>Discover</h2>
 
