@@ -10,7 +10,7 @@ import './EventsSection.css';
 // .ticketmaster._embedded.events[0 , url]   -   link to ticketmaster tickets
 // .ticketmaster._embedded.events[0 , _]
 
-console.log(ticketmaster._embedded.events[0].start.localDate)
+// console.log(ticketmaster._embedded.events[0].start.localDate)
 
 
 const EventsSection = () => {
@@ -22,11 +22,11 @@ const EventsSection = () => {
     ]
   };
 
-  const { eventDate } = artistData.ticketmaster._embedded.events[0].dates.start.dateTime;
-  const { eventName } = artistData.ticketmaster._embedded.events[0].name;
-  const { ticketmasterURL } = artistData.ticketmaster._embedded.events[0].url;
-  const { eventCity } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].city.name;
-  const { eventVenue } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].name;
+  // const { eventDate } = artistData.ticketmaster._embedded.events[0].dates.start.dateTime;
+  // const { eventName } = artistData.ticketmaster._embedded.events[0].name;
+  // const { ticketmasterURL } = artistData.ticketmaster._embedded.events[0].url;
+  // const { eventCity } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].city.name;
+  // const { eventVenue } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].name;
 
 
 
