@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+// import './style.css';
 
 const ArtistSection = ({ artistData }) => {
   if (!artistData || !artistData.lastfm || !artistData.albums || !artistData.tracks || !artistData.artistImage) {

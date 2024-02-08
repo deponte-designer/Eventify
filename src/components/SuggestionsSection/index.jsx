@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+// import './style.css';
 import {BsCaretRightFill} from "react-icons/bs";
 
 const SuggestionsSection = ({ artistData }) => {
