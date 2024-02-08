@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
-import './style.css';
+// import './style.css';
 
 const CustomNavbar = ({onSearchSubmit }) => {
   const [searchQuery, setSearchQuery] = useState('');
