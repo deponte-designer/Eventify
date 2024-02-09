@@ -17,26 +17,23 @@ const DiscoverSection = ({ artistData }) => {
   console.log(artistData.ticketmaster)
   console.log(artistData.ticketmaster._embedded.events[0].name)
 
-  const eventName = artistData.ticketmaster._embedded.events[0].name;
-  const eventImg = artistData.ticketmaster._embedded.events[0].images[0].url;
-  const eventDate = artistData.ticketmaster._embedded.events[0].dates.start.localDate;
-  const eventTime = artistData.ticketmaster._embedded.events[0].dates.start.localTime;
-  // artists attractions of the event 
-  // TODO: create a function to go through the array attractions[0], and if exists show all the names separated by a comma
-  const eventAtractions1 = artistData.ticketmaster._embedded.events[0]._embedded.attractions[0].name;  
-  const eventAtractions2 = artistData.ticketmaster._embedded.events[0]._embedded.attractions[1].name;
-  const eventAddressLine1 = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].address.line1;
-  const eventCity = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].city.name;
-  const eventPostalCode = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].postalCode;
-  const eventCountryCode = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].country.countryCode;
-  const eventState = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].state.name;
-  const eventBuyTicket = artistData.ticketmaster._embedded.events[0].url;
+  // Combined the repeated access to artistData.ticketmaster._embedded.events[0] into a single 'event' variable for better readability
+  const event = artistData.ticketmaster._embedded.events[0];
+
+  const eventName = event.name;
+  const eventImg = event.images[0].url;
+  const eventDate = event.dates.start.localDate;
+  const eventTime = event.dates.start.localTime;
+  const eventArtists = event._embedded.attractions.map(attraction => attraction.name).join(', ');
+  const venue = event._embedded.venues[0];
+  const eventAddress = `${venue.address.line1}, ${venue.city.name}, ${venue.postalCode}, ${venue.state.name} - ${venue.country.countryCode}`;
+  const eventBuyTicket = event.url;
 
   const discoverBorder = {
     border: "2px solid yellow",
   }
 
-  // TODO: create a function to go through the array events[0] and if exists more than 1 in the array, add a new card with the information of the event, and show maximum 4 card events
+  // TODO: create a function to go through the array artistData.ticketmaster._embedded.events[] and if exists more than 1 in the array, add a new card with the information of the event, and add maximum 4 <EventCard />
 
   return (
     <div className="discover-section-container" style={discoverBorder}>
@@ -45,10 +42,10 @@ const DiscoverSection = ({ artistData }) => {
       <EventCard 
       eventImg={eventImg} 
       eventName={eventName} 
-      eventArtists={eventAtractions1 + ", " + eventAtractions2}
+      eventArtists={eventArtists}
       eventDate={eventDate}
       eventTime={eventTime}
-      eventAddress={eventAddressLine1 + ", " + eventCity + ", " + eventPostalCode + ", " + eventState + " - " + eventCountryCode} 
+      eventAddress={eventAddress} 
       eventBuyTicket={eventBuyTicket} />
     </div>
   );
