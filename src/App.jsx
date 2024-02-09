@@ -54,10 +54,6 @@ const App = () => {
       {artistData && artistData.lastfm !== "The artist you supplied could not be found" && (
         <ArtistSection artistData={artistData} />
       )}
-      {/* Conditionally render EventsSection */}
-      {artistData && artistData.lastfm !== "The artist you supplied could not be found" && (
-        <EventsSection artistData={artistData} />
-      )}
       {/* Conditionally render DiscoverSection */}
       {artistData && artistData.lastfm !== "The artist you supplied could not be found" && (
         <DiscoverSection artistData={artistData} />
@@ -73,7 +69,6 @@ const App = () => {
       {/* this div needs to be moved to Artists page maybe */}
       <div className="app-container">
         <ArtistSection artistData={artistData} />
-        <EventsSection artistData={artistData} />
         {/* <DiscoverSection artistData={artistData} /> */}
         <SuggestionsSection artistData={artistData} />
       </div>
