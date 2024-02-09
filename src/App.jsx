@@ -23,15 +23,19 @@ const App = () => {
         console.error('Error fetching artist data:', error);
     }
 };
-  return (
-    <div className="app-container">
+  return ( 
+    <Router>
       <Navbar onSearchSubmit={handleSearchSubmit} />
+      <Routes>
+    <div className="app-container">
       <ArtistSection artistData={artistData} />
       <EventsSection artistData={artistData} />
       <DiscoverSection artistData={artistData} />
       <SuggestionsSection artistData={artistData}/>
       <Footer />
     </div>
+    </Routes>
+    </Router>
   );
 };
 
