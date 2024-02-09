@@ -38,12 +38,12 @@ const DiscoverSection = ({ artistData }) => {
         {events.slice(0, 4).map(event => (
           <EventCard
             key={event.id}
-            eventImg={event.images && event.images.length > 0 ? event.images[0].url : ''} 
-            eventName={event.name || ''} 
+            eventImg={event.images && event.images.length > 0 ? event.images[0].url : ''}
+            eventName={event.name || ''}
             eventArtists={event._embedded && event._embedded.attractions ? event._embedded.attractions.map(attraction => attraction.name).join(', ') : ''}
             eventDate={event.dates && event.dates.start && event.dates.start.localDate ? event.dates.start.localDate : ''}
             eventTime={event.dates && event.dates.start && event.dates.start.localTime ? event.dates.start.localTime + ', Local time' : ''}
-            eventAddress={event._embedded && event._embedded.venues && event._embedded.venues.length > 0 ? `${event._embedded.venues[0].address.line1}, ${event._embedded.venues[0].city.name}, ${event._embedded.venues[0].postalCode}, ${event._embedded.venues[0].state.name} - ${event._embedded.venues[0].country.countryCode}` : ''}
+            eventAddress={event._embedded && event._embedded.venues && event._embedded.venues.length > 0 ? `${event._embedded.venues[0].address.line1}, ${event._embedded.venues[0].city.name}, ${event._embedded.venues[0].postalCode}, ${event._embedded.venues[0].name} - ${event._embedded.venues[0].country.countryCode}` : ''}
             eventBuyTicket={event.url || ''}
           />
         ))}
