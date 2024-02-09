@@ -1,23 +1,29 @@
 import React, { useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import Button from 'react-bootstrap/Button';
+import { FiCalendar } from "react-icons/fi";
+import { FiMapPin } from "react-icons/fi";
+// import Placeholder from 'react-bootstrap/Placeholder';
 
 const EventCard = (props) => {
     return (
-        <Card style={{ width: '18rem' }}>
-            { props.eventImg && <Card.Img variant="top" src={props.eventImg} /> }
+        <Card style={{ width: '20rem' }}>
+            {props.eventImg && <Card.Img variant="top" src={props.eventImg} />}
             <Card.Body>
-                <Card.Title>{props.eventName} Event title ticketmaster._embedded.events/0.name</Card.Title>
+                <Card.Title>{props.eventName}</Card.Title>
                 <Card.Text>
-                    Event img: ticketmaster._embedded.events/0.images/0.url
                     About the event.. Some quick example text to build on the card title and make up the
                     bulk of the card's content.
-                    Date: ticketmaster._embedded.events/0.dates.start.localDate
-
+                    <br />
+                    LienUp: {props.eventArtists}
+                    <br />
+                    <FiCalendar className="icon" style={{ fontSize: '20pt' }} />{props.eventDate} {props.eventTime}
+                    <br />
+                    <FiMapPin className="icon" style={{ fontSize: '20pt' }} />{props.eventAddress}
                 </Card.Text>
-                <Button variant="primary">Buy Tickets</Button>
-                <Button variant="primary">Read more</Button>
+                {/* TODO: Add data to this link */}
+                <Card.Link className="links-style" href="#">More about</Card.Link>
+                <Button variant="primary" as="a" target="_blank" href={props.eventBuyTicket}>Buy Tickets</Button>
             </Card.Body>
         </Card>
 

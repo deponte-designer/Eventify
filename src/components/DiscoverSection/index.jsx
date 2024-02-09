@@ -8,8 +8,6 @@ import EventCard from '../EventCard';
 
 
 const DiscoverSection = ({ artistData }) => {
-
-
   // Check if artistData and ticketmaster data exist
   if (!artistData || !artistData.ticketmaster) {
     return null;
@@ -22,18 +20,21 @@ const DiscoverSection = ({ artistData }) => {
   const eventName = artistData.ticketmaster._embedded.events[0].name;
   const eventImg = artistData.ticketmaster._embedded.events[0].images[0].url;
 
+
   const discoverBorder = {
     border: "2px solid yellow",
   }
 
+  // TODO: create a function to go through the array events[0] and if exists more than 1 in the array, add a new card with the information of the event, and show maximum 4 card events
 
   return (
-
     <div className="discover-section-container" style={discoverBorder}>
       <h2>Discover</h2>
       <h4>Upcoming Events</h4>
-      <EventCard eventImg={eventImg} eventName={eventName} />
-
+      <EventCard 
+      eventImg={eventImg} 
+      eventName={eventName} 
+       />
     </div>
   );
 };
