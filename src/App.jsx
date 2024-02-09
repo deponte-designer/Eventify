@@ -1,7 +1,10 @@
 import './App.css'
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Home from './components/pages/Home';
+import Contact from './components/pages/Contact';
 import ArtistSection from './components/ArtistSection';
 import EventsSection from './components/EventsSection/EventsSection';
 import SuggestionsSection from './components/SuggestionsSection';
