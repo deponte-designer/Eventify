@@ -21,6 +21,10 @@ const DiscoverSection = ({ artistData }) => {
   const eventImg = artistData.ticketmaster._embedded.events[0].images[0].url;
   const eventDate = artistData.ticketmaster._embedded.events[0].dates.start.localDate;
   const eventTime = artistData.ticketmaster._embedded.events[0].dates.start.localTime;
+  // artists attractions of the event 
+  // TODO: create a function to go through the array attractions[0], and if exists show all the names separated by a comma
+  const eventAtractions1 = artistData.ticketmaster._embedded.events[0]._embedded.attractions[0].name;  
+  const eventAtractions2 = artistData.ticketmaster._embedded.events[0]._embedded.attractions[1].name;
 
   const discoverBorder = {
     border: "2px solid yellow",
@@ -35,6 +39,7 @@ const DiscoverSection = ({ artistData }) => {
       <EventCard 
       eventImg={eventImg} 
       eventName={eventName} 
+      eventArtists={eventAtractions1 + ", " + eventAtractions2}
       eventDate={eventDate}
       eventTime={eventTime}
        />
