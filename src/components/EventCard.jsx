@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import {Card, Button} from 'react-bootstrap';
 // import { FiUser } from "react-icons/fi";
-import { FiClock } from "react-icons/fi";
-import { FiMapPin } from "react-icons/fi";
+import { FiClock, FiMapPin } from "react-icons/fi";
 import { BsMusicNote } from "react-icons/bs";
 // import Placeholder from 'react-bootstrap/Placeholder';
 
