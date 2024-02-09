@@ -5,13 +5,13 @@ import { BsMusicNote } from "react-icons/bs";
 
 const EventCard = (props) => {
     return (
-        <Card style={{ width: '20rem' }}>
+        <Card variant="dark" style={{ width: '20rem' }}>
             {props.eventImg && <Card.Img variant="top" src={props.eventImg} />}
             <Card.Body>
                 <Card.Title>{props.eventName}</Card.Title>
                 <Card.Text>
-                    About the event.. Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                    {/* About the event.. Some quick example text to build on the card title and make up the
+                    bulk of the card's content. */}
                     <br />
                     {props.eventArtists && (
                         <>
@@ -34,7 +34,7 @@ const EventCard = (props) => {
                 </Card.Text>
                 {/* TODO: Add data to this link */}
                 <Card.Link className="links-style" href="#">More about</Card.Link>
-                <Button variant="primary" as="a" target="_blank" href={props.eventBuyTicket}>Buy Tickets</Button>
+                {props.eventBuyTicket && (<Button variant="primary" as="a" target="_blank" href={props.eventBuyTicket}>Buy Tickets</Button>)}
             </Card.Body>
         </Card>
     );
