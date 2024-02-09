@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { FiCalendar } from "react-icons/fi";
+import { FiUser } from "react-icons/fi";
+import { FiClock } from "react-icons/fi";
 import { FiMapPin } from "react-icons/fi";
 // import Placeholder from 'react-bootstrap/Placeholder';
 
@@ -15,11 +16,11 @@ const EventCard = (props) => {
                     About the event.. Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                     <br />
-                    LienUp: {props.eventArtists}
+                    <FiUser className="icon" style={{ fontSize: '20pt' }} /> Lienup: {props.eventArtists}
                     <br />
-                    <FiCalendar className="icon" style={{ fontSize: '20pt' }} />{props.eventDate} {props.eventTime}
+                    <FiClock className="icon" style={{ fontSize: '20pt' }} /> Date: {props.eventDate} {props.eventTime}
                     <br />
-                    <FiMapPin className="icon" style={{ fontSize: '20pt' }} />{props.eventAddress}
+                    <FiMapPin className="icon" style={{ fontSize: '20pt' }} /> Venue: {props.eventAddress}
                 </Card.Text>
                 {/* TODO: Add data to this link */}
                 <Card.Link className="links-style" href="#">More about</Card.Link>
