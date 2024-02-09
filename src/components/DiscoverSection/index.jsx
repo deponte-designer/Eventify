@@ -67,7 +67,6 @@ export default DiscoverSection;
 
 
 
-
 // * HOW I DID IT BEFORE! ---->>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // // Combined the repeated access to artistData.ticketmaster._embedded.events[0] into a single 'event' variable for better readability
