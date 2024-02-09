@@ -17,6 +17,14 @@ const DiscoverSection = ({ artistData }) => {
   console.log(artistData.ticketmaster)
   console.log(artistData.ticketmaster._embedded.events[0].name)
 
+  const { eventDate } = artistData.ticketmaster._embedded.events[0].dates.start.dateTime;
+  const { eventName } = artistData.ticketmaster._embedded.events[0].name;
+  const { ticketmasterURL } = artistData.ticketmaster._embedded.events[0].url;
+  const { eventCity } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].city.name;
+  const { eventVenue } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].name;
+  const { location } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].location.longitude && artistData.ticketmaster._embedded.events[0]._embedded.venues[0].location.latitude;
+
+
   // Combined the repeated access to artistData.ticketmaster._embedded.events[0] into a single 'events' variable for better readability
   const events = artistData.ticketmaster._embedded.events;
 
