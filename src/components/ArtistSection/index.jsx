@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import './style.css';
+import { BsCaretRightFill, Bs1CircleFill, Bs2CircleFill, Bs3CircleFill, Bs4CircleFill, Bs5CircleFill } from 'react-icons/bs';
 
 const ArtistSection = ({ artistData }) => {
+
+  // Check if artist data indicates artist not found
+  const artistNotFound = artistData && artistData.lastfm === "The artist you supplied could not be found";
+
+  // If artist not found, display error message
+  if (artistNotFound) {
+    return <div className="artist-section">Artist not found</div>;
+  }
+
+  // If artist data is not fully available, return null
   if (!artistData || !artistData.lastfm || !artistData.albums || !artistData.tracks || !artistData.artistImage) {
     return null;
   }
-
+  
   const { artist } = artistData.lastfm;
   const { topalbums } = artistData.albums;
   const { toptracks } = artistData.tracks;
@@ -38,27 +49,45 @@ const formattedPlaycount = parseInt(artist.stats.playcount, 10).toLocaleString()
       {artist.tags && (
         <div>
           <h3>Genres:</h3>
-          <ul>
-            {artist.tags.tag.map((tag) => (
-              <li key={tag.name}>{tag.name}</li>
+          <ul className='genres-list'>
+            {artist.tags.tag.map((tag,index) => (
+              <li key={index}>
+                <BsCaretRightFill className="icon" />
+                {tag.name}
+                </li>
             ))}
           </ul>
         </div>
       )}
-      {/* Album section */}
-      <div>
+
+       {/* Album section */}
+       <div>
         <h3>Top 5 Albums:</h3>
-        <ul>
-          {topAlbums.map((album) => (
-            <li key={album.name}>{album.name}</li>
+        <ul className="album-list">
+          {topAlbums.map((album, index) => (
+            <li key={album.name}>
+              {index === 0 && <Bs1CircleFill className="icon" />}
+              {index === 1 && <Bs2CircleFill className="icon" />}
+              {index === 2 && <Bs3CircleFill className="icon" />}
+              {index === 3 && <Bs4CircleFill className="icon" />}
+              {index === 4 && <Bs5CircleFill className="icon" />}
+              <span>{album.name}</span>
+            </li>
           ))}
         </ul>
       </div>
       <div>
         <h3>Top 5 Songs:</h3>
-        <ul>
-          {topTracks.map((track) => (
-            <li key={track.name}>{track.name}</li>
+        <ul className="track-list">
+          {topTracks.map((track, index) => (
+            <li key={track.name}>
+              {index === 0 && <Bs1CircleFill className="icon" />}
+              {index === 1 && <Bs2CircleFill className="icon" />}
+              {index === 2 && <Bs3CircleFill className="icon" />}
+              {index === 3 && <Bs4CircleFill className="icon" />}
+              {index === 4 && <Bs5CircleFill className="icon" />}
+              <span>{track.name}</span>
+            </li>
           ))}
         </ul>
       </div>
