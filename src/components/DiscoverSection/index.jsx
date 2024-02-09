@@ -25,6 +25,7 @@ const DiscoverSection = ({ artistData }) => {
   // TODO: create a function to go through the array attractions[0], and if exists show all the names separated by a comma
   const eventAtractions1 = artistData.ticketmaster._embedded.events[0]._embedded.attractions[0].name;  
   const eventAtractions2 = artistData.ticketmaster._embedded.events[0]._embedded.attractions[1].name;
+  const eventAddressLine1 = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].address.line1;
 
   const discoverBorder = {
     border: "2px solid yellow",
