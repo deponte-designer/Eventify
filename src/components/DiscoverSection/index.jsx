@@ -47,6 +47,7 @@ const DiscoverSection = ({ artistData }) => {
       eventArtists={eventAtractions1 + ", " + eventAtractions2}
       eventDate={eventDate}
       eventTime={eventTime}
+      eventAddress={eventAddressLine1 + ", " + eventCity + ", " + eventPostalCode + ", " + eventState + " - " + eventCountryCode} 
        />
     </div>
   );
