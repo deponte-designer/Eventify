@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { FiUser } from "react-icons/fi";
+// import { FiUser } from "react-icons/fi";
 import { FiClock } from "react-icons/fi";
 import { FiMapPin } from "react-icons/fi";
 import { BsMusicNote } from "react-icons/bs";
@@ -17,7 +17,7 @@ const EventCard = (props) => {
                     About the event.. Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                     <br />
-                    <FiUser />
+                    {/* <FiUser /> */}
                     <BsMusicNote className="icon" style={{ fontSize: '20pt' }} /> Lienup: {props.eventArtists}
                     <br />
                     <FiClock className="icon" style={{ fontSize: '20pt' }} /> Date: {props.eventDate} {props.eventTime}
