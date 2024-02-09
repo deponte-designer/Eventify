@@ -73,10 +73,10 @@ const App = () => {
       )}
       {/* this div needs to be moved to Artists page maybe */}
       <div className="app-container">
-          <ArtistSection artistData={artistData} />
-          <EventsSection artistData={artistData} />
+          {/* <ArtistSection artistData={artistData} />
+          <EventsSection artistData={artistData} /> */}
           {/* <DiscoverSection artistData={artistData} /> */}
-          <SuggestionsSection artistData={artistData} />
+          {/* <SuggestionsSection artistData={artistData} /> */}
         </div>
       <Routes>
         <Route path="/" element={<Home />} />
