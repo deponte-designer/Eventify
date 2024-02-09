@@ -20,6 +20,7 @@ const DiscoverSection = ({ artistData }) => {
   const eventName = artistData.ticketmaster._embedded.events[0].name;
   const eventImg = artistData.ticketmaster._embedded.events[0].images[0].url;
   const eventDate = artistData.ticketmaster._embedded.events[0].dates.start.localDate;
+  const eventTime = artistData.ticketmaster._embedded.events[0].dates.start.localTime;
 
   const discoverBorder = {
     border: "2px solid yellow",
@@ -35,6 +36,7 @@ const DiscoverSection = ({ artistData }) => {
       eventImg={eventImg} 
       eventName={eventName} 
       eventDate={eventDate}
+      eventTime={eventTime}
        />
     </div>
   );
