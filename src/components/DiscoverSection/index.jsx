@@ -30,6 +30,7 @@ const DiscoverSection = ({ artistData }) => {
   const eventPostalCode = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].postalCode;
   const eventCountryCode = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].country.countryCode;
   const eventState = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].state.name;
+  const eventBuyTicket = artistData.ticketmaster._embedded.events[0].url;
 
   const discoverBorder = {
     border: "2px solid yellow",
@@ -48,7 +49,7 @@ const DiscoverSection = ({ artistData }) => {
       eventDate={eventDate}
       eventTime={eventTime}
       eventAddress={eventAddressLine1 + ", " + eventCity + ", " + eventPostalCode + ", " + eventState + " - " + eventCountryCode} 
-       />
+      eventBuyTicket={eventBuyTicket} />
     </div>
   );
 };
