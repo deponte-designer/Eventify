@@ -26,6 +26,7 @@ const DiscoverSection = ({ artistData }) => {
   const eventAtractions1 = artistData.ticketmaster._embedded.events[0]._embedded.attractions[0].name;  
   const eventAtractions2 = artistData.ticketmaster._embedded.events[0]._embedded.attractions[1].name;
   const eventAddressLine1 = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].address.line1;
+  const eventCity = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].city.name;
 
   const discoverBorder = {
     border: "2px solid yellow",
