@@ -17,24 +17,27 @@ const App = () => {
 
   const handleSearchSubmit = async (searchQuery) => {
     try {
-        const data = await runScript(searchQuery);
-        setArtistData(data);
+      const data = await runScript(searchQuery);
+      setArtistData(data);
     } catch (error) {
-        console.error('Error fetching artist data:', error);
+      console.error('Error fetching artist data:', error);
     }
-};
-  return ( 
+  };
+  return (
     <Router>
       <Navbar onSearchSubmit={handleSearchSubmit} />
+      // this div needs to be moved to Artists page maybe
+      <div className="app-container">
+          <ArtistSection artistData={artistData} />
+          <EventsSection artistData={artistData} />
+          <DiscoverSection artistData={artistData} />
+          <SuggestionsSection artistData={artistData} />
+        </div>
       <Routes>
-    <div className="app-container">
-      <ArtistSection artistData={artistData} />
-      <EventsSection artistData={artistData} />
-      <DiscoverSection artistData={artistData} />
-      <SuggestionsSection artistData={artistData}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
-    </div>
-    </Routes>
     </Router>
   );
 };
