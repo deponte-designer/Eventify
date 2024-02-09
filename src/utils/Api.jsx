@@ -3,6 +3,7 @@ import axios from 'axios';
 const ticketmasterApiKey = 'qAOcJsOSzwjbeqGxkHPjP6svF2rmPQAD';
 const lastfmApiKey = 'cf9774362d390975d10497a4ac2f0c64';
 const deezerApiKey = '61d9c85765513cff4b3fdcd6179b9ace';
+const giphyApiKey = 'f0vozMQchRD8NIqhBBu5nhkJdugPLoQC'
 
 // Function to fetch data from Last.fm API
 async function fetchLastfmData(endpoint) {
@@ -27,23 +28,31 @@ async function fetchTicketmasterData(endpoint) {
 }
 
 // Commented out as was getting 500 error
-async function fetchArtistImage(mbid) {
-    // const endpoint = `https://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels&fmt=json`;
+async function fetchArtistImage(artistName) {
+    // Construct the Giphy API request URL
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyApiKey}&q=${encodeURIComponent(artistName)}&limit=1&rating=g`;
+    console.log(url)
+    try {
+        // Fetch data from Giphy API using Axios
+        const response = await axios.get(url);
+        console.log('giphy repsonse:',response.data);
+        // Extract the URL of the still image from the response data
+        const imageUrl = response.data.data.length > 0 ? response.data.data[0].images.original_still.url : null;
 
-    // try {
-    //     const response = await axios.get(endpoint);
-    //     const relations = response.data.relations;
-    //     const imageUrl = relations.find(relation => relation.type === 'image')?.url.resource;
+        // Log the image URL for debugging
+        console.log('Image URL:', imageUrl);
+        // Check if the request was successful
+        if (response.status !== 200) {
+            console.log('giphy error 200')
+            throw new Error('Failed to fetch data from Giphy API');
+        }
+   
 
-    //     return imageUrl;
-    // } catch (error) {
-    //     console.error('Error fetching artist image:', error);
-    //     throw error;
-    // }
-
-    //doing this while theres an error
-    const imageUrl = `toreplace`
-    return imageUrl
+        return imageUrl;
+    } catch (error) {
+        console.error('Error fetching data from Giphy API:', error);
+        return null;
+    }
 }
 
 export async function runScript(artistName) {
@@ -71,13 +80,13 @@ export async function runScript(artistName) {
         const mbid = lastfmData.artist.mbid;
 
         // Use MBID to construct the artist image URL
-        const artistImageUrl = await fetchArtistImage(mbid);
+        const artistImageUrl = await fetchArtistImage(artistName);
 
         // Define API endpoints for Ticketmaster, Last.fm albums, and tracks
         const ticketmasterEndpoint = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${artistName}&apikey=${ticketmasterApiKey}`;
         const lastfmAlbumsEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&mbid=${mbid}&api_key=${lastfmApiKey}&format=json`;
         const lastfmTracksEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&mbid=${mbid}&api_key=${lastfmApiKey}&format=json`;
-
+        
         // Fetch data from Ticketmaster API
         const ticketmasterData = await fetchTicketmasterData(ticketmasterEndpoint);
 

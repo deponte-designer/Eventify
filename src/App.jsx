@@ -50,6 +50,7 @@ const App = () => {
   return (
     <Router>
       <Navbar onSearchSubmit={handleSearchSubmit} />
+      <div className="app-container">      
       {/* Conditionally render ArtistSection */}
       {artistData && artistData.lastfm !== "The artist you supplied could not be found" && (
         <ArtistSection artistData={artistData} />
@@ -67,11 +68,9 @@ const App = () => {
         <ModalComponentError show={showModal} toggleModal={() => setShowModal(false)} />
       )}
       {/* this div needs to be moved to Artists page maybe */}
-      <div className="app-container">
-        <ArtistSection artistData={artistData} />
-        {/* <DiscoverSection artistData={artistData} /> */}
-        <SuggestionsSection artistData={artistData} />
+      
       </div>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/artists" element={<Artists />} />
