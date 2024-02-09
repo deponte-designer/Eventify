@@ -23,11 +23,14 @@ const DiscoverSection = ({ artistData }) => {
   const eventName = event.name;
   const eventImg = event.images[0].url;
   const eventDate = event.dates.start.localDate;
-  const eventTime = event.dates.start.localTime;
+  const eventTime = event.dates.start.localTime + ', Local time';
   const eventArtists = event._embedded.attractions.map(attraction => attraction.name).join(', ');
+  const eventBuyTicket = event.url;
+
+  // Combined the repeated access to artistData.ticketmaster._embedded.events[0]._embedded.venues[0]
   const venue = event._embedded.venues[0];
   const eventAddress = `${venue.address.line1}, ${venue.city.name}, ${venue.postalCode}, ${venue.state.name} - ${venue.country.countryCode}`;
-  const eventBuyTicket = event.url;
+  
 
   const discoverBorder = {
     border: "2px solid yellow",
