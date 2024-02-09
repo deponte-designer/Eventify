@@ -26,7 +26,7 @@ const App = () => {
   return (
     <Router>
       <Navbar onSearchSubmit={handleSearchSubmit} />
-      // this div needs to be moved to Artists page maybe
+      {/* this div needs to be moved to Artists page maybe */}
       <div className="app-container">
           <ArtistSection artistData={artistData} />
           <EventsSection artistData={artistData} />
