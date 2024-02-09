@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
-// import './style.css';
+import { Navbar, Nav, Container, Form, FormControl, Button } from 'react-bootstrap';
+import { NavLink } from "react-router-dom";
+
 
 const CustomNavbar = ({onSearchSubmit }) => {
   const [searchQuery, setSearchQuery] = useState('');
