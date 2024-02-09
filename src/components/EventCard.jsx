@@ -5,7 +5,14 @@ import { BsMusicNote } from "react-icons/bs";
 
 const EventCard = (props) => {
     return (
-        <Card variant="dark" style={{ width: '20rem' }}>
+        <>
+        {[
+          'Dark',
+        ].map((variant) => (
+            <Card
+            bg={variant.toLowerCase()}
+            key={variant}
+            text={variant.toLowerCase() === 'light' ? 'dark' : 'white'} style={{ width: '20rem' }} className="mb-2">
             {props.eventImg && <Card.Img variant="top" src={props.eventImg} />}
             <Card.Body>
                 <Card.Title>{props.eventName}</Card.Title>
@@ -37,6 +44,8 @@ const EventCard = (props) => {
                 {props.eventBuyTicket && (<Button variant="primary" as="a" target="_blank" href={props.eventBuyTicket}>Buy Tickets</Button>)}
             </Card.Body>
         </Card>
+        ))}
+        </>
     );
 };
 
