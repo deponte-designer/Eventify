@@ -17,12 +17,12 @@ const DiscoverSection = ({ artistData }) => {
   console.log(artistData.ticketmaster)
   console.log(artistData.ticketmaster._embedded.events[0].name)
 
-  const { eventDate } = artistData.ticketmaster._embedded.events[0].dates.start.dateTime;
-  const { eventName } = artistData.ticketmaster._embedded.events[0].name;
-  const { ticketmasterURL } = artistData.ticketmaster._embedded.events[0].url;
-  const { eventCity } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].city.name;
-  const { eventVenue } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].name;
-  const { location } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].location.longitude && artistData.ticketmaster._embedded.events[0]._embedded.venues[0].location.latitude;
+  // const { eventDate } = artistData.ticketmaster._embedded.events[0].dates.start.dateTime;
+  // const { eventName } = artistData.ticketmaster._embedded.events[0].name;
+  // const { ticketmasterURL } = artistData.ticketmaster._embedded.events[0].url;
+  // const { eventCity } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].city.name;
+  // const { eventVenue } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].name;
+  // const { location } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].location.longitude && artistData.ticketmaster._embedded.events[0]._embedded.venues[0].location.latitude;
 
 
   // Combined the repeated access to artistData.ticketmaster._embedded.events[0] into a single 'events' variable for better readability
@@ -38,7 +38,7 @@ const DiscoverSection = ({ artistData }) => {
   }
 
   return (
-    <div className="discover-section-container" style={discoverBorder}>
+    <div className="discover-section-container jumbotron" style={discoverBorder}>
       <h2>Discover</h2>
       <h4>Upcoming Events</h4>
       <div style={cardFlex}>
@@ -53,6 +53,8 @@ const DiscoverSection = ({ artistData }) => {
             eventTime={event.dates && event.dates.start && event.dates.start.localTime ? event.dates.start.localTime + ', Local time' : ''}
             eventAddress={event._embedded && event._embedded.venues && event._embedded.venues.length > 0 ? `${event._embedded.venues[0].address.line1}, ${event._embedded.venues[0].city.name}, ${event._embedded.venues[0].postalCode}, ${event._embedded.venues[0].name} - ${event._embedded.venues[0].country.countryCode}` : ''}
             eventBuyTicket={event.url || ''}
+            // {artistImage && (<img src={artistImage} alt={artist.name} />
+            // )}
           />
         ))}
       </div>
