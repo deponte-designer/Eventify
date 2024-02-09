@@ -9,7 +9,6 @@ import Home from './pages/Home';
 import Artists from './pages/Artists';
 import Contact from './pages/Contact';
 import ArtistSection from './components/ArtistSection';
-import EventsSection from './components/EventsSection/EventsSection';
 import SuggestionsSection from './components/SuggestionsSection';
 import DiscoverSection from './components/DiscoverSection';
 import Footer from './components/Footer';
@@ -51,13 +50,10 @@ const App = () => {
   return (
     <Router>
       <Navbar onSearchSubmit={handleSearchSubmit} />
+      <div className="app-container">      
       {/* Conditionally render ArtistSection */}
       {artistData && artistData.lastfm !== "The artist you supplied could not be found" && (
         <ArtistSection artistData={artistData} />
-      )}
-      {/* Conditionally render EventsSection */}
-      {artistData && artistData.lastfm !== "The artist you supplied could not be found" && (
-        <EventsSection artistData={artistData} />
       )}
       {/* Conditionally render DiscoverSection */}
       {artistData && artistData.lastfm !== "The artist you supplied could not be found" && (
@@ -72,12 +68,9 @@ const App = () => {
         <ModalComponentError show={showModal} toggleModal={() => setShowModal(false)} />
       )}
       {/* this div needs to be moved to Artists page maybe */}
-      <div className="app-container">
-          {/* <ArtistSection artistData={artistData} />
-          <EventsSection artistData={artistData} /> */}
-          {/* <DiscoverSection artistData={artistData} /> */}
-          {/* <SuggestionsSection artistData={artistData} /> */}
-        </div>
+      
+      </div>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/artists" element={<Artists />} />
