@@ -27,11 +27,11 @@ const EventsSection = ({ artistData }) => {
     ]
   };
 
-  // const { eventDate } = artistData.ticketmaster._embedded.events[0].dates.start.dateTime;
-  // const { eventName } = artistData.ticketmaster._embedded.events[0].name;
-  // const { ticketmasterURL } = artistData.ticketmaster._embedded.events[0].url;
-  // const { eventCity } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].city.name;
-  // const { eventVenue } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].name;
+  const { eventDate } = artistData.ticketmaster._embedded.events[0].dates.start.dateTime;
+  const { eventName } = artistData.ticketmaster._embedded.events[0].name;
+  const { ticketmasterURL } = artistData.ticketmaster._embedded.events[0].url;
+  const { eventCity } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].city.name;
+  const { eventVenue } = artistData.ticketmaster._embedded.events[0]._embedded.venues[0].name;
 
 
   return (

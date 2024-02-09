@@ -9,7 +9,7 @@ import EventCard from '../EventCard';
 
 const DiscoverSection = ({ artistData }) => {
   // Check if artistData and ticketmaster data exist
-  if (!artistData || !artistData.ticketmaster) {
+  if (!artistData || !artistData.ticketmaster || !artistData.ticketmaster._embedded || !artistData.ticketmaster._embedded.events) {
     return null;
   };
 
@@ -34,20 +34,19 @@ const DiscoverSection = ({ artistData }) => {
       <h2>Discover</h2>
       <h4>Upcoming Events</h4>
       <div style={cardFlex}>
-      {/* Iterate over events and render EventCard for each event */}
-      {events.slice(0, 4).map(event => (
-        <EventCard 
-          key={event.id}  
-          eventImg={event.images[0].url} 
-          eventName={event.name} 
-          eventArtists={event._embedded.attractions.map(attraction => attraction.name).join(', ')}
-          eventDate={event.dates.start.localDate}
-          eventTime={event.dates.start.localTime + ', Local time'}
-          eventAddress={`${event._embedded.venues[0].address.line1}, ${event._embedded.venues[0].city.name}, ${event._embedded.venues[0].postalCode}, ${event._embedded.venues[0].state.name} - ${event._embedded.venues[0].country.countryCode}`} 
-          eventBuyTicket={event.url} 
-          
-        />
-      ))}
+        {/* Iterate over events and render EventCard for each event */}
+        {events.slice(0, 4).map(event => (
+          <EventCard
+            key={event.id}
+            eventImg={event.images && event.images.length > 0 ? event.images[0].url : ''} 
+            eventName={event.name || ''} 
+            eventArtists={event._embedded && event._embedded.attractions ? event._embedded.attractions.map(attraction => attraction.name).join(', ') : ''}
+            eventDate={event.dates && event.dates.start && event.dates.start.localDate ? event.dates.start.localDate : ''}
+            eventTime={event.dates && event.dates.start && event.dates.start.localTime ? event.dates.start.localTime + ', Local time' : ''}
+            eventAddress={event._embedded && event._embedded.venues && event._embedded.venues.length > 0 ? `${event._embedded.venues[0].address.line1}, ${event._embedded.venues[0].city.name}, ${event._embedded.venues[0].postalCode}, ${event._embedded.venues[0].state.name} - ${event._embedded.venues[0].country.countryCode}` : ''}
+            eventBuyTicket={event.url || ''}
+          />
+        ))}
       </div>
     </div>
   );

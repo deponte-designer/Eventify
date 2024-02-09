@@ -67,7 +67,6 @@ const App = () => {
       {artistData && artistData.lastfm !== "The artist you supplied could not be found" && (
         <SuggestionsSection artistData={artistData} />
       )}
-      <Footer />
       {/* Modal component */}
       {showModal && (
         <ModalComponentError show={showModal} toggleModal={() => setShowModal(false)} />
@@ -76,7 +75,7 @@ const App = () => {
       <div className="app-container">
           <ArtistSection artistData={artistData} />
           <EventsSection artistData={artistData} />
-          <DiscoverSection artistData={artistData} />
+          {/* <DiscoverSection artistData={artistData} /> */}
           <SuggestionsSection artistData={artistData} />
         </div>
       <Routes>
