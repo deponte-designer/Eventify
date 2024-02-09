@@ -7,10 +7,11 @@ const ArtistSection = ({ artistData }) => {
   // Check if artist data indicates artist not found
   const artistNotFound = artistData && artistData.lastfm === "The artist you supplied could not be found";
 
+  //DONT NEED THIS
   // If artist not found, display error message
-  if (artistNotFound) {
-    return <div className="artist-section">Artist not found</div>;
-  }
+  // if (artistNotFound) {
+  //   return <div className="artist-section">Artist not found</div>;
+  // }
 
   // If artist data is not fully available, return null
   if (!artistData || !artistData.lastfm || !artistData.albums || !artistData.tracks || !artistData.artistImage) {
