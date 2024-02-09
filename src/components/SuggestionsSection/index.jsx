@@ -7,7 +7,6 @@ const SuggestionsSection = ({ artistData }) => {
   if (!artistData || !artistData.lastfm || !artistData.lastfm.artist|| !artistData.lastfm.artist.similar) {
     return null;
   }
- 
   // Access the similar tags array
   const similarArtists = artistData.lastfm.artist.similar.artist;
 
@@ -25,5 +24,4 @@ const SuggestionsSection = ({ artistData }) => {
     </div>
   );
 };
-
 export default SuggestionsSection;
