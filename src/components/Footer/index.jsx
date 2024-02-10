@@ -15,7 +15,7 @@ const Footer = () => {
 
     }
     return (
-      <div className="footer-container" style={footerStyle}>
+      <div className="footer-container fixed-bottom" style={footerStyle}>
         
         
         <p className="m-0">&copy; {new Date().getFullYear()} Moment12. All rights reserved.</p>
