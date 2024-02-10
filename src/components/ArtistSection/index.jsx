@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import './style.css';
 import { BsCaretRightFill, Bs1CircleFill, Bs2CircleFill, Bs3CircleFill, Bs4CircleFill, Bs5CircleFill } from 'react-icons/bs';
 import { Card, Button } from 'react-bootstrap';
+// import { Container } from 'react-bootstrap/lib/Tab.js';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
 const ArtistSection = ({ artistData }) => {
   // If artist data is not fully available, return null
   if (!artistData || !artistData.lastfm || !artistData.albums || !artistData.tracks) {
@@ -69,12 +75,12 @@ const ArtistSection = ({ artistData }) => {
       {/* Album section */}
       <div>
         <h3>Top Albums:</h3>
-        <div className="album-list-container">
-        <ul className="album-list">
-          {topAlbums.map((album, index) => (
-            <li key={album.name} className="album-item">
-              <div className="album-content">
-                {/* <div className="album-number">
+        <Container className="album-list-container">
+          <Row className="album-list">
+            {topAlbums.map((album, index) => (
+              <Col key={album.name} className="album-item">
+                <div className="album-content">
+                  {/* <div className="album-number">
         {index === 0 && <Bs1CircleFill className="icon" />}
         {index === 1 && <Bs2CircleFill className="icon" />}
         {index === 2 && <Bs3CircleFill className="icon" />}
@@ -82,17 +88,17 @@ const ArtistSection = ({ artistData }) => {
         {index === 4 && <Bs5CircleFill className="icon" />}
       </div> */}
 
-      
-                <div className="album-name">{album.name}</div>
-                <div className="album-cover">
-                  <img src={album.image[2]['#text']} alt={album.name} />
+
+                  <div className="album-name">{album.name}</div>
+                  <div className="album-cover">
+                    <img src={album.image[2]['#text']} alt={album.name} />
+                  </div>
+                  <div className="album-playcount">Playcount: {parseInt(album.playcount, 10).toLocaleString()}</div>
                 </div>
-                <div className="album-playcount">Playcount: {parseInt(album.playcount, 10).toLocaleString()}</div>
-              </div>
-            </li>
-          ))}
-        </ul>
-        </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </div>
       <div>
         <h3>Top 5 Songs:</h3>
