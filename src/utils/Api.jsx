@@ -72,9 +72,10 @@ export async function runScript(artistName) {
                 ticketmaster: null,
                 albums: null,
                 tracks: null,
-                artistImage: null
+                artistImage: null,
             };
         }
+
 
         // Extract MBID from Last.fm response
         const mbid = lastfmData.artist.mbid;
@@ -102,7 +103,7 @@ export async function runScript(artistName) {
             lastfm: lastfmData,
             albums: lastfmAlbumsData,
             tracks: lastfmTracksData,
-            artistImage: artistImageUrl
+            artistImage: artistImageUrl,
         };
     } catch (error) {
         console.error('Error running the script:', error);

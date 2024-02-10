@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 import { BsCaretRightFill, Bs1CircleFill, Bs2CircleFill, Bs3CircleFill, Bs4CircleFill, Bs5CircleFill } from 'react-icons/bs';
 import { Card, Button } from 'react-bootstrap';
-
 const ArtistSection = ({ artistData }) => {
-
   // If artist data is not fully available, return null
   if (!artistData || !artistData.lastfm || !artistData.albums || !artistData.tracks) {
     return null;
@@ -14,31 +12,25 @@ const ArtistSection = ({ artistData }) => {
   const { topalbums } = artistData.albums;
   const { toptracks } = artistData.tracks;
   const artistImage = artistData.artistImage;
-
   const bioContent = artist.bio.content;
   // Removes unwanted a tag
   const bioWithoutLink = bioContent.split('<a')[0];
-
   // Extract the first 5 sentences from the biography
   const bioSentences = bioWithoutLink.split('.').filter(sentence => sentence.trim() !== '');
   const initialBio = bioSentences.slice(0, 5).join('. ') + '.';
-
   // State to track whether full biography is displayed
   const [expanded, setExpanded] = useState(false);
   const [bio, setBio] = useState(initialBio);
-
   // Function to expand the biography
   const handleReadMore = () => {
     setBio(bioContent);
     setExpanded(true);
   };
-
-// Function to hide the extra biography
-const handleHideBio = () => {
-  setBio(initialBio);
-  setExpanded(false);
-};
-
+  // Function to hide the extra biography
+  const handleHideBio = () => {
+    setBio(initialBio);
+    setExpanded(false);
+  };
   // Extract the first 5 albums and tracks
   const topAlbums = topalbums.album.slice(0, 5);
   const topTracks = toptracks.track.slice(0, 5);
@@ -46,7 +38,6 @@ const handleHideBio = () => {
   const formattedListeners = parseInt(artist.stats.listeners, 10).toLocaleString();
   // Format the number of playcount with commas
   const formattedPlaycount = parseInt(artist.stats.playcount, 10).toLocaleString();
-  
   //DELETE THESE WHEN WE'RE HAPPY THEY WORK
   console.log('artistData:', artistData);
   console.log('artist:', artist);
@@ -75,22 +66,33 @@ const handleHideBio = () => {
           </ul>
         </div>
       )}
-
       {/* Album section */}
       <div>
-        <h3>Top 5 Albums:</h3>
+        <h3>Top Albums:</h3>
+        <div className="album-list-container">
         <ul className="album-list">
           {topAlbums.map((album, index) => (
-            <li key={album.name}>
-              {index === 0 && <Bs1CircleFill className="icon" />}
-              {index === 1 && <Bs2CircleFill className="icon" />}
-              {index === 2 && <Bs3CircleFill className="icon" />}
-              {index === 3 && <Bs4CircleFill className="icon" />}
-              {index === 4 && <Bs5CircleFill className="icon" />}
-              <span>{album.name}</span>
+            <li key={album.name} className="album-item">
+              <div className="album-content">
+                {/* <div className="album-number">
+        {index === 0 && <Bs1CircleFill className="icon" />}
+        {index === 1 && <Bs2CircleFill className="icon" />}
+        {index === 2 && <Bs3CircleFill className="icon" />}
+        {index === 3 && <Bs4CircleFill className="icon" />}
+        {index === 4 && <Bs5CircleFill className="icon" />}
+      </div> */}
+
+      
+                <div className="album-name">{album.name}</div>
+                <div className="album-cover">
+                  <img src={album.image[2]['#text']} alt={album.name} />
+                </div>
+                <div className="album-playcount">Playcount: {parseInt(album.playcount, 10).toLocaleString()}</div>
+              </div>
             </li>
           ))}
         </ul>
+        </div>
       </div>
       <div>
         <h3>Top 5 Songs:</h3>
@@ -107,7 +109,6 @@ const handleHideBio = () => {
           ))}
         </ul>
       </div>
-
       {/* Biography */}
       {artist.bio && (
         <div>
@@ -137,5 +138,4 @@ const handleHideBio = () => {
     </div>
   );
 };
-
 export default ArtistSection;
