@@ -12,7 +12,7 @@ const EventCard = (props) => {
             <Card
             bg={variant.toLowerCase()}
             key={variant}
-            text={variant.toLowerCase() === 'light' ? 'dark' : 'white'} style={{ width: '20rem' }} className="mb-2">
+            text={variant.toLowerCase() === 'light' ? 'dark' : 'white'} style={{ width: '20rem', margin: '20px' }} className="mb-2">
             {props.eventImg && <Card.Img variant="top" src={props.eventImg} />}
             <Card.Body>
                 <Card.Title>{props.eventName}</Card.Title>
