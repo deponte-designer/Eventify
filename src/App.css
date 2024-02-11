@@ -1,7 +1,9 @@
-/* #root {
+#root {
     position: relative;
     height: 100%;
-} */
+    margin-bottom: 10;
+}
+
 
 .footer-container {
     min-height: calc('100vh - 34px');

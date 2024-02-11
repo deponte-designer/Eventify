@@ -1,10 +1,10 @@
 import React from 'react';
-import './style.css'; 
-import {BsCaretRightFill} from "react-icons/bs"
+import './style.css';
+import { BsCaretRightFill } from "react-icons/bs"
 
 const SuggestionsSection = ({ artistData }) => {
   // Check if artistData and Last.fm data exist
-  if (!artistData || !artistData.lastfm || !artistData.lastfm.artist|| !artistData.lastfm.artist.similar) {
+  if (!artistData || !artistData.lastfm || !artistData.lastfm.artist || !artistData.lastfm.artist.similar) {
     return null;
   }
   // Access the similar tags array
