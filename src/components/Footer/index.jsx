@@ -7,23 +7,33 @@ const Footer = () => {
         backgroundColor: "#2596be",
         color: "#ffffff",
         textAlign: "center",
-        paddingTop: "15px",
+        padding: "15px 0",
+        width: "100%", 
+        bottom: "0",
     }
+    
     const footerIcon ={
         color: "#000000",
         fontSize: "50px",
-
+        display: "flex",
+        justifyContent: "center",
     }
     return (
-      <div className="footer-container fixed-bottom" style={footerStyle}>
+      <div className="footer-container" style={footerStyle}>
         
         
         <p className="m-0">&copy; {new Date().getFullYear()} Moment12. All rights reserved.</p>
       
-        <div style={footerIcon} > 
-        <FaGithub className="me-2" />
-        <FaFacebook className="me-2" />
-        <FaInstagramSquare />
+        <div style={footerIcon}>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="me-2" style={{ color: "#000000"}}/>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <FaFacebook className="me-2" style={{ color: "#000000"}}/>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <FaInstagramSquare className="me-2" style={{ color: "#000000"}}/>
+          </a>
         </div>
       </div>
     );

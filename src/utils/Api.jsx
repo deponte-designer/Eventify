@@ -96,7 +96,7 @@ export async function runScript(artistName) {
         const lastfmTracksData = await fetchLastfmData(lastfmTracksEndpoint);
 
         // Wait for 1 second before returning data to ensure rate limiting
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        // await new Promise(resolve => setTimeout(resolve, 1000));
 
         return {
             ticketmaster: ticketmasterData,

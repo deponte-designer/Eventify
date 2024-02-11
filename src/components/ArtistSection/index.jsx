@@ -51,13 +51,88 @@ const ArtistSection = ({ artistData }) => {
   console.log('tracks:', toptracks);
   console.log('image:', artistImage);
   return (
+    
     <div className="artist-section">
-      {/* Artist name */}
-      <h2>{artist.name}</h2>
-      {/* Image - need to check CORS error */}
-      {artistImage && (
-        <img src={artistImage} alt={artist.name} />
+      <div>
+{/* Artist name */}
+<h2>{artist.name}</h2>
+      </div>
+      <Container>
+        
+        <Row>
+          {/* Image */}
+          <Col sm={12} md={4}>
+            <div className="artist-image">
+              {artistImage && (
+                <img src={artistImage} alt={artist.name} className="img-fluid" style={{ marginLeft: 0, marginRight: 0 }} />
+              )}
+            </div>
+          </Col>
+          {/* Listeners, playcount and top 5 songs */}
+          <Col sm={12} md={8}>
+            <Row>
+              <Col sm={12} md={6}>
+                <div className="listeners-playcount">
+                  <h3>Listeners:</h3>
+                  <p>{formattedListeners}</p>
+                  <h3>Playcount:</h3>
+                  <p>{formattedPlaycount}</p>
+                </div>
+              </Col>
+              <Col sm={12} md={6}>
+                <div className="top-songs">
+                  <h3>Top 5 Songs:</h3>
+                  <ul className="track-list">
+                    {topTracks.map((track, index) => (
+                      <li key={track.name}>
+                        {index === 0 && <Bs1CircleFill className="icon" />}
+                        {index === 1 && <Bs2CircleFill className="icon" />}
+                        {index === 2 && <Bs3CircleFill className="icon" />}
+                        {index === 3 && <Bs4CircleFill className="icon" />}
+                        {index === 4 && <Bs5CircleFill className="icon" />}
+                        <span>{track.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+      {/* Biography */}
+      {artist.bio && (
+        <div>
+          <h3>Biography:</h3>
+          <p>
+            {bio}
+            {!expanded && <button onClick={handleReadMore}>Read More</button>}
+            {expanded && <button onClick={handleHideBio}>Hide</button>}
+          </p>
+          <a href={artist.url} target="_blank" rel="noopener noreferrer">Learn more</a>
+        </div>
       )}
+
+      {/* Album section */}
+      <div>
+        <h3>Top Albums:</h3>
+        <Container className="album-list-container">
+          <Row className="album-list">
+            {topAlbums.map((album, index) => (
+              <Col key={album.name} className="album-item">
+                <div className="album-content">
+                  <div className="album-name">{album.name}</div>
+                  <div className="album-cover">
+                    <img src={album.image[2]['#text']} alt={album.name} />
+                  </div>
+                  <div className="album-playcount">Playcount: {parseInt(album.playcount, 10).toLocaleString()}</div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </div>
+
       {/* Genres section */}
       {artist.tags && (
         <div>
@@ -72,75 +147,7 @@ const ArtistSection = ({ artistData }) => {
           </ul>
         </div>
       )}
-      {/* Album section */}
-      <div>
-        <h3>Top Albums:</h3>
-        <Container className="album-list-container">
-          <Row className="album-list">
-            {topAlbums.map((album, index) => (
-              <Col key={album.name} className="album-item">
-                <div className="album-content">
-                  {/* <div className="album-number">
-        {index === 0 && <Bs1CircleFill className="icon" />}
-        {index === 1 && <Bs2CircleFill className="icon" />}
-        {index === 2 && <Bs3CircleFill className="icon" />}
-        {index === 3 && <Bs4CircleFill className="icon" />}
-        {index === 4 && <Bs5CircleFill className="icon" />}
-      </div> */}
 
-
-                  <div className="album-name">{album.name}</div>
-                  <div className="album-cover">
-                    <img src={album.image[2]['#text']} alt={album.name} />
-                  </div>
-                  <div className="album-playcount">Playcount: {parseInt(album.playcount, 10).toLocaleString()}</div>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </div>
-      <div>
-        <h3>Top 5 Songs:</h3>
-        <ul className="track-list">
-          {topTracks.map((track, index) => (
-            <li key={track.name}>
-              {index === 0 && <Bs1CircleFill className="icon" />}
-              {index === 1 && <Bs2CircleFill className="icon" />}
-              {index === 2 && <Bs3CircleFill className="icon" />}
-              {index === 3 && <Bs4CircleFill className="icon" />}
-              {index === 4 && <Bs5CircleFill className="icon" />}
-              <span>{track.name}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      {/* Biography */}
-      {artist.bio && (
-        <div>
-          <h3>Biography:</h3>
-          <p>
-            {bio}
-            {!expanded && <button onClick={handleReadMore}>Read More</button>}
-            {expanded && <button onClick={handleHideBio}>Hide</button>}
-          </p>
-          <a href={artist.url} target="_blank" rel="noopener noreferrer">Learn more</a>
-        </div>
-      )}
-      {/* Listeners section */}
-      {artist.stats && (
-        <div>
-          <h3>Listeners:</h3>
-          <p>{formattedListeners}</p>
-        </div>
-      )}
-      {/* Playcount section */}
-      {artist.stats && (
-        <div>
-          <h3>Playcount:</h3>
-          <p>{formattedPlaycount}</p>
-        </div>
-      )}
     </div>
   );
 };
