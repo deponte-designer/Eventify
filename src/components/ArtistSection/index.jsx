@@ -51,14 +51,14 @@ const ArtistSection = ({ artistData }) => {
   console.log('tracks:', toptracks);
   console.log('image:', artistImage);
   return (
-    
+
     <div className="artist-section">
       <div>
-{/* Artist name */}
-<h2>{artist.name}</h2>
+        {/* Artist name */}
+        <h2>{artist.name}</h2>
       </div>
       <Container>
-        
+
         <Row>
           {/* Image */}
           <Col sm={12} md={4}>
@@ -137,14 +137,16 @@ const ArtistSection = ({ artistData }) => {
       {artist.tags && (
         <div>
           <h3>Genres:</h3>
-          <ul className='genres-list'>
-            {artist.tags.tag.map((tag, index) => (
-              <li key={index}>
-                <BsCaretRightFill className="icon" />
-                {tag.name}
-              </li>
-            ))}
-          </ul>
+          <Container className="genre-list-container">
+            <Row className='genres-list'>
+              {artist.tags.tag.map((tag, index) => (
+                <Col key={index}>
+                  <BsCaretRightFill className="icon" />
+                  {tag.name}
+                </Col>
+              ))}
+            </Row>
+          </Container>
         </div>
       )}
 
