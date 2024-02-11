@@ -68,7 +68,7 @@
 //         <ModalComponentError show={showModal} toggleModal={() => setShowModal(false)} />
 //       )}
 //       {/* this div needs to be moved to Artists page maybe */}
-      
+
 //       </div>
 
 //       <Routes>
@@ -92,6 +92,7 @@ import Home from './pages/Home';
 import Artists from './pages/Artists';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import './App.css';
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
