@@ -6,6 +6,7 @@ import { Card, Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Albums from './Albums'
 
 
 const ArtistSection = ({ artistData }) => {
@@ -13,7 +14,6 @@ const ArtistSection = ({ artistData }) => {
   if (!artistData || !artistData.lastfm || !artistData.albums || !artistData.tracks) {
     return null;
   }
-
   const { artist } = artistData.lastfm;
   const { topalbums } = artistData.albums;
   const { toptracks } = artistData.tracks;
@@ -38,18 +38,19 @@ const ArtistSection = ({ artistData }) => {
     setExpanded(false);
   };
   // Extract the first 5 albums and tracks
-  const topAlbums = topalbums.album.slice(0, 5);
+  const topAlbumData = topalbums.album.slice(0, 5);
+  // console.log('top albums', topAlbumData);
   const topTracks = toptracks.track.slice(0, 5);
   // Format the number of listeners with commas
   const formattedListeners = parseInt(artist.stats.listeners, 10).toLocaleString();
   // Format the number of playcount with commas
   const formattedPlaycount = parseInt(artist.stats.playcount, 10).toLocaleString();
   //DELETE THESE WHEN WE'RE HAPPY THEY WORK
-  console.log('artistData:', artistData);
-  console.log('artist:', artist);
-  console.log('albums:', topalbums);
-  console.log('tracks:', toptracks);
-  console.log('image:', artistImage);
+  // console.log('artistData:', artistData);
+  // console.log('artist:', artist);
+  // console.log('albums:', topalbums);
+  // console.log('tracks:', toptracks);
+  // console.log('image:', artistImage);
   return (
 
     <div className="artist-section">
@@ -118,16 +119,8 @@ const ArtistSection = ({ artistData }) => {
         <h3>Top Albums:</h3>
         <Container className="album-list-container">
           <Row className="album-list">
-            {topAlbums.map((album, index) => (
-              <Col key={album.name} className="album-item">
-                <div className="album-content">
-                  <div className="album-name">{album.name}</div>
-                  <div className="album-cover">
-                    <img src={album.image[2]['#text']} alt={album.name} />
-                  </div>
-                  <div className="album-playcount">Playcount: {parseInt(album.playcount, 10).toLocaleString()}</div>
-                </div>
-              </Col>
+            {topAlbumData.map((album, i) => (
+              <Albums album={album} index={i} />
             ))}
           </Row>
         </Container>

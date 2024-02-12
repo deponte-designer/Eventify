@@ -13,9 +13,9 @@ const DiscoverSection = ({ artistData }) => {
     return null;
   };
 
-  console.log("DISCOVER SECTION: ")
-  console.log(artistData.ticketmaster)
-  console.log(artistData.ticketmaster._embedded.events[0].name)
+  // console.log("DISCOVER SECTION: ")
+  // console.log(artistData.ticketmaster)
+  // console.log(artistData.ticketmaster._embedded.events[0].name)
 
   // const { eventDate } = artistData.ticketmaster._embedded.events[0].dates.start.dateTime;
   // const { eventName } = artistData.ticketmaster._embedded.events[0].name;
@@ -53,8 +53,8 @@ const DiscoverSection = ({ artistData }) => {
             eventTime={event.dates && event.dates.start && event.dates.start.localTime ? event.dates.start.localTime + ', Local time' : ''}
             eventAddress={event._embedded && event._embedded.venues && event._embedded.venues.length > 0 ? `${event._embedded.venues[0].address.line1}, ${event._embedded.venues[0].city.name}, ${event._embedded.venues[0].postalCode}, ${event._embedded.venues[0].name} - ${event._embedded.venues[0].country.countryCode}` : ''}
             eventBuyTicket={event.url || ''}
-            // {artistImage && (<img src={artistImage} alt={artist.name} />
-            // )}
+          // {artistImage && (<img src={artistImage} alt={artist.name} />
+          // )}
           />
         ))}
       </div>
