@@ -14,7 +14,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function Home() {
   return (
-    <div> This is home page
+    <div id="container_div"> This is home page
       <Carousel fade>
         <Carousel.Item>
           <img

@@ -7,7 +7,6 @@
 
 .footer-container {
     min-height: calc('100vh - 34px');
-    position: fixed;
     bottom: 0,
 }
 
@@ -16,3 +15,7 @@
     bottom: 0;
     left: 0;
 } */
+
+#container_div{
+    min-height: 77vh !important;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 import { BsCaretRightFill, Bs1CircleFill, Bs2CircleFill, Bs3CircleFill, Bs4CircleFill, Bs5CircleFill } from 'react-icons/bs';
 import { Card, Button } from 'react-bootstrap';
@@ -8,42 +8,49 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-const ArtistSection = ({ artistData }) => {
+let ArtistSection = ({ artistData }) => {
   // If artist data is not fully available, return null
   if (!artistData || !artistData.lastfm || !artistData.albums || !artistData.tracks) {
     return null;
   }
 
-  const { artist } = artistData.lastfm;
-  const { topalbums } = artistData.albums;
-  const { toptracks } = artistData.tracks;
-  const artistImage = artistData.artistImage;
-  const bioContent = artist.bio.content;
+  let { artist } = artistData.lastfm;
+  let { topalbums } = artistData.albums;
+  let { toptracks } = artistData.tracks;
+  let artistImage = artistData.artistImage;
+  let bioContent = artist.bio.content;
   // Removes unwanted a tag
-  const bioWithoutLink = bioContent.split('<a')[0];
+  let bioWithoutLink = bioContent.split('<a')[0];
   // Extract the first 5 sentences from the biography
-  const bioSentences = bioWithoutLink.split('.').filter(sentence => sentence.trim() !== '');
-  const initialBio = bioSentences.slice(0, 5).join('. ') + '.';
+  let bioSentences = bioWithoutLink.split('.').filter(sentence => sentence.trim() !== '');
+  let initialBio = bioSentences.slice(0, 5).join('. ') + '.';
   // State to track whether full biography is displayed
-  const [expanded, setExpanded] = useState(false);
-  const [bio, setBio] = useState(initialBio);
+  let [expanded, setExpanded] = useState(false);
+  let [bio, setBio] = useState(initialBio);
   // Function to expand the biography
-  const handleReadMore = () => {
+  let handleReadMore = () => {
     setBio(bioContent);
     setExpanded(true);
   };
   // Function to hide the extra biography
-  const handleHideBio = () => {
+  let handleHideBio = () => {
     setBio(initialBio);
     setExpanded(false);
   };
+
+  // Reset bio and expanded state when artistData changes
+  useEffect(() => {
+    setBio(initialBio);
+    setExpanded(false);
+  }, [artistData]);
+
   // Extract the first 5 albums and tracks
-  const topAlbums = topalbums.album.slice(0, 5);
-  const topTracks = toptracks.track.slice(0, 5);
+  let topAlbums = topalbums.album.slice(0, 5);
+  let topTracks = toptracks.track.slice(0, 5);
   // Format the number of listeners with commas
-  const formattedListeners = parseInt(artist.stats.listeners, 10).toLocaleString();
+  let formattedListeners = parseInt(artist.stats.listeners, 10).toLocaleString();
   // Format the number of playcount with commas
-  const formattedPlaycount = parseInt(artist.stats.playcount, 10).toLocaleString();
+  let formattedPlaycount = parseInt(artist.stats.playcount, 10).toLocaleString();
   //DELETE THESE WHEN WE'RE HAPPY THEY WORK
   console.log('artistData:', artistData);
   console.log('artist:', artist);
@@ -103,14 +110,14 @@ const ArtistSection = ({ artistData }) => {
       {/* Biography */}
       {artist.bio && (
         <div>
-          <h3>Biography:</h3>
-          <p>
-            {bio}
-            {!expanded && <button onClick={handleReadMore}>Read More</button>}
-            {expanded && <button onClick={handleHideBio}>Hide</button>}
-          </p>
-          <a href={artist.url} target="_blank" rel="noopener noreferrer">Learn more</a>
-        </div>
+        <h3>Biography:</h3>
+        <p>
+          {bio}
+          {!expanded && <button onClick={handleReadMore}>Read More</button>}
+          {expanded && <button onClick={handleHideBio}>Hide</button>}
+        </p>
+        <a href={artist.url} target="_blank" rel="noopener noreferrer">Learn more</a>
+      </div>
       )}
 
       {/* Album section */}

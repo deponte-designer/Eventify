@@ -14,17 +14,17 @@ const ModalComponentError = ({ show, toggleModal }) => {
   );
 };
 
-// const ModalComponentTypo = ({ show, toggleModal, assumedArtist }) => {
-//   return (
-//     <Modal show={show} onHide={toggleModal}>
-//       <Modal.Header closeButton>
-//         <Modal.Title>Error</Modal.Title>
-//       </Modal.Header>
-//       <Modal.Body>
-//         {`Sorry, we could not find ${assumedArtist}. Instead, here are results for ${assumedArtist}.`}
-//       </Modal.Body>
-//     </Modal>
-//   );
-// };
+const ModalComponentTypo = ({ show, toggleTypoModal, artistName}) => {
+  return (
+    <Modal show={show} onHide={toggleTypoModal}>
+      <Modal.Header closeButton>
+        <Modal.Title>Error</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        {`Sorry, we could not find ${artistName}. Did you mean this artist instead?`}
+      </Modal.Body>
+    </Modal>
+  );
+};
 
-export default ModalComponentError;
+export {ModalComponentError, ModalComponentTypo};

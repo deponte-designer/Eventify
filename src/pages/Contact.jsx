@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 
 function Contact() {
     return (
-        <div className="container">
+        <div id="container_div" className="container">
             <form action="/submit_contact_form" method="post">
                 <label For="fname"></label>
                 <input type="text" id="fname" name="firstname" placeholder="Your name.." required />
