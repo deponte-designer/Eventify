@@ -14,7 +14,7 @@ let CustomNavbar = ({ onSearchSubmit }) => {
 
   let handleSearchSubmit = (event) => {
     event.preventDefault();
-    console.log('Search Query:', searchQuery);
+    // console.log('Search Query:', searchQuery);
     onSearchSubmit(searchQuery);
     navigate('/artists');
   };
