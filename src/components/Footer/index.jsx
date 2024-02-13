@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="footer-custom fixed-bottom pb-3 pt-3">
       <Container className="">
         <Row>
-          <Col md={12} className="mb-1">
+          <Col md={12} className="mb-2">
             <a className="ftr-link" href="https://github.com/deponte-designer" target="_blank" rel="noopener noreferrer external">
               <FaGithub className="me-2 ftr-icon" />
             </a>
@@ -24,7 +24,9 @@ const Footer = () => {
           </Col>
         </Row>
         <Row>
-          <p className="m-0" style={{ fontSize: '14px' }}>&copy; 2023 - {new Date().getFullYear()} Developed by <span className="bold">Moment 12</span>. All rights reserved.</p>
+          <Col md={12}>
+            <p className="m-0" style={{ fontSize: '14px' }}>&copy; 2023 - {new Date().getFullYear()} Developed by <span className="bold">Moment 12</span>. All rights reserved.</p>
+          </Col>
         </Row>
       </Container>
     </div>
