@@ -4,15 +4,15 @@ import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
 
-const CustomNavbar = ({ onSearchSubmit }) => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate(); // Initialize navigate function
+let CustomNavbar = ({ onSearchSubmit }) => {
+  let [searchQuery, setSearchQuery] = useState('');
+  let navigate = useNavigate(); // Initialize navigate function
 
-  const handleSearchChange = (event) => {
+  let handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
-  const handleSearchSubmit = (event) => {
+  let handleSearchSubmit = (event) => {
     event.preventDefault();
     console.log('Search Query:', searchQuery);
     onSearchSubmit(searchQuery);
