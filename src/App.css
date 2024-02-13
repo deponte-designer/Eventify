@@ -30,12 +30,12 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: var(--purpleSoft); 
+    background-color: var(--purpleLight); 
     border-radius: 6px; 
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--purpleLight); 
+    background-color: var(--purpleSoft); 
   }
 
 /* * ========== LAYOUT BODY STYLE ========== */
@@ -58,6 +58,7 @@ body,
         linear-gradient(rgba(163, 70, 184, 0.8) 1.1%, rgba(31, 11, 36, 0.8) 130.5%);
 }
 
+/* Carousel style */
 .carousel-custom {
     height: calc(100vh - (85.63px + 56px));
 }
@@ -65,12 +66,11 @@ body,
 .carousel-img {
     height: calc(100vh - (85.63px + 56px));
     object-fit: cover;
-    opacity: 0.5;
     top: auto;
     bottom: 0;
     left: 0;
     right: 0;
-    
+    opacity: 0.5;
 }
 
 .carousel-caption-custom h2 {
@@ -96,10 +96,14 @@ body,
     z-index: 0; /* Ensure the content appears above the control icons */
   }
 
+/* Section Offers style */
+.home-offers {
+    background: var(--purpleGhost);
+}
 
-
-
-
+.home-albums {
+    /* padding: 10px 0; */
+}
 
 
 

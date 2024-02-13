@@ -5,7 +5,7 @@
 // import CarouselH from '../components/CarouselH';
 
 import React, { useEffect, useState } from 'react';
-import { Carousel, Container, Image, Row, Col } from 'react-bootstrap';
+import { Carousel, Container, Image, Row, Col, Card } from 'react-bootstrap';
 import Slider1 from '../assets/images/slider1-artists.jpg';
 import Slider2 from '../assets/images/slider2-events.jpg';
 import Album1 from '../assets/images/album-divide.jpg';
@@ -51,21 +51,21 @@ function Home() {
         <Container style={{ border: "5px solid blue" }}>
           <Row className="" style={{ border: "5px solid yellow" }}>
               <Col md={6} className="">
-                <Row className="home-albums">
-                  <Col md={6} className="">
-                    <Image src={Album1} rounded className="img-fluid" alt="Album 1" />
+                <Row className="">
+                  <Col md={6} className="pt-3 pb-3">
+                    <Image src={Album1} rounded className="img-fluid home-albums" alt="Album 1" />
                   </Col>
-                  <Col md={6} className="">
-                    <Image src={Album2} rounded className="img-fluid" alt="Album 2" />
+                  <Col md={6} className="pt-3 pb-3">
+                    <Image src={Album2} rounded className="img-fluid home-albums" alt="Album 2" />
                   </Col>
                 </Row>
                 
-                <Row className="home-albums">
-                  <Col md={6} className="">
-                    <Image src={Album3} rounded className="img-fluid" alt="Album 3" />
+                <Row className="">
+                  <Col md={6} className="pt-3 pb-3">
+                    <Image src={Album3} rounded className="img-fluid home-albums" alt="Album 3" />
                   </Col>
-                  <Col md={6} className="">
-                    <Image src={Album4} rounded className="img-fluid" alt="Album 4" />
+                  <Col md={6} className="pt-3 pb-3 mb-4">
+                    <Image src={Album4} rounded className="img-fluid home-albums" alt="Album 4" />
                   </Col>
                 </Row>
               </Col>
