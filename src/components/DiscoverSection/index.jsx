@@ -37,6 +37,16 @@ const DiscoverSection = ({ artistData }) => {
     justifyContent: "space-between",
   }
 
+  const formatDate = (time, date) => {
+    console.log(time.split(":"), date.split("-"));
+    const timeFormat = new Date(...date.split("-"), ...time.split(":")).toTimeString()
+    console.log(timeFormat);
+    const timeFormat2 = new Date(...date.split("-"), ...time.split(":")).toLocaleTimeString("en-US", {hour:"numeric",minute:"numeric"})
+    console.log(timeFormat2);
+
+    return timeFormat2;
+  }
+
   return (
     <div className="discover-section-container jumbotron" style={discoverBorder}>
       <h2>Discover</h2>
@@ -49,8 +59,8 @@ const DiscoverSection = ({ artistData }) => {
             eventImg={event.images && event.images.length > 0 ? event.images[0].url : ''}
             eventName={event.name || ''}
             eventArtists={event._embedded && event._embedded.attractions ? event._embedded.attractions.map(attraction => attraction.name).join(', ') : ''}
-            eventDate={event.dates && event.dates.start && event.dates.start.localDate ? event.dates.start.localDate : ''}
-            eventTime={event.dates && event.dates.start && event.dates.start.localTime ? event.dates.start.localTime + ', Local time' : ''}
+            eventDate={event.dates && event.dates.start && event.dates.start.localDate ? `${new Date(event.dates.start.localDate).toDateString()}` : ''}
+            eventTime={event.dates && event.dates.start && event.dates.start.localTime ? `${formatDate(event.dates.start.localTime, event.dates.start.localDate)} , Local time` : ''}
             eventAddress={event._embedded && event._embedded.venues && event._embedded.venues.length > 0 ? `${event._embedded.venues[0].address.line1}, ${event._embedded.venues[0].city.name}, ${event._embedded.venues[0].postalCode}, ${event._embedded.venues[0].name} - ${event._embedded.venues[0].country.countryCode}` : ''}
             eventBuyTicket={event.url || ''}
           // {artistImage && (<img src={artistImage} alt={artist.name} />
