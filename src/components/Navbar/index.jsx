@@ -38,7 +38,7 @@ let CustomNavbar = ({ onSearchSubmit }) => {
             </Form>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="m-auto">
+          <Nav className="me-auto">
             <NavLink className="nav-link" to="/" end>Home</NavLink>
             <NavLink className="nav-link" to="/artists" end>Artists</NavLink>
             <NavLink className="nav-link" to="/contact" end>Contact</NavLink>
@@ -65,3 +65,4 @@ let CustomNavbar = ({ onSearchSubmit }) => {
 };
 
 export default CustomNavbar;
+
