@@ -14,6 +14,7 @@ import Album3 from '../assets/images/album-dualipa.jpg';
 import Album4 from '../assets/images/album-pinkfloyd.jpg';
 import { TbCalendarEvent } from "react-icons/tb";
 import { BsMusicNote } from "react-icons/bs";
+import { RiUser6Fill } from "react-icons/ri";
 
 function Home() {
   return (
@@ -74,17 +75,17 @@ function Home() {
             <Col md={6} className="offers-text-custom">
               <h2 className="pb-3">What does Eventify offer?</h2>
               <Row className="align-items-center">
-                <Col xs={1}><BsMusicNote className="icon offers-icon" style={{ fontSize: '25pt' }} /></Col>
+                <Col xs={1} className="offers-icon"><RiUser6Fill className="icon" style={{ fontSize: '25pt' }} /></Col>
                 <Col><h3>Artists Profiles</h3></Col>
               </Row>
               <p>Eventify boasts millions of artists. Search for your favourites, discover new music, and compile your favourites in one place.</p>
               <Row className="align-items-center">
-                <Col xs={1}><BsMusicNote className="icon offers-icon" style={{ fontSize: '25pt' }} /></Col>
+                <Col xs={1} className="offers-icon"><BsMusicNote className="icon" style={{ fontSize: '25pt' }} /></Col>
                 <Col><h3>Playlists</h3></Col>
               </Row>
               <p>Explore curated playlists and stay up-to-date with the latest trends in the Top 5 Albums.</p>
               <Row className="align-items-center">
-                <Col xs={1}><TbCalendarEvent className="icon offers-icon" style={{ fontSize: '25pt' }} /></Col>
+                <Col xs={1} className="offers-icon"><TbCalendarEvent className="icon" style={{ fontSize: '25pt' }} /></Col>
                 <Col><h3>Upcoming Events</h3></Col>
               </Row>
               <p>Discover events for every occasion and secure your tickets. All curated by music enthusiasts and experts.</p>

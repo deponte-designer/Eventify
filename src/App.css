@@ -117,13 +117,21 @@ body,
     letter-spacing: 1pt;
 }
 
+.offers-text-custom h3 {
+    /* font-family: 'Roboto', sans-serif; */
+    font-style: italic;
+    font-weight: 600; 
+}
+
 .offers-text-custom p {
     /* font-family: 'Roboto', sans-serif; */
 }
 
 .offers-icon {
-
+margin-right: 20px;
+color: var(--purpleLight);
 }
+
 
 /* * ========== FOOTER STYLE ========== */
 
