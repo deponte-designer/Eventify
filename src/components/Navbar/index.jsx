@@ -20,7 +20,7 @@ const CustomNavbar = ({ onSearchSubmit }) => {
   };
 
   return (
-    <Navbar className="bg-body-tertiary mb-3" expand="lg" bg="dark" data-bs-theme="dark" fixed="top">
+    <Navbar className="bg-body-tertiary-opacity nav-opacity mb-3" expand="lg" data-bs-theme="dark" fixed="top">
       <Container>
         <Navbar.Brand className="" href="#">Eventify</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -32,7 +32,7 @@ const CustomNavbar = ({ onSearchSubmit }) => {
             <Form onSubmit={handleSearchSubmit} className="d-flex">
               <Form.Control
                 type="search"
-                placeholder="Search artist..."
+                placeholder="Search by Artist..."
                 className="me-2"
                 aria-label="Search"
                 value={searchQuery}

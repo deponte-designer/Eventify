@@ -61,7 +61,7 @@
     background-color: var(--purpleSoft); 
   }
 
-/* * ========== LAYOUT BODY STYLE ========== */
+/* * ========== LAYOUT STYLE ========== */
 body, 
 #home,
 #artists,
@@ -73,6 +73,17 @@ body,
     /* height: 100%; */
     /* overflow-x: hidden; */
 }
+
+[data-bs-theme=dark] {
+    color-scheme: dark;
+    --bs-body-bg: #21252980 !important;
+
+}
+
+.nav-opacity {
+	background: rgba(0,0,0,0.6);
+}
+
 
 /* * ========== HOME STYLE ========== */
 .bg-home {
