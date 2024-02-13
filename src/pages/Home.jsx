@@ -6,8 +6,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { Carousel, Container, Image } from 'react-bootstrap';
-// import Slider1 from '../assets/images/close-shot-microphone-near-drum-with-smoke-cold.jpg';
-// import Slider2 from '../assets/images/DSC_6758-cold.jpg';
+import Slider1 from '../assets/images/slider1-artists.jpg';
+import Slider2 from '../assets/images/slider2-events.jpg';
 
 
 function Home() {
@@ -17,7 +17,7 @@ function Home() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            // src={Slider1}
+            src={Slider1}
             // src="https://placehold.co/600x200/000000/FFFFFF/png"
             alt="First slide"
           />
@@ -30,6 +30,7 @@ function Home() {
         <Carousel.Item>
           <img
             className="d-block w-100"
+            src={Slider2}
             // src="https://placehold.co/600x200/000000/FFFFFF/png"
             alt="Second slide"
           />
