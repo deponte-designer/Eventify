@@ -1,13 +1,13 @@
 # Eventify
 
-Explore and discover your favourite music artists and bands or those you're eager to disocver more about. Dive into music details and album artwork and check out their upcoming live gigs.
+Explore and discover your favourite music artists and bands or those you're eager to discover more about. Dive into music details and album artwork and check out their upcoming live gigs.
 
 
 ## Description
 
 This project aims to create a music dashboard with form inputs. When a user searches for a music artist or band they are presented with information including band biography, and play count data including their most played albums (and album artwork) using the LastFM API. 
 User is also presented with a list of alternative suggested artists based on their selection.
-Lastly via the Ticketmaster API the user can see the next 5 confirmed events for the artist and follow the link to the Ticketmaster website to book tickets.
+Lastly, via the Ticketmaster API, the user can see the next 5 confirmed events for the artist and follow the link to the Ticketmaster website to book tickets.
 
 
 ## Table of Contents
@@ -22,13 +22,13 @@ Lastly via the Ticketmaster API the user can see the next 5 confirmed events for
 
 ## Usage
 
-The search bar  i slocatered at the top of the landing page, when a valid music artis is entered and selected the Artists page is populated, user can view information about the seleceted artist including biography (which can be extended by by clicking the button)m playcount information including most popular albums showing the album covers and suggestions of similar artists.
-User can view the next 5 upcoming events for the artist and follow the link to the Ticketmaster page to book tickets.
+The search bar i displayed at the top of the landing page, when a valid music artist is entered and selected the Artist page is populated, user can view information about the selected artist including biography (which can be extended by  clicking the button) playcount information including most popular albums showing the album covers and suggestions of similar artists.
+Users can view the next 5 upcoming events for the artist and follow the link to the Ticketmaster page to book tickets.
 
 
 ## Credits
 
-This README was created by following the Good-README-Guide on git.bootcampcontent:
+This README was created by following the Good-README Guide on git. Bootcamp content:
 
 https://git.bootcampcontent.com/uk-edx-16-week/UK-VIRT-FE-PT-10-2023-U-LOLC/-/blob/main/01-html-git-github-module/04-code-refactor-lesson/challenge/Good-README-Guide.md
 
@@ -37,9 +37,9 @@ https://git.bootcampcontent.com/uk-edx-16-week/UK-VIRT-FE-PT-10-2023-U-LOLC/-/bl
 
 This project is deployed and accessible at the following URLs:
 
+PROJECT URLs HERE
 
-
-> Explore yuor favourite music artists and check out their upcoming live events at Eventify.
+> Explore your favourite music artists and check out their upcoming live events at Eventify.
 
 
 ## License
@@ -72,7 +72,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
 ![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)
-
+![React](https://camo.githubusercontent.com/3babc94d778f96441b3a66615fb5ee88c6ed04f174ed49b04df92b0[…]76f3d7265616374266c6f676f436f6c6f723d253233363144414642)
 
 
 # React + Vite
