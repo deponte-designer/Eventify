@@ -13,8 +13,10 @@
     border: 5px solid green;
 }
 
+
 .border-pink {
     border: 5px solid pink;
+
 }
 
 .border-red {
@@ -203,5 +205,3 @@ color: var(--purpleSoft);
 .ftr-icon:hover {
     color: var(--purpleLight);
 }
-
-

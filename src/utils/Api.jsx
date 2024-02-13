@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const ticketmasterApiKey = 'qAOcJsOSzwjbeqGxkHPjP6svF2rmPQAD';
 const lastfmApiKey = 'cf9774362d390975d10497a4ac2f0c64';
-const deezerApiKey = '61d9c85765513cff4b3fdcd6179b9ace';
 const giphyApiKey = 'f0vozMQchRD8NIqhBBu5nhkJdugPLoQC'
 
 // Function to fetch data from Last.fm API
@@ -31,22 +30,20 @@ async function fetchTicketmasterData(endpoint) {
 async function fetchArtistImage(artistName) {
     // Construct the Giphy API request URL
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyApiKey}&q=${encodeURIComponent(artistName)}&limit=1&rating=g`;
-    console.log(url)
+
     try {
         // Fetch data from Giphy API using Axios
         const response = await axios.get(url);
-        console.log('giphy repsonse:',response.data);
+
         // Extract the URL of the still image from the response data
         const imageUrl = response.data.data.length > 0 ? response.data.data[0].images.original_still.url : null;
 
-        // Log the image URL for debugging
-        console.log('Image URL:', imageUrl);
         // Check if the request was successful
         if (response.status !== 200) {
             console.log('giphy error 200')
             throw new Error('Failed to fetch data from Giphy API');
         }
-   
+
 
         return imageUrl;
     } catch (error) {
@@ -57,11 +54,13 @@ async function fetchArtistImage(artistName) {
 
 export async function runScript(artistName) {
     // Define Last.fm endpoint to get artist information
-    const lastfmEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artistName}&api_key=${lastfmApiKey}&format=json`;
+    var lastfmEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artistName}&api_key=${lastfmApiKey}&format=json`;
+
+    let typoCheckValue = null;
 
     try {
         // Fetch data from Last.fm API to get artist information
-        const lastfmData = await fetchLastfmData(lastfmEndpoint);
+        var lastfmData = await fetchLastfmData(lastfmEndpoint);
 
 
         // Check if Last.fm API returned an error message
@@ -73,6 +72,88 @@ export async function runScript(artistName) {
                 albums: null,
                 tracks: null,
                 artistImage: null,
+                typoCheck: null
+            };
+        }
+
+        if (lastfmData.artist.bio.content.startsWith("This is an incorrect tag")) {
+            var typoArtist = artistName;
+            let startIndex = lastfmData.artist.bio.content.indexOf("This is an incorrect tag for ") + "This is an incorrect tag for ".length;
+            let endIndex = lastfmData.artist.bio.content.indexOf(".", startIndex);
+            var artistName = lastfmData.artist.bio.content.substring(startIndex, endIndex);
+
+            // Redefine Last.fm endpoint to get artist information
+            var lastfmEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artistName}&api_key=${lastfmApiKey}&format=json`;
+            var lastfmData = await fetchLastfmData(lastfmEndpoint);
+            // Extract MBID from Last.fm response
+            const mbid = lastfmData.artist.mbid;
+
+            // Use MBID to construct the artist image URL
+            const artistImageUrl = await fetchArtistImage(artistName);
+
+            // Define API endpoints for Ticketmaster, Last.fm albums, and tracks
+            const ticketmasterEndpoint = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${artistName}&apikey=${ticketmasterApiKey}`;
+            const lastfmAlbumsEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&mbid=${mbid}&api_key=${lastfmApiKey}&format=json`;
+            const lastfmTracksEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&mbid=${mbid}&api_key=${lastfmApiKey}&format=json`;
+
+            // Fetch data from Ticketmaster API
+            const ticketmasterData = await fetchTicketmasterData(ticketmasterEndpoint);
+
+            // Fetch data from Last.fm API for top albums and tracks
+            const lastfmAlbumsData = await fetchLastfmData(lastfmAlbumsEndpoint);
+            const lastfmTracksData = await fetchLastfmData(lastfmTracksEndpoint);
+
+            // Wait for 1 second before returning data to ensure rate limiting
+            // await new Promise(resolve => setTimeout(resolve, 1000));
+
+            return {
+                ticketmaster: ticketmasterData,
+                lastfm: lastfmData,
+                albums: lastfmAlbumsData,
+                tracks: lastfmTracksData,
+                artistImage: artistImageUrl,
+                typoCheck: typoArtist,
+            };
+        }
+
+        if (lastfmData.artist.bio.content.startsWith("Correct artist name is")) {
+            var typoArtist = artistName;
+            let startIndex = lastfmData.artist.bio.content.indexOf("Correct artist name is ") + "Correct artist name is ".length;
+            let endIndex = lastfmData.artist.bio.content.indexOf(".", startIndex);
+            var artistName = lastfmData.artist.bio.content.substring(startIndex, endIndex);
+
+            let typoCheckValue = "Yes";
+            // Redefine Last.fm endpoint to get artist information
+            var lastfmEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artistName}&api_key=${lastfmApiKey}&format=json`;
+            var lastfmData = await fetchLastfmData(lastfmEndpoint);
+            // Extract MBID from Last.fm response
+            const mbid = lastfmData.artist.mbid;
+
+            // Use MBID to construct the artist image URL
+            const artistImageUrl = await fetchArtistImage(artistName);
+
+            // Define API endpoints for Ticketmaster, Last.fm albums, and tracks
+            const ticketmasterEndpoint = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${artistName}&apikey=${ticketmasterApiKey}`;
+            const lastfmAlbumsEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&mbid=${mbid}&api_key=${lastfmApiKey}&format=json`;
+            const lastfmTracksEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&mbid=${mbid}&api_key=${lastfmApiKey}&format=json`;
+
+            // Fetch data from Ticketmaster API
+            const ticketmasterData = await fetchTicketmasterData(ticketmasterEndpoint);
+
+            // Fetch data from Last.fm API for top albums and tracks
+            const lastfmAlbumsData = await fetchLastfmData(lastfmAlbumsEndpoint);
+            const lastfmTracksData = await fetchLastfmData(lastfmTracksEndpoint);
+
+            // Wait for 1 second before returning data to ensure rate limiting
+            // await new Promise(resolve => setTimeout(resolve, 1000));
+
+            return {
+                ticketmaster: ticketmasterData,
+                lastfm: lastfmData,
+                albums: lastfmAlbumsData,
+                tracks: lastfmTracksData,
+                artistImage: artistImageUrl,
+                typoCheck: typoCheckValue,
             };
         }
 
@@ -87,7 +168,7 @@ export async function runScript(artistName) {
         const ticketmasterEndpoint = `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${artistName}&apikey=${ticketmasterApiKey}`;
         const lastfmAlbumsEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&mbid=${mbid}&api_key=${lastfmApiKey}&format=json`;
         const lastfmTracksEndpoint = `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&mbid=${mbid}&api_key=${lastfmApiKey}&format=json`;
-        
+
         // Fetch data from Ticketmaster API
         const ticketmasterData = await fetchTicketmasterData(ticketmasterEndpoint);
 
@@ -104,6 +185,7 @@ export async function runScript(artistName) {
             albums: lastfmAlbumsData,
             tracks: lastfmTracksData,
             artistImage: artistImageUrl,
+            typoCheck: typoCheckValue,
         };
     } catch (error) {
         console.error('Error running the script:', error);

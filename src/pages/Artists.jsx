@@ -2,25 +2,31 @@ import React, { useEffect, useState } from 'react';
 import ArtistSection from '../components/ArtistSection';
 import DiscoverSection from '../components/DiscoverSection';
 import SuggestionsSection from '../components/SuggestionsSection';
-import ModalComponentError from '../components/ModalComponent';
+import {ModalComponentError, ModalComponentTypo} from '../components/ModalComponent';
 import { runScript } from '../utils/Api';
 import { useNavigate } from 'react-router-dom';
 
-const Artists = ({ searchQuery }) => {
-  const [artistData, setArtistData] = useState(null);
-  const [showModal, setShowModal] = useState(false);
-  const navigate = useNavigate();
+
+let Artists = ({ searchQuery }) => {
+  let [artistData, setArtistData] = useState(null);
+  let [showModal, setShowModal] = useState(false);
+  let [showTypoModal, setShowTypoModal] = useState(false);
+  let navigate = useNavigate();
 
   useEffect(() => {
-    const fetchArtistData = async () => {
+    let fetchArtistData = async () => {
       try {
-        const data = await runScript(searchQuery);
+        let data = await runScript(searchQuery);
         setArtistData(data);
         // Check if artist not found and toggle modal accordingly
-        if (data && data.lastfm === "The artist you supplied could not be found") {
+        if 
+        (data && data.lastfm === "The artist you supplied could not be found") {
           setShowModal(true);
         }
-      } catch (error) {
+        else if (data && data.typoCheck!==null){
+          setShowTypoModal(true);
+          }
+        } catch (error) {
         console.error('Error fetching artist data:', error);
       }
     };
@@ -30,12 +36,16 @@ const Artists = ({ searchQuery }) => {
     }
   }, [searchQuery]);
 
-  const toggleModal = () => {
+  let toggleModal = () => {
     setShowModal(!showModal);
   };
 
+  let toggleTypoModal = () => {
+    setShowTypoModal(!showTypoModal);
+  };
+
   return (
-    <div>
+    <div id="container_div">
       {artistData && artistData.lastfm !== "The artist you supplied could not be found" && (
         <>
           <ArtistSection artistData={artistData} />
@@ -43,9 +53,14 @@ const Artists = ({ searchQuery }) => {
           <SuggestionsSection artistData={artistData} />
         </>
       )}
-      {showModal && (
+      
+      
         <ModalComponentError show={showModal} toggleModal={toggleModal} />
-      )}
+      
+      
+      
+        <ModalComponentTypo show={showTypoModal} toggleTypoModal={toggleTypoModal} artistName={searchQuery} />
+     
     </div>
   );
 };
