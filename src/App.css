@@ -43,6 +43,22 @@
     font-weight: bold;
 }
 
+
+
+
+/* * ========== LAYOUT STYLE ========== */
+body, 
+#home,
+#artists,
+#contact {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: var(--bs-gray-800) !important;
+    color: var(--ghostWhite) !important;
+    margin-bottom: 85.63px; /* less the footer size */
+    /* height: 100%; */
+    /* overflow-x: hidden; */
+}
+
 /* scrollbar custom style */
 ::-webkit-scrollbar {
     width: 12px;
@@ -61,29 +77,32 @@
     background-color: var(--purpleSoft); 
   }
 
-/* * ========== LAYOUT STYLE ========== */
-body, 
-#home,
-#artists,
-#contact {
-    font-family: 'Poppins', sans-serif !important;
-    background-color: var(--bs-gray-800) !important;
-    color: var(--ghostWhite) !important;
-    margin-bottom: 85.63px; /* less the footer size */
-    /* height: 100%; */
-    /* overflow-x: hidden; */
+.btn-outline-purple {
+    --bs-btn-color: var(--purpleGhost) !important;
+    --bs-btn-border-color: var(--purpleSoft) !important;
+    --bs-btn-hover-color: var(--purpleGhost);
+    --bs-btn-hover-bg: var(--purpleLight) !important;
+    --bs-btn-hover-border-color: var(--purpleLight) !important;
+    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-active-color: var(--purpleGhost);
+    --bs-btn-active-bg: var(--purpleSoft) !important;
+    --bs-btn-active-border-color: var(--purpleSoft) !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--purpleSoft) !important;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: var(--purpleSoft) !important;
+    --bs-gradient: none;
 }
 
-[data-bs-theme=dark] {
+/* * ========== HOME STYLE ========== */
+/* [data-bs-theme=dark] {
     color-scheme: dark;
     --bs-body-bg: #21252980 !important;
-
-}
+} */
 
 .nav-opacity {
 	background: rgba(0,0,0,0.6);
 }
-
 
 /* * ========== HOME STYLE ========== */
 .bg-home {

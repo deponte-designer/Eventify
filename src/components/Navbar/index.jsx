@@ -39,7 +39,7 @@ const CustomNavbar = ({ onSearchSubmit }) => {
                 // onChange={handleSearchChange}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <Button variant="outline-success" type="submit">Search</Button>
+              <Button variant="outline-success" className="btn-outline-purple" type="submit">Search</Button>
             </Form>
           </Nav>
         </Navbar.Collapse>
