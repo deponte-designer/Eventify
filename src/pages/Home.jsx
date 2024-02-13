@@ -20,10 +20,12 @@ function Home() {
             src={Slider1}
             alt="First slide"
           />
-          <Carousel.Caption className="carousel-caption-custom">
-            <h2>Millions of Artist's profiles</h2>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
+          <Container className="carousel-content">
+            <Carousel.Caption className="carousel-caption-custom">
+              <h2>Millions of Artist's profiles</h2>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Container>
         </Carousel.Item>
 
         <Carousel.Item>
@@ -32,10 +34,12 @@ function Home() {
             src={Slider2}
             alt="Second slide"
           />
-          <Carousel.Caption className="carousel-caption-custom">
-            <h2>Events for all</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
+          <Container className="carousel-content">
+            <Carousel.Caption className="carousel-caption-custom">
+              <h2>Events for all</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Container>
         </Carousel.Item>
 
       </Carousel>
