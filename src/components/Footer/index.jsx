@@ -2,6 +2,7 @@ import React from 'react';
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
+
 const Footer = () => {
   const footerStyle = {
     backgroundColor: "#2596be",
@@ -23,7 +24,7 @@ const Footer = () => {
     // bottom: "0",
   }
   return (
-    <div className="footer-container" style={footerStyle}>
+    <div className="footer-custom fixed-bottom" style={footerStyle}>
 
 
       <p className="m-0">&copy; {new Date().getFullYear()} Moment12. All rights reserved.</p>

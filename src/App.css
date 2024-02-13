@@ -1,4 +1,4 @@
-#root {
+/* #root {
     position: relative;
     height: 100%;
     margin-bottom: 10;
@@ -9,7 +9,7 @@
     min-height: calc('100vh - 34px');
     position: fixed;
     bottom: 0,
-}
+} */
 
 /* .footer {
     position: absolute;
