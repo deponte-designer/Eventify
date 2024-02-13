@@ -4,15 +4,15 @@ import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
 
-let CustomNavbar = ({ onSearchSubmit }) => {
-  let [searchQuery, setSearchQuery] = useState('');
-  let navigate = useNavigate(); // Initialize navigate function
+const CustomNavbar = ({ onSearchSubmit }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate(); // Initialize navigate function
 
-  let handleSearchChange = (event) => {
+  const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
-  let handleSearchSubmit = (event) => {
+  const handleSearchSubmit = (event) => {
     event.preventDefault();
     console.log('Search Query:', searchQuery);
     onSearchSubmit(searchQuery);
@@ -38,7 +38,7 @@ let CustomNavbar = ({ onSearchSubmit }) => {
             </Form>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="m-auto">
+          <Nav className="me-auto">
             <NavLink className="nav-link" to="/" end>Home</NavLink>
             <NavLink className="nav-link" to="/artists" end>Artists</NavLink>
             <NavLink className="nav-link" to="/contact" end>Contact</NavLink>
@@ -65,3 +65,4 @@ let CustomNavbar = ({ onSearchSubmit }) => {
 };
 
 export default CustomNavbar;
+
