@@ -10,7 +10,7 @@ import Slider1 from '../assets/images/slider1-artists.jpg';
 import Slider2 from '../assets/images/slider2-events.jpg';
 import Album1 from '../assets/images/album-divide.jpg';
 import Album2 from '../assets/images/album-adele21.jpg';
-import Album3 from '../assets/images/album-dualipa.png';
+import Album3 from '../assets/images/album-dualipa.jpg';
 import Album4 from '../assets/images/album-pinkfloyd.jpg';
 
 function Home() {
