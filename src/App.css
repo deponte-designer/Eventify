@@ -1,21 +1,207 @@
-#root {
-    position: relative;
-    height: 100%;
-    margin-bottom: 10;
+/* Imported fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ! To delete at the end of the project ==================== */
+/* Styling border sections  */
+.border-yellow {
+    border: 5px solid yellow;
+}
+
+.border-green {
+    border: 5px solid green;
 }
 
 
-.footer-container {
-    min-height: calc('100vh - 34px');
-    bottom: 0,
+.border-pink {
+    border: 5px solid pink;
+
 }
 
-/* .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.border-red {
+    border: 5px solid red;
+}
+
+.border-blue {
+    border: 5px solid blue;
+}
+/* ! To delete at the end of the project ==================== */
+
+
+/* Defined main css */
+:root {
+    --purpleDark: #210d27;
+    --purpleMid: #1F0B24;
+    --purpleLight: #682777;
+    --purpleSoft: #a346b8;
+    --purpleGhost: #F6EBF9;
+    --ghostWhite: #fbfbff;
+    --silver: #A2A2A2;
+    --gold: #F7BD39;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+
+
+/* * ========== LAYOUT STYLE ========== */
+body, 
+#home,
+#artists,
+#contact {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: var(--bs-gray-800) !important;
+    color: var(--ghostWhite) !important;
+    margin-bottom: 85.63px; /* less the footer size */
+    /* height: 100%; */
+    /* overflow-x: hidden; */
+}
+
+/* scrollbar custom style */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: var(--silver); 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--purpleLight); 
+    border-radius: 6px; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--purpleSoft); 
+  }
+
+.btn-outline-purple {
+    --bs-btn-color: var(--purpleGhost) !important;
+    --bs-btn-border-color: var(--purpleSoft) !important;
+    --bs-btn-hover-color: var(--purpleGhost);
+    --bs-btn-hover-bg: var(--purpleLight) !important;
+    --bs-btn-hover-border-color: var(--purpleLight) !important;
+    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-active-color: var(--purpleGhost);
+    --bs-btn-active-bg: var(--purpleSoft) !important;
+    --bs-btn-active-border-color: var(--purpleSoft) !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--purpleSoft) !important;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: var(--purpleSoft) !important;
+    --bs-gradient: none;
+}
+
+/* * ========== HOME STYLE ========== */
+/* [data-bs-theme=dark] {
+    color-scheme: dark;
+    --bs-body-bg: #21252980 !important;
 } */
 
-#container_div{
-    min-height: 77vh !important;
+.nav-opacity {
+	background: rgba(0,0,0,0.6);
+}
+
+/* * ========== HOME STYLE ========== */
+.bg-home {
+    background:
+        url(./assets/images/bg-img-albums.jpg) center center/cover fixed,
+        linear-gradient(rgba(163, 70, 184, 0.8) 1.1%, rgba(31, 11, 36, 0.8) 130.5%);
+}
+
+/* Carousel style */
+.carousel-custom {
+    height: calc(100vh - (85.63px + 56px));
+}
+
+.carousel-img {
+    height: calc(100vh - (85.63px + 56px));
+    object-fit: cover;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+}
+
+.carousel-caption-custom h2 {
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 700; 
+    /* font-size: 4rem;  DO NOT DELETE, YET */
+    font-size: 6vw;
+    letter-spacing: 1pt;
+    margin-bottom: 10px; 
+    margin-top: 20rem; 
+  }
+
+  .carousel-caption-custom {
+    text-align: center;
+    margin-bottom: -7rem;
+  }
+
+  .carousel-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 0; /* Ensure the content appears above the control icons */
+  }
+
+/* Section Offers style */
+.home-offers {
+    background: var(--purpleGhost);
+    color: var(--purpleDark);
+}
+
+.offers-text-custom {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offers-text-custom h2 {
+    color: var(--purpleLight);
+    font-weight: 800; 
+    font-size: 25pt; 
+    letter-spacing: 1pt;
+}
+
+.offers-text-custom h3 {
+    /* font-family: 'Roboto', sans-serif; */
+    font-style: italic;
+    font-weight: 600; 
+}
+
+.offers-text-custom p {
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+.offers-icon {
+margin-right: 20px;
+color: var(--purpleLight);
+}
+
+
+/* * ========== FOOTER STYLE ========== */
+
+.footer-custom {
+    background-color: var(--bs-gray-900);
+    text-align: center;
+    color: var(--silver);
+    font-weight: 300;
+}
+
+.ftr-icon {
+font-size: 18pt;
+color: var(--purpleSoft);
+}
+
+.ftr-icon:hover {
+    color: var(--purpleLight);
 }
