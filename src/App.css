@@ -28,6 +28,7 @@ body,
     font-family: 'Poppins', sans-serif !important;
     background-color: var(--bs-gray-800) !important;
     color: var(--ghostWhite) !important;
+    margin-bottom: 120px;
 }
 
 
@@ -49,7 +50,6 @@ color: var(--purpleSoft);
 .ftr-icon:hover {
     color: var(--purpleLight);
 }
-
 
 
 
