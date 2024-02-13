@@ -46,7 +46,7 @@ body,
     font-family: 'Poppins', sans-serif !important;
     background-color: var(--bs-gray-800) !important;
     color: var(--ghostWhite) !important;
-    margin-bottom: 85.63px;
+    margin-bottom: 85.63px; /* less the footer size */
     /* height: 100%; */
     /* overflow-x: hidden; */
 }
@@ -55,32 +55,48 @@ body,
 .bg-home {
     background:
         url(./assets/images/bg-img-albums.jpg) center center/cover fixed,
-        linear-gradient(rgba(121, 45, 129, 0.8), rgba(36, 31, 98, 0.8));
+        linear-gradient(rgba(163, 70, 184, 0.8) 1.1%, rgba(31, 11, 36, 0.8) 130.5%);
 }
 
 .carousel-custom {
-    height: calc('100vh - 85.63px');
+    height: calc(100vh - (85.63px + 56px));
 }
 
 .carousel-img {
-    height: 86vh;
+    height: calc(100vh - (85.63px + 56px));
     object-fit: cover;
     opacity: 0.5;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
 }
 
 .carousel-caption-custom h2 {
-    font-family: 'Poppins', sans-serif; /* Use the imported Google font */
-    font-weight: 700; /* Make it bold */
-    font-size: 4rem; /* Increase font size */
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 700; 
+    font-size: 4rem; 
     letter-spacing: 1pt;
-    margin-bottom: 10px; /* Add some space between h1 and p */
-    margin-top: 20rem; /* Adjust as needed */
+    margin-bottom: 10px; 
+    margin-top: 20rem; 
+  }
+
+  .carousel-caption-custom {
+    text-align: center;
+    margin-bottom: -7rem;
+  }
+
+  .carousel-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 0; /* Ensure the content appears above the control icons */
   }
 
 
-
-
-  
 
 
 
@@ -106,23 +122,3 @@ color: var(--purpleSoft);
 }
 
 
-
-
-/* #root {
-    position: relative;
-    height: 100%;
-    margin-bottom: 10;
-}
-
-
-.footer-container {
-    min-height: calc('100vh - 34px');
-    position: fixed;
-    bottom: 0,
-} */
-
-/* .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-} */
