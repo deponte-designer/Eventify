@@ -31,6 +31,22 @@ body,
     margin-bottom: 120px;
 }
 
+/* * ========== HOME STYLE ========== */
+.bg-home {
+    background:
+        url(./assets/images/bg-img-albums.jpg) center center/cover fixed,
+        linear-gradient(rgba(121, 45, 129, 0.8), rgba(36, 31, 98, 0.8));
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* * ========== FOOTER STYLE ========== */
