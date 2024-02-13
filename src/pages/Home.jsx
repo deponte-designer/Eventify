@@ -5,7 +5,7 @@
 // import CarouselH from '../components/CarouselH';
 
 import React, { useEffect, useState } from 'react';
-import { Carousel, Container, Image } from 'react-bootstrap';
+import { Carousel, Container, Image, Row, Col } from 'react-bootstrap';
 import Slider1 from '../assets/images/slider1-artists.jpg';
 import Slider2 from '../assets/images/slider2-events.jpg';
 import Album1 from '../assets/images/album-divide.jpg';
@@ -46,41 +46,44 @@ function Home() {
         </Carousel.Item>
       </Carousel>
 
-      <Container>
-        <section className="home-offers">
-
-          <Row>
-            <Col md={6} className="">
-              <Row className="home-albums">
-                <Col md={6} className="">
-                  <Image src={Album1} rounded className="img-fluid" alt="Album 1" />
-                </Col>
-                <Col md={6} className="">
-                  <Image src={Album2} rounded className="img-fluid" alt="Album 2" />
-                </Col>
-              </Row>
-              <Row className="home-albums">
-                <Col md={6} className="">
-                  <Image src={Album3} rounded className="img-fluid" alt="Album 3" />
-                </Col>
-                <Col md={6} className="">
-                  <Image src={Album4} rounded className="img-fluid" alt="Album 4" />
-                </Col>
-              </Row>
-            </Col>
-            <Col md={6} className="offers-text-custom">
-              <h2>What does Eventify offer?</h2>
-              <h3>Artists Profiles</h3>
-              <p>Eventify boasts millions of artists. Search for your favourites, discover new music, and compile your favourites in one place.</p>
-              <h3>Playlists</h3>
-              <p>Explore curated playlists and stay up-to-date with the latest trends in the Top 5 Albums.</p>
-              <h3>Upcoming Events</h3>
-              <p>Discover events for every occasion and secure your tickets. All curated by music enthusiasts and experts.</p>
-            </Col>
+      
+        <section style={{ border: "5px solid green" }} className="home-offers pb-5 pt-5">
+        <Container style={{ border: "5px solid blue" }}>
+          <Row className="" style={{ border: "5px solid yellow" }}>
+              <Col md={6} className="">
+                <Row className="home-albums">
+                  <Col md={6} className="">
+                    <Image src={Album1} rounded className="img-fluid" alt="Album 1" />
+                  </Col>
+                  <Col md={6} className="">
+                    <Image src={Album2} rounded className="img-fluid" alt="Album 2" />
+                  </Col>
+                </Row>
+                
+                <Row className="home-albums">
+                  <Col md={6} className="">
+                    <Image src={Album3} rounded className="img-fluid" alt="Album 3" />
+                  </Col>
+                  <Col md={6} className="">
+                    <Image src={Album4} rounded className="img-fluid" alt="Album 4" />
+                  </Col>
+                </Row>
+              </Col>
+              <Col md={6} className="offers-text-custom">
+                <h2>What does Eventify offer?</h2>
+                <h3>Artists Profiles</h3>
+                <p>Eventify boasts millions of artists. Search for your favourites, discover new music, and compile your favourites in one place.</p>
+                <h3>Playlists</h3>
+                <p>Explore curated playlists and stay up-to-date with the latest trends in the Top 5 Albums.</p>
+                <h3>Upcoming Events</h3>
+                <p>Discover events for every occasion and secure your tickets. All curated by music enthusiasts and experts.</p>
+              </Col>
           </Row>
-
+          </Container>
         </section>
-      </Container>
+
+
+
     </div>
   );
 }
