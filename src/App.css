@@ -59,14 +59,15 @@ body,
 }
 
 .carousel-custom {
-    height: calc('100vh - 85.63px');
+    height: calc(100vh - (85.63px + 56px));
 }
 
 .carousel-img {
-    height: 86vh;
+    height: calc(100vh - (85.63px + 56px));
     object-fit: cover;
     opacity: 0.5;
 }
+
 
 .carousel-caption-custom h2 {
     font-family: 'Poppins', sans-serif; /* Use the imported Google font */
