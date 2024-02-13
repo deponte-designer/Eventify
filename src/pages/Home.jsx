@@ -22,7 +22,7 @@ function Home() {
           />
           <Container className="carousel-content">
             <Carousel.Caption className="carousel-caption-custom">
-              <h2>Millions of Artist's profiles</h2>
+              <h2>Millions of Artists</h2>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Container>
