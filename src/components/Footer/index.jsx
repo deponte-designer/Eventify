@@ -1,48 +1,34 @@
 import React from 'react';
 import { FaGithub } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
+import { Container, Row, Col } from 'react-bootstrap';
 
 const Footer = () => {
-  const footerStyle = {
-    backgroundColor: "#2596be",
-    color: "#ffffff",
-    textAlign: "center",
-    padding: "15px 0",
-    width: "100%",
-    // position: "relative",
-    // height: "100vh",
-    bottom: "0",
-  }
 
-  const footerIcon = {
-    color: "#000000",
-    fontSize: "50px",
-    display: "flex",
-    justifyContent: "center",
-    // position: 'absolute',
-    // bottom: "0",
-  }
   return (
-    <div className="footer-custom fixed-bottom" style={footerStyle}>
-
-
-      <p className="m-0">&copy; {new Date().getFullYear()} Moment12. All rights reserved.</p>
-
-      <div style={footerIcon}>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="me-2" style={{ color: "#000000" }} />
-        </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-          <FaFacebook className="me-2" style={{ color: "#000000" }} />
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <FaInstagramSquare className="me-2" style={{ color: "#000000" }} />
-        </a>
-      </div>
+    <div className="footer-custom fixed-bottom pb-3 pt-3">
+      <Container className="">
+        <Row>
+          <Col md={12} className="mb-1">
+            <a className="ftr-link" href="https://github.com/deponte-designer" target="_blank" rel="noopener noreferrer external">
+              <FaGithub className="me-2 ftr-icon" />
+            </a>
+            <a className="ftr-link" href="https://github.com/jsskilton" target="_blank" rel="noopener noreferrer external">
+              <FaGithub className="me-2 ftr-icon" />
+            </a>
+            <a className="ftr-link" href="https://github.com/Meisterstu" target="_blank" rel="noopener noreferrer external">
+              <FaGithub className="me-2 ftr-icon" />
+            </a>
+            <a className="ftr-link" href="https://github.com/abbysod" target="_blank" rel="noopener noreferrer external">
+              <FaGithub className="me-2 ftr-icon" />
+            </a>
+          </Col>
+        </Row>
+        <Row>
+          <p className="m-0" style={{ fontSize: '14px' }}>&copy; 2023 - {new Date().getFullYear()} Developed by <span className="bold">Moment 12</span>. All rights reserved.</p>
+        </Row>
+      </Container>
     </div>
   );
 };
-
 
 export default Footer;

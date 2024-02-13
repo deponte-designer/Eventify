@@ -9,10 +9,15 @@
     --purpleDark: #210d27;
     --purpleMid: #1F0B24;
     --purpleLight: #682777;
-    --purpleSoft: #F6EBF9;
+    --purpleSoft: #a346b8;
+    /* --purpleSoft: #F6EBF9; */
     --ghostWhite: #fbfbff;
     --silver: #A2A2A2;
     --gold: #F7BD39;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 /* * ========== LAYOUT BODY STYLE ========== */
@@ -24,6 +29,28 @@ body,
     background-color: var(--bs-gray-800) !important;
     color: var(--ghostWhite) !important;
 }
+
+
+
+/* * ========== FOOTER STYLE ========== */
+
+.footer-custom {
+    background-color: var(--bs-gray-900);
+    text-align: center;
+    color: var(--silver);
+    font-weight: 300;
+}
+
+.ftr-icon {
+font-size: 18pt;
+color: var(--purpleSoft);
+}
+
+.ftr-icon:hover {
+    color: var(--purpleLight);
+}
+
+
 
 
 
