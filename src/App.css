@@ -112,7 +112,7 @@ body,
 
 .offers-text-custom h2 {
     color: var(--purpleLight);
-    font-weight: 700; 
+    font-weight: 800; 
     font-size: 25pt; 
     letter-spacing: 1pt;
 }
@@ -121,7 +121,9 @@ body,
     /* font-family: 'Roboto', sans-serif; */
 }
 
+.offers-icon {
 
+}
 
 /* * ========== FOOTER STYLE ========== */
 
