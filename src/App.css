@@ -4,6 +4,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+/* Styling sections  */
+.border-yellow {
+    border: 5px solid yellow;
+}
+
+.border-green {
+    border: 5px solid green;
+}
+
+.border-pink {
+    border: 5px solid pink;
+}
+
+.border-red {
+    border: 5px solid red;
+}
+
+.border-blue {
+    border: 5px solid blue;
+}
+
+
+
 /* Defined main css */
 :root {
     --purpleDark: #210d27;
@@ -30,12 +53,12 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: var(--purpleSoft); 
+    background-color: var(--purpleLight); 
     border-radius: 6px; 
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--purpleLight); 
+    background-color: var(--purpleSoft); 
   }
 
 /* * ========== LAYOUT BODY STYLE ========== */
@@ -58,6 +81,7 @@ body,
         linear-gradient(rgba(163, 70, 184, 0.8) 1.1%, rgba(31, 11, 36, 0.8) 130.5%);
 }
 
+/* Carousel style */
 .carousel-custom {
     height: calc(100vh - (85.63px + 56px));
 }
@@ -65,18 +89,18 @@ body,
 .carousel-img {
     height: calc(100vh - (85.63px + 56px));
     object-fit: cover;
-    opacity: 0.5;
     top: auto;
     bottom: 0;
     left: 0;
     right: 0;
-    
+    opacity: 0.5;
 }
 
 .carousel-caption-custom h2 {
     font-family: 'Poppins', sans-serif; 
     font-weight: 700; 
-    font-size: 4rem; 
+    /* font-size: 4rem;  */
+    font-size: 6vw;
     letter-spacing: 1pt;
     margin-bottom: 10px; 
     margin-top: 20rem; 
@@ -96,11 +120,40 @@ body,
     z-index: 0; /* Ensure the content appears above the control icons */
   }
 
+/* Section Offers style */
+.home-offers {
+    background: var(--purpleGhost);
+    color: var(--purpleDark);
+}
 
+.offers-text-custom {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.offers-text-custom h2 {
+    color: var(--purpleLight);
+    font-weight: 800; 
+    font-size: 25pt; 
+    letter-spacing: 1pt;
+}
 
+.offers-text-custom h3 {
+    /* font-family: 'Roboto', sans-serif; */
+    font-style: italic;
+    font-weight: 600; 
+}
 
+.offers-text-custom p {
+    /* font-family: 'Roboto', sans-serif; */
+}
 
+.offers-icon {
+margin-right: 20px;
+color: var(--purpleLight);
+}
 
 
 /* * ========== FOOTER STYLE ========== */
