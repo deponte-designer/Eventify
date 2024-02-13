@@ -46,7 +46,7 @@ body,
     font-family: 'Poppins', sans-serif !important;
     background-color: var(--bs-gray-800) !important;
     color: var(--ghostWhite) !important;
-    margin-bottom: 85.63px;
+    margin-bottom: 85.63px; /* less footer size */
     /* height: 100%; */
     /* overflow-x: hidden; */
 }
@@ -68,7 +68,6 @@ body,
     opacity: 0.5;
 }
 
-
 .carousel-caption-custom h2 {
     font-family: 'Poppins', sans-serif; /* Use the imported Google font */
     font-weight: 700; /* Make it bold */
@@ -78,8 +77,19 @@ body,
     margin-top: 20rem; /* Adjust as needed */
   }
 
+  .carousel-caption-custom {
+    text-align: center;
+    margin-bottom: -6rem;
+  }
 
-
+  .carousel-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1; /* Ensure the content appears above the control icons */
+  }
 
   
 
