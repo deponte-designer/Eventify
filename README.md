@@ -27,6 +27,10 @@ Users can view the next 5 upcoming events for the artist and follow the link to 
 
 
 ## Credits
+npm Inquirer.js
+Jestjs.io
+Badges Documentation by Shields.io
+
 
 This README was created by following the Good-README Guide on git. Bootcamp content:
 
