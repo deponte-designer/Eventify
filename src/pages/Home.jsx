@@ -13,7 +13,7 @@ import Slider2 from '../assets/images/slider2-events.jpg';
 function Home() {
   return (
     <div className="bg-home">
-      <Carousel fade className="carousel-custom">
+      <Carousel className="carousel-custom">  {/*property: fade */}
         <Carousel.Item>
           <Image
             className="d-block w-100 carousel-img"
