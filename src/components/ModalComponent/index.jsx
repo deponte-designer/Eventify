@@ -3,7 +3,7 @@ import { Modal } from 'react-bootstrap';
 
 const ModalComponentError = ({ show, toggleModal }) => {
   return (
-    <Modal show={show} onHide={toggleModal}>
+    <Modal data-bs-theme="dark" show={show} onHide={toggleModal}>
       <Modal.Header closeButton>
         <Modal.Title>Error</Modal.Title>
       </Modal.Header>
@@ -16,7 +16,7 @@ const ModalComponentError = ({ show, toggleModal }) => {
 
 const ModalComponentTypo = ({ show, toggleTypoModal, artistName}) => {
   return (
-    <Modal show={show} onHide={toggleTypoModal}>
+    <Modal data-bs-theme="dark" show={show} onHide={toggleTypoModal}>
       <Modal.Header closeButton>
         <Modal.Title>Error</Modal.Title>
       </Modal.Header>

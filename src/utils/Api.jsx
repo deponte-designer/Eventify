@@ -62,6 +62,7 @@ export async function runScript(artistName) {
         // Fetch data from Last.fm API to get artist information
         var lastfmData = await fetchLastfmData(lastfmEndpoint);
 
+        // console.log('lastfmData.artist.bio.content:',lastfmData.artist.bio.content)
 
         // Check if Last.fm API returned an error message
         if (lastfmData.error) {
@@ -156,7 +157,18 @@ export async function runScript(artistName) {
                 typoCheck: typoCheckValue,
             };
         }
-
+        
+        if ((lastfmData.artist.bio.content.length)===0){
+            // Return an object indicating artist not found
+            return {
+                lastfm: "The artist you supplied could not be found",
+                ticketmaster: null,
+                albums: null,
+                tracks: null,
+                artistImage: null,
+                typoCheck: null
+            };
+        }
 
         // Extract MBID from Last.fm response
         const mbid = lastfmData.artist.mbid;
