@@ -29,6 +29,8 @@ body,
     background-color: var(--bs-gray-800) !important;
     color: var(--ghostWhite) !important;
     margin-bottom: 120px;
+    /* height: 100%; */
+    /* overflow-x: hidden; */
 }
 
 /* * ========== HOME STYLE ========== */
