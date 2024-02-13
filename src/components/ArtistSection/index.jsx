@@ -47,7 +47,7 @@ let ArtistSection = ({ artistData }) => {
   }, [artistData]);
 
   // Extract the first 5 albums and tracks
-  let topAlbums = topalbums.album.slice(0, 5);
+  let topAlbumData = topalbums.album.slice(0, 5);
   let topTracks = toptracks.track.slice(0, 5);
 
   // Format the number of listeners with commas
@@ -55,11 +55,11 @@ let ArtistSection = ({ artistData }) => {
   // Format the number of playcount with commas
   let formattedPlaycount = parseInt(artist.stats.playcount, 10).toLocaleString();
   //DELETE THESE WHEN WE'RE HAPPY THEY WORK
-  // console.log('artistData:', artistData);
-  // console.log('artist:', artist);
-  // console.log('albums:', topalbums);
-  // console.log('tracks:', toptracks);
-  // console.log('image:', artistImage);
+  console.log('artistData:', artistData);
+  console.log('artist:', artist);
+  console.log('albums:', topalbums);
+  console.log('tracks:', toptracks);
+  console.log('image:', artistImage);
   return (
 
     <div className="artist-section">
@@ -129,7 +129,7 @@ let ArtistSection = ({ artistData }) => {
         <Container className="album-list-container">
           <Row className="album-list">
             {topAlbumData.map((album, i) => (
-              <Albums album={album} index={i} />
+              <Albums album={album} key={i} />
             ))}
           </Row>
         </Container>
