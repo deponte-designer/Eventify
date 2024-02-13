@@ -76,7 +76,8 @@ body,
 .carousel-caption-custom h2 {
     font-family: 'Poppins', sans-serif; 
     font-weight: 700; 
-    font-size: 4rem; 
+    /* font-size: 4rem;  */
+    font-size: 6vw;
     letter-spacing: 1pt;
     margin-bottom: 10px; 
     margin-top: 20rem; 
@@ -99,10 +100,25 @@ body,
 /* Section Offers style */
 .home-offers {
     background: var(--purpleGhost);
+    color: var(--purpleDark);
 }
 
-.home-albums {
-    /* padding: 10px 0; */
+.offers-text-custom {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offers-text-custom h2 {
+    color: var(--purpleLight);
+    font-weight: 700; 
+    font-size: 25pt; 
+    letter-spacing: 1pt;
+}
+
+.offers-text-custom p {
+    /* font-family: 'Roboto', sans-serif; */
 }
 
 
