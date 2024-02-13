@@ -8,7 +8,7 @@ const ModalComponentError = ({ show, toggleModal }) => {
         <Modal.Title>Error</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        Sorry, we could not find that artist. Please try again.
+        {`Sorry, we could not find that artist. Please try again.`}
       </Modal.Body>
     </Modal>
   );
