@@ -50,9 +50,9 @@ function Home() {
       </Carousel>
 
 
-      <section style={{ border: "5px solid green" }} className="home-offers pb-5 pt-5">
-        <Container style={{ border: "5px solid blue" }}>
-          <Row className="" style={{ border: "5px solid yellow" }}>
+      <section className="home-offers pb-5 pt-5">
+        <Container>
+          <Row className="">
             <Col md={6} className="">
               <Row className="">
                 <Col md={6} className="pt-3 pb-3">
