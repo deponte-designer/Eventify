@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-/* Styling sections  */
+/* ! To delete at the end of the project ==================== */
+/* Styling border sections  */
 .border-yellow {
     border: 5px solid yellow;
 }
@@ -24,7 +24,7 @@
 .border-blue {
     border: 5px solid blue;
 }
-
+/* ! To delete at the end of the project ==================== */
 
 
 /* Defined main css */
@@ -41,6 +41,22 @@
 
 .bold {
     font-weight: bold;
+}
+
+
+
+
+/* * ========== LAYOUT STYLE ========== */
+body, 
+#home,
+#artists,
+#contact {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: var(--bs-gray-800) !important;
+    color: var(--ghostWhite) !important;
+    margin-bottom: 85.63px; /* less the footer size */
+    /* height: 100%; */
+    /* overflow-x: hidden; */
 }
 
 /* scrollbar custom style */
@@ -61,17 +77,31 @@
     background-color: var(--purpleSoft); 
   }
 
-/* * ========== LAYOUT BODY STYLE ========== */
-body, 
-#home,
-#artists,
-#contact {
-    font-family: 'Poppins', sans-serif !important;
-    background-color: var(--bs-gray-800) !important;
-    color: var(--ghostWhite) !important;
-    margin-bottom: 85.63px; /* less the footer size */
-    /* height: 100%; */
-    /* overflow-x: hidden; */
+.btn-outline-purple {
+    --bs-btn-color: var(--purpleGhost) !important;
+    --bs-btn-border-color: var(--purpleSoft) !important;
+    --bs-btn-hover-color: var(--purpleGhost);
+    --bs-btn-hover-bg: var(--purpleLight) !important;
+    --bs-btn-hover-border-color: var(--purpleLight) !important;
+    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-active-color: var(--purpleGhost);
+    --bs-btn-active-bg: var(--purpleSoft) !important;
+    --bs-btn-active-border-color: var(--purpleSoft) !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--purpleSoft) !important;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: var(--purpleSoft) !important;
+    --bs-gradient: none;
+}
+
+/* * ========== HOME STYLE ========== */
+/* [data-bs-theme=dark] {
+    color-scheme: dark;
+    --bs-body-bg: #21252980 !important;
+} */
+
+.nav-opacity {
+	background: rgba(0,0,0,0.6);
 }
 
 /* * ========== HOME STYLE ========== */
@@ -99,7 +129,7 @@ body,
 .carousel-caption-custom h2 {
     font-family: 'Poppins', sans-serif; 
     font-weight: 700; 
-    /* font-size: 4rem;  */
+    /* font-size: 4rem;  DO NOT DELETE, YET */
     font-size: 6vw;
     letter-spacing: 1pt;
     margin-bottom: 10px; 

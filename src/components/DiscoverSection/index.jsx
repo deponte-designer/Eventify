@@ -13,8 +13,8 @@ const DiscoverSection = ({ artistData }) => {
     return null;
   };
 
-  // console.log("DISCOVER SECTION: ")
-  // console.log(artistData.ticketmaster)
+  console.log("DISCOVER SECTION: ")
+  console.log(artistData.ticketmaster)
   // console.log(artistData.ticketmaster._embedded.events[0].name)
 
   // const { eventDate } = artistData.ticketmaster._embedded.events[0].dates.start.dateTime;

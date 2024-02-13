@@ -20,30 +20,45 @@ const CustomNavbar = ({ onSearchSubmit }) => {
   };
 
   return (
-    <Navbar className="bg-body-tertiary mb-3" expand="lg" bg="dark" data-bs-theme="dark" fixed="top">
+    <Navbar className="bg-body-tertiary-opacity nav-opacity mb-3" expand="lg" data-bs-theme="dark" fixed="top">
       <Container>
+        
         <Navbar.Brand className="" href="#">Eventify</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <NavLink className="nav-link" to="/" end>Home</NavLink>
-            <NavLink className="nav-link" to="/artists" end>Artists</NavLink>
-            <NavLink className="nav-link" to="/contact" end>Contact</NavLink>
-            <Form onSubmit={handleSearchSubmit} className="d-flex">
+        <Form onSubmit={handleSearchSubmit} className="d-flex d-lg-none">
               <Form.Control
                 type="search"
-                placeholder="Search artist..."
+                placeholder="Search by Artist..."
                 className="me-2"
                 aria-label="Search"
                 value={searchQuery}
                 // onChange={handleSearchChange}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <Button variant="outline-success" type="submit">Search</Button>
+              <Button variant="outline-success" className="btn-outline-purple" type="submit">Search</Button>
             </Form>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <NavLink className="nav-link" to="/" end>Home</NavLink>
+            <NavLink className="nav-link" to="/artists" end>Artists</NavLink>
+            <NavLink className="nav-link" to="/contact" end>Contact</NavLink>
+            
           </Nav>
         </Navbar.Collapse>
-      </Container>
+        <Form onSubmit={handleSearchSubmit} className="d-lg-flex d-sm-none">
+              <Form.Control
+                type="search"
+                placeholder="Search by Artist..."
+                className="me-2"
+                aria-label="Search"
+                value={searchQuery}
+                // onChange={handleSearchChange}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <Button variant="outline-success" className="btn-outline-purple" type="submit">Search</Button>
+            </Form>
+
+            </Container>
     </Navbar>
 
   );
