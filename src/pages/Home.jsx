@@ -19,7 +19,7 @@ import { RiUser6Fill } from "react-icons/ri";
 function Home() {
   return (
 
-    <div className="bg-home">
+    <main className="bg-home">
       <Carousel className="carousel-custom">  {/*property: fade */}
 
         <Carousel.Item>
@@ -96,9 +96,7 @@ function Home() {
         </Container>
       </section>
 
-
-
-    </div>
+    </main>
   );
 }
 

@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import { BsCaretRightFill, Bs1CircleFill, Bs2CircleFill, Bs3CircleFill, Bs4CircleFill, Bs5CircleFill } from 'react-icons/bs';
 import { Card, Button } from 'react-bootstrap';
-// import { Container } from 'react-bootstrap/lib/Tab.js';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row, Col } from 'react-bootstrap';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 import Albums from './Albums'
 
 
@@ -62,13 +61,15 @@ let ArtistSection = ({ artistData }) => {
   console.log('image:', artistImage);
   return (
 
-    <div className="artist-section">
-      <div>
+    <div className="artist-section border-yellow">
+      <div className="border-green">
         {/* Artist name */}
         <h2>{artist.name}</h2>
       </div>
-      <Container>
-
+      <Container className="border-green">
+<section>
+  
+</section>
         <Row>
           {/* Image */}
           <Col sm={12} md={4}>

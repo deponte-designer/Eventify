@@ -196,6 +196,30 @@ color: var(--purpleLight);
 
 
 
+/* * ========== ARTISTS STYLE ========== */
+
+.album-list {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.track-list {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.genres-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+
+
+
 /* * ========== CONTACT STYLE ========== */
 
 .contact2 .contact-container {
