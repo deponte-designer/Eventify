@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import { BsCaretRightFill, Bs1CircleFill, Bs2CircleFill, Bs3CircleFill, Bs4CircleFill, Bs5CircleFill } from 'react-icons/bs';
 import { Card, Button } from 'react-bootstrap';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 import Albums from './Albums'
@@ -68,14 +68,14 @@ let ArtistSection = ({ artistData }) => {
       </div>
       <Container className="border-green">
 <section>
-  
+
 </section>
         <Row>
           {/* Image */}
           <Col sm={12} md={4}>
             <div className="artist-image">
               {artistImage && (
-                <img src={artistImage} alt={artist.name} className="img-fluid" style={{ marginLeft: 0, marginRight: 0 }} />
+                <Image src={artistImage} alt={artist.name} className="img-fluid" roundedCircle style={{ width: '200px', height: '200px', objectFit: 'cover', marginLeft: 0, marginRight: 0 }} />
               )}
             </div>
           </Col>
