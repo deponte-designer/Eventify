@@ -12,15 +12,15 @@ Lastly, via the Ticketmaster API, the user can see the next 4 confirmed events f
 
 ## Table of Contents
 
-- [User Story](#User Story)
 - [Usage](#usage)
+- [User Story](#User Story)
 - [Credits](#credits)
 - [Deployment](#deployment)
 - [License](#license)
 - [Badges](#badges)
 
 
-## User Story
+## User Story
 
 As a music lover I WANT to be able to search for my favourite artists and check what events they have coming up SO THAT I can find out more about the artists and book their shows.
 
