@@ -41,7 +41,6 @@ https://git.bootcampcontent.com/uk-edx-16-week/UK-VIRT-FE-PT-10-2023-U-LOLC/-/bl
 
 This project is deployed and accessible at the following URLs:
 
-![Deployed:](https://go-eventify.netlify.app/)
 https://go-eventify.netlify.app/
 
 
