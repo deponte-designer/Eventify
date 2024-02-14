@@ -38,7 +38,7 @@
     --purpleGhost: #F6EBF9;
     --ghostWhite: #fbfbff;
     --silver: #A2A2A2;
-    --gold: #F7BD39;
+    --gold: #F7BD39; 
 }
 
 .bold {
@@ -94,16 +94,23 @@ body,
     --bs-btn-disabled-bg: transparent;
     --bs-btn-disabled-border-color: var(--purpleSoft) !important;
     --bs-gradient: none;
+    --bs-border-radius: 2rem;
 }
 
-/* * ========== HOME STYLE ========== */
-/* [data-bs-theme=dark] {
+.form-control {
+    --bs-border-radius: 2rem;
+}
+
+
+/* * ========== Navbar STYLE ========== */
+[data-bs-theme=dark] {
     color-scheme: dark;
-    --bs-body-bg: #21252980 !important;
-} */
+    --bs-body-bg: rgba(33, 37, 41, 0.7) !important;
+}
 
 .nav-opacity {
-	background: rgba(0,0,0,0.6);
+	background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
 }
 
 /* * ========== HOME STYLE ========== */
