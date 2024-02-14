@@ -13,7 +13,7 @@ Lastly, via the Ticketmaster API, the user can see the next 4 confirmed events f
 ## Table of Contents
 
 - [Usage](#usage)
-- [User Story](#User Story)
+- [User Story](#UserStory)
 - [Credits](#credits)
 - [Deployment](#deployment)
 - [License](#license)
