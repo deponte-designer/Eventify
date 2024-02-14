@@ -41,7 +41,8 @@ https://git.bootcampcontent.com/uk-edx-16-week/UK-VIRT-FE-PT-10-2023-U-LOLC/-/bl
 
 This project is deployed and accessible at the following URLs:
 
-PROJECT URLs HERE
+Deployed: go-eventify.netlify.app
+GitHub repository: github.com/deponte-designer/Eventify
 
 > Explore your favourite music artists and check out their upcoming live events at Eventify.
 
