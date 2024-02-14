@@ -7,22 +7,27 @@ Explore your favourite music artists and check out their upcoming live events at
 
 This project aims to create a music dashboard with form inputs. When a user searches for a music artist or band they are presented with information including band biography, and play count data including their most played albums (and album artwork) using the LastFM API. 
 User is also presented with a list of alternative suggested artists based on their selection.
-Lastly, via the Ticketmaster API, the user can see the next 5 confirmed events for the artist and follow the link to the Ticketmaster website to book tickets.
+Lastly, via the Ticketmaster API, the user can see the next 4 confirmed events for the artist and follow the link to the Ticketmaster website to book tickets.
 
 
 ## Table of Contents
 
+- [User Story](#User Story)
 - [Usage](#usage)
 - [Credits](#credits)
-- [License](#license)
 - [Deployment](#deployment)
 - [License](#license)
 - [Badges](#badges)
 
 
+## User Story
+
+As a music lover I WANT to be able to search for my favourite artists and check what events they have coming up SO THAT I can find out more about the artists and book their shows.
+
+
 ## Usage
 
-The search bar i displayed at the top of the landing page, when a valid music artist is entered and selected the Artist page is populated, user can view information about the selected artist including biography (which can be extended by  clicking the button) playcount information including most popular albums showing the album covers and suggestions of similar artists.
+The search bar is displayed at the top of the landing page, when a valid music artist is entered and selected the Artist page is populated, user can view information about the selected artist including biography (which can be extended by  clicking the button) playcount information including most popular albums showing the album covers and suggestions of similar artists.
 Users can view the next 5 upcoming events for the artist and follow the link to the Ticketmaster page to book tickets.
 
 
@@ -79,7 +84,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
 
-# React + Vite
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
