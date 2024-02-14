@@ -62,8 +62,6 @@ export async function runScript(artistName) {
         // Fetch data from Last.fm API to get artist information
         var lastfmData = await fetchLastfmData(lastfmEndpoint);
 
-        // console.log('lastfmData.artist.bio.content:',lastfmData.artist.bio.content)
-
         // Check if Last.fm API returned an error message
         if (lastfmData.error) {
             // Return an object indicating artist not found

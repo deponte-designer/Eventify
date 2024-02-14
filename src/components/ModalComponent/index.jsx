@@ -27,4 +27,17 @@ const ModalComponentTypo = ({ show, toggleTypoModal, artistName}) => {
   );
 };
 
-export {ModalComponentError, ModalComponentTypo};
+const ModalContact = ({ show, toggleContactModal, formError }) => {
+  return (
+    <Modal data-bs-theme="dark" show={show} onHide={toggleContactModal}>
+      <Modal.Header closeButton>
+        <Modal.Title>{formError ? 'Error' : 'Form submitted'}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        {formError ? 'There was an error submitting the form.' : 'Thank you!' }
+      </Modal.Body>
+    </Modal>
+  );
+};
+
+export {ModalComponentError, ModalComponentTypo, ModalContact};

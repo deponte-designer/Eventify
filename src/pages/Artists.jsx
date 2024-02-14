@@ -54,10 +54,7 @@ let Artists = ({ searchQuery }) => {
         </>
       )}
       
-      
         <ModalComponentError show={showModal} toggleModal={toggleModal} />
-      
-      
       
         <ModalComponentTypo show={showTypoModal} toggleTypoModal={toggleTypoModal} artistName={searchQuery} />
      
