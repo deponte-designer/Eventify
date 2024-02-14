@@ -195,6 +195,21 @@ color: var(--purpleLight);
 }
 
 
+
+/* * ========== CONTACT STYLE ========== */
+
+.contact2 .contact-container {
+    position: relative;
+    top: 200px;
+}
+
+
+
+
+
+
+
+
 /* * ========== FOOTER STYLE ========== */
 
 .footer-custom {
