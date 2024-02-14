@@ -45,7 +45,7 @@ let CustomNavbar = ({ onSearchSubmit }) => {
             
           </Nav>
         </Navbar.Collapse>
-        <Form onSubmit={handleSearchSubmit} className="d-lg-flex d-sm-none">
+        <Form onSubmit={handleSearchSubmit} className="d-lg-flex d-none">
               <Form.Control
                 type="search"
                 placeholder="Search by Artist..."
