@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
+// import './style.css';
 import { BsCaretRightFill, Bs1CircleFill, Bs2CircleFill, Bs3CircleFill, Bs4CircleFill, Bs5CircleFill } from 'react-icons/bs';
 import { Card, Button } from 'react-bootstrap';
 import { Container, Row, Col, Image } from 'react-bootstrap';
@@ -60,100 +60,98 @@ let ArtistSection = ({ artistData }) => {
   console.log('tracks:', toptracks);
   console.log('image:', artistImage);
   return (
+    <Container className="mt-5">
 
-    <div className="artist-section border-yellow">
-      <div className="border-green">
-        {/* Artist name */}
-        <h2>{artist.name}</h2>
-      </div>
-      <Container className="border-green">
-<section>
+      <div className="artist-section border-yellow">
+        {/* add a background */}
+        <Container className="p-2 border-pink" rounded style={{ background: 'blue' }} >
+          <Row>
+            {/* Image */}
+            <Col sm={12} md={3}>
+              <div className="artist-image">
+                {artistImage && (
+                  <Image src={artistImage} alt={artist.name} className="img-fluid" style={{ width: '300px', objectFit: 'cover', marginLeft: 0, marginRight: 0 }} />
+                )}
+              </div>
+            </Col>
 
-</section>
-        <Row>
-          {/* Image */}
-          <Col sm={12} md={4}>
-            <div className="artist-image">
-              {artistImage && (
-                <Image src={artistImage} alt={artist.name} className="img-fluid" roundedCircle style={{ width: '200px', height: '200px', objectFit: 'cover', marginLeft: 0, marginRight: 0 }} />
-              )}
-            </div>
-          </Col>
-          {/* Listeners, playcount and top 5 songs */}
-          <Col sm={12} md={8}>
-            <Row>
-              <Col sm={12} md={6}>
-                <div className="listeners-playcount">
-                  <h3>Listeners:</h3>
-                  <p>{formattedListeners}</p>
-                  <h3>Playcount:</h3>
-                  <p>{formattedPlaycount}</p>
-                </div>
-              </Col>
-              <Col sm={12} md={6}>
-                <div className="top-songs">
-                  <h3>Top 5 Songs:</h3>
-                  <ul className="track-list">
-                    {topTracks.map((track, index) => (
-                      <li key={track.name}>
-                        {index === 0 && <Bs1CircleFill className="icon" />}
-                        {index === 1 && <Bs2CircleFill className="icon" />}
-                        {index === 2 && <Bs3CircleFill className="icon" />}
-                        {index === 3 && <Bs4CircleFill className="icon" />}
-                        {index === 4 && <Bs5CircleFill className="icon" />}
-                        <span>{track.name}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
-      {/* Biography */}
-      {artist.bio && (
-        <div>
-        <h3>Biography:</h3>
-        <p>
-          {bio}
-          {!expanded && <button onClick={handleReadMore}>Read More</button>}
-          {expanded && <button onClick={handleHideBio}>Hide</button>}
-        </p>
-        <a href={artist.url} target="_blank" rel="noopener noreferrer">Learn more</a>
-      </div>
-      )}
+            <Col sm={12} md={5}>
+              <div className="border-green">
+                {/* Artist name */}
+                <h2>{artist.name}</h2>
+              </div>
+              {/* Listeners, playcount and top 5 songs */}
+              <div className="listeners-playcount">
+                <p> {formattedListeners} Listeners {formattedPlaycount} Playcount </p>
+              </div>
+            </Col>
 
-      {/* Album section */}
-      <div>
-        <h3>Top Albums:</h3>
-        <Container className="album-list-container">
-          <Row className="album-list">
-            {topAlbumData.map((album, i) => (
-              <Albums album={album} key={i} />
-            ))}
-          </Row>
-        </Container>
-      </div>
 
-      {/* Genres section */}
-      {artist.tags && (
-        <div>
-          <h3>Genres:</h3>
-          <Container className="genre-list-container">
-            <Row className='genres-list'>
-              {artist.tags.tag.map((tag, index) => (
-                <Col key={index}>
-                  <BsCaretRightFill className="icon" />
-                  {tag.name}
+                <Col sm={12} md={4}>
+                  <div className="top-songs">
+                    <h3>Top 5 Songs</h3>
+                    <ul className="track-list">
+                      {topTracks.map((track, index) => (
+                        <li key={track.name}>
+                          {index === 0 && <Bs1CircleFill className="icon" />}
+                          {index === 1 && <Bs2CircleFill className="icon" />}
+                          {index === 2 && <Bs3CircleFill className="icon" />}
+                          {index === 3 && <Bs4CircleFill className="icon" />}
+                          {index === 4 && <Bs5CircleFill className="icon" />}
+                          <span>{track.name}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </Col>
+              </Row>
+         
+          
+        </Container>
+        {/* Biography */}
+        {artist.bio && (
+          <div>
+            <h3>Biography:</h3>
+            <p>
+              {bio}
+              {!expanded && <button onClick={handleReadMore}>Read More</button>}
+              {expanded && <button onClick={handleHideBio}>Hide</button>}
+            </p>
+            <a href={artist.url} target="_blank" rel="noopener noreferrer">Learn more</a>
+          </div>
+        )}
+
+        {/* Album section */}
+        <div>
+          <h3>Top Albums:</h3>
+          <Container className="album-list-container">
+            <Row className="album-list">
+              {topAlbumData.map((album, i) => (
+                <Albums album={album} key={i} />
               ))}
             </Row>
           </Container>
         </div>
-      )}
 
-    </div>
+        {/* Genres section */}
+        {artist.tags && (
+          <div>
+            <h3>Genres:</h3>
+            <Container className="genre-list-container">
+              <Row className='genres-list'>
+                {artist.tags.tag.map((tag, index) => (
+                  <Col key={index}>
+                    <BsCaretRightFill className="icon" />
+                    {tag.name}
+                  </Col>
+                ))}
+              </Row>
+            </Container>
+          </div>
+        )}
+
+      </div>
+    </Container>
   );
 };
 export default ArtistSection;

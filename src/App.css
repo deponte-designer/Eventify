@@ -220,6 +220,27 @@ color: var(--purpleLight);
 
 
 
+
+
+/* Similar Section Style */
+
+  .similar-artists-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .similar-artists-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; 
+  }
+  
+  .icon {
+    margin-right: 5px; 
+  }
+
+
+
 /* * ========== CONTACT STYLE ========== */
 
 .contact2 .contact-container {

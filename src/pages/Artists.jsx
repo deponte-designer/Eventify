@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ArtistSection from '../components/ArtistSection';
 import DiscoverSection from '../components/DiscoverSection';
-import SuggestionsSection from '../components/SuggestionsSection';
+import SimilarSection from '../components/SimilarSection';
 import {ModalComponentError, ModalComponentTypo} from '../components/ModalComponent';
 import { runScript } from '../utils/Api';
 import { useNavigate } from 'react-router-dom';
@@ -50,7 +50,7 @@ let Artists = ({ searchQuery }) => {
         <>
           <ArtistSection artistData={artistData} />
           <DiscoverSection artistData={artistData} />
-          <SuggestionsSection artistData={artistData} />
+          <SimilarSection artistData={artistData} />
         </>
       )}
       

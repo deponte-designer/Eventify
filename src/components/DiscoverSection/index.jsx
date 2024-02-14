@@ -1,9 +1,4 @@
 import React, { useEffect } from 'react';
-// import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
-// import axios from 'axios';
-// import Holder from 'holderjs';
-// import './style.css';
 import EventCard from '../EventCard';
 
 
