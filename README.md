@@ -1,6 +1,6 @@
 # Eventify
 
-Explore and discover your favourite music artists and bands or those you're eager to discover more about. Dive into music details and album artwork and check out their upcoming live gigs.
+Explore your favourite music artists and check out their upcoming live events at Eventify.
 
 
 ## Description
@@ -42,9 +42,7 @@ https://git.bootcampcontent.com/uk-edx-16-week/UK-VIRT-FE-PT-10-2023-U-LOLC/-/bl
 This project is deployed and accessible at the following URLs:
 
 ![Deployed:](https://go-eventify.netlify.app/)
-
-
-> Explore your favourite music artists and check out their upcoming live events at Eventify.
+https://go-eventify.netlify.app/
 
 
 ## License
@@ -80,7 +78,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-
 
 
 # React + Vite
