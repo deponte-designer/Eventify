@@ -124,7 +124,7 @@ let ArtistSection = ({ artistData }) => {
         <Container className="mb-4 border-green">
           <h3 className="text-center">Top Albums</h3>
 
-            <Row className="album-list border-blue">
+            <Row className="g-4 album-list border-blue">
               {topAlbumData.map((album, i) => (
                 <Albums album={album} key={i} />
               ))}

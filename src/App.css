@@ -257,7 +257,10 @@ button .artist-link-more {
 
 .album-list {
     list-style: none;
-    padding-left: 10px;
+    /* padding-left: 10px; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .icon {
@@ -266,7 +269,7 @@ button .artist-link-more {
 
 .track-list {
     list-style: none;
-    padding-left: 10px;
+    /* padding-left: 10px; */
 }
 
 .genres-list {
