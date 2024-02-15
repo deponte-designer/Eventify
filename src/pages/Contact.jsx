@@ -38,7 +38,7 @@ function Contact() {
                                                     </Form.Group>
                                                 </Col>
                                                 <Col lg={12}>
-                                                    <Button type="submit" variant="outline-success" className="btn-outline-purple mt-3 mb-3 py-2 px-3"><span> SEND <i className="ti-arrow-right"></i></span></Button>
+                                                    <Button type="submit" variant="outline-success" className="btn-outline-purple mt-3 mb-3 py-2 px-3"><span> Send Message <i className="ti-arrow-right"></i></span></Button>
                                                 </Col>
                                             </Row>
                                         </Form>
