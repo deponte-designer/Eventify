@@ -23,33 +23,9 @@ let CustomNavbar = ({ onSearchSubmit }) => {
   return (
     <Navbar className="bg-body-tertiary-opacity nav-opacity mb-3" expand="lg" data-bs-theme="dark" fixed="top">
       <Container>
-
-        {/* <Navbar.Brand className="" href="#">Eventify</Navbar.Brand> */}
-
         <Navbar.Brand className="" href="/">
          <LogoNav />
         </Navbar.Brand>
-
-
-        {/* <Image
-            className="d-inline-block align-top"
-            src={NavLogo}
-            alt="Eventify logo"
-            height="35px"
-          /> */}
-
-        {/* <Container>
-          <Navbar.Brand href="#home">
-            <Image
-              src={NavLogo}
-              
-              height="30"
-              className="d-inline-block align-top"
-              alt="React Bootstrap logo"
-            />
-          </Navbar.Brand>
-        </Container> */}
-
 
         <Form onSubmit={handleSearchSubmit} className="d-flex d-lg-none">
           <Form.Control
