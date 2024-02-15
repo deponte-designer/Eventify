@@ -133,6 +133,7 @@ body,
     left: 0;
     right: 0;
     opacity: 0.5;
+    position: center bottom;
 }
 
 .carousel-caption-custom h2 {
@@ -141,8 +142,16 @@ body,
     /* font-size: 4rem;  DO NOT DELETE, YET */
     font-size: 6vw;
     letter-spacing: 1pt;
-    margin-bottom: 10px; 
+    /* margin-bottom: 10px;  */
     margin-top: 20rem; 
+  }
+
+  .carousel-caption-custom p {
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 100; 
+    /* font-size: 4rem;  DO NOT DELETE, YET */
+    font-size: 2vw;
+    letter-spacing: 1pt;
   }
 
   .carousel-caption-custom {
@@ -243,7 +252,15 @@ color: var(--purpleLight);
 
 /* * ========== CONTACT STYLE ========== */
 
-.contact2 .contact-container {
+.contact-page {
+    /* color: #8d97ad !important; */
+    /* font-weight: 300; */
+    padding: 60px 0;
+    margin-bottom: 170px;
+    background-position: center top;
+}
+
+.contact-page .contact-container {
     position: relative;
     top: 200px;
 }

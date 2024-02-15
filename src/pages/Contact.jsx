@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-
+import ContactMap from '../assets/images/contact-map.jpg';
 
 function Contact() {
     return (
-        <div className="contact2" style={{ backgroundImage: 'url(https://placehold.co/1969x1029)' }} id="contact">
+        <div className="contact-page" style={{ backgroundImage: `url(${ContactMap})` }} id="contact">
             <Container>
                 <Row className="contact-container">
                     <Col lg={12}>
@@ -45,11 +45,10 @@ function Contact() {
                                 <Col lg={4} className="bg-image" style={{ backgroundImage: 'url(https://placehold.co/380x318)' }}>
                                     <div className="detail-box p-4">
                                         <h5 className="text-white font-weight-light mb-3">ADDRESS</h5>
-                                        <p className="text-white op-7">601 Sherwood Ave.
+                                        <p className="text-white op-7">Carnaby Street,
                                             <br /> London, UK</p>
                                         <h5 className="text-white font-weight-light mb-3 mt-4">CALL US</h5>
-                                        <p className="text-white op-7">07712 123123
-                                            <br /> 07712 123123</p>
+                                        <p className="text-white op-7">07712 123123</p>
                                         <div className="round-social light">
 
                                         </div>
