@@ -6,6 +6,8 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 import Albums from './Albums'
+import { RiVerifiedBadgeFill } from "react-icons/ri";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 
 let ArtistSection = ({ artistData }) => {
@@ -61,82 +63,98 @@ let ArtistSection = ({ artistData }) => {
   console.log('image:', artistImage);
   return (
     <Container className="mt-5">
-
-      <div className="artist-section border-yellow">
-        {/* add a background */}
-        <Container className="p-2 border-pink" rounded style={{ background: '' }} >
+      <div className="artist-section">
+        <Container className="p-2 mb-4" rounded style={{ background: '' }} >
 
           <Card className="artist-bio-card p-4" data-bs-theme="dark">
-
             <Row>
-
-              <Col sm={12} md={3}>
-                {/* <div className="artist-image"> */}
+              <Col sm={12} md={3} className="artist-img">
                 {artistImage && (
                   <Image src={artistImage} alt={artist.name} className="img-fluid" style={{ width: '300px', objectFit: 'cover', marginLeft: 0, marginRight: 0 }} />
                 )}
-                {/* </div> */}
               </Col>
 
-              <Col sm={12} md={5} className="artist-name">
-                {/* <div className="border-green"> */}
-                {/* Artist name */}
-                <h2>{artist.name}</h2>
-                {/* </div> */}
-                {/* Listeners, playcount and top 5 songs */}
+              <Col sm={12} md={5} className="artist-name" >
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <RiVerifiedBadgeFill style={{ color: 'var(--purpleSoft)', marginRight: '5px', marginBottom: '10px' }} />
+                  <p style={{ margin: '0' }}>Profile</p>
+                </div>
+                <h2 style={{ color: 'var(--orangeGold)' }}>{artist.name}</h2>
                 <div className="listeners-playcount">
-                  <p> {formattedListeners} Listeners &sdot; {formattedPlaycount} Playcount </p>
+                  <p style={{ marginTop: '-5px' }}> {formattedListeners} <span style={{ fontWeight: "200" }}>Listeners </span> &sdot; {formattedPlaycount} <span style={{ fontWeight: "200" }}>Playcount</span></p>
                 </div>
               </Col>
 
-
-              <Col sm={12} md={4}>
-                <div className="top-songs">
-                  <h3>Top 5 Songs</h3>
-                  <ul className="track-list">
-                    {topTracks.map((track, index) => (
-                      <li key={track.name}>
-                        {index === 0 && <Bs1CircleFill className="icon" />}
-                        {index === 1 && <Bs2CircleFill className="icon" />}
-                        {index === 2 && <Bs3CircleFill className="icon" />}
-                        {index === 3 && <Bs4CircleFill className="icon" />}
-                        {index === 4 && <Bs5CircleFill className="icon" />}
-                        <span>{track.name}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <Col sm={12} md={4} className="artist-top-songs">
+                <h3>Top 5 Songs</h3>
+                <ul className="track-list">
+                  {topTracks.map((track, index) => (
+                    <li key={track.name}>
+                      {index === 0 && <Bs1CircleFill className="icon" />}
+                      {index === 1 && <Bs2CircleFill className="icon" />}
+                      {index === 2 && <Bs3CircleFill className="icon" />}
+                      {index === 3 && <Bs4CircleFill className="icon" />}
+                      {index === 4 && <Bs5CircleFill className="icon" />}
+                      <span>{track.name}</span>
+                    </li>
+                  ))}
+                </ul>
               </Col>
             </Row>
-          
 
-        
-        {/* Biography */}
-        {artist.bio && (
-          <div>
-            <h3>Biography</h3>
-            <p>
-              {bio}
-              {!expanded && <button onClick={handleReadMore}>Read More</button>}
-              {expanded && <button onClick={handleHideBio}>Hide</button>}
-            </p>
-            <a href={artist.url} target="_blank" rel="noopener noreferrer">Learn more</a>
-          </div>
-        )}
+            <Row>
+              {artist.bio && (
+                <div>
+                  <h3>Biography</h3>
+                  <p>
+                    {bio}&nbsp;&nbsp;&nbsp;
+                    {!expanded && <button onClick={handleReadMore} variant="outline-success" className="btn-outline-purple">Read More</button>}
+                    {expanded && <button onClick={handleHideBio} variant="outline-success" className="btn-outline-purple">Hide</button>}
+                  </p>
+                  <Button variant="outline-success" className="btn-outline-purple" size="sm" style={{ borderRadius: '1rem' }}>
+                    <a href={artist.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'var(--purpleGhost)'}}>More about</a>
+                    <FaArrowUpRightFromSquare style={{ marginLeft: '5px'}} />
+                  </Button>
+                </div>
+              )}
+            </Row>
+          </Card>
+        </Container>
 
-</Card>
-</Container>
+
         {/* Album section */}
-        <div>
-          <h3>Top Albums:</h3>
-          <Container className="album-list-container">
+
+        <Container className="">
+          <h3>Top Albums</h3>
+          <Card className="artist-albums p-4" data-bs-theme="dark">
+          
             <Row className="album-list">
               {topAlbumData.map((album, i) => (
                 <Albums album={album} key={i} />
               ))}
             </Row>
-          </Container>
-        </div>
+          </Card>
+        </Container>
+
+
+
+        {/* <Container fluid className="album-list-container">
+          <h3 className="text-center">Top Albums</h3>
+          <Row xs={1} md={2} lg={3} className="g-4">
+            {topAlbumData.map((album, i) => (
+              <Col key={i}>
+                <Card className="h-100">
+                  <Card.Img variant="top" src={album.cover} alt={album.title} />
+                  <Card.Body>
+                    <Card.Title>{album.title}</Card.Title>
+                    <Card.Text>{album.artist}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container> */}
+
 
         {/* Genres section */}
         {artist.tags && (

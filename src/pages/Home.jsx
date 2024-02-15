@@ -48,9 +48,9 @@ function Home() {
 
       <section className="home-offers pb-5 pt-5">
         <Container>
-          <Row className="">
+          <Row className="justify-content-center">
             <Col md={6} className="">
-              <Row className="">
+              <Row xs={2} sm={2} className="">
                 <Col md={6} className="pt-3 pb-3">
                   <Image src={Album1} rounded className="img-fluid home-albums" alt="Album 1" />
                 </Col>
@@ -59,7 +59,7 @@ function Home() {
                 </Col>
               </Row>
 
-              <Row className="">
+              <Row xs={2} sm={2} className="">
                 <Col md={6} className="pt-3 pb-3">
                   <Image src={Album3} rounded className="img-fluid home-albums" alt="Album 3" />
                 </Col>
@@ -68,6 +68,7 @@ function Home() {
                 </Col>
               </Row>
             </Col>
+
             <Col md={6} className="offers-text-custom">
               <h2 className="pb-3">What does Eventify offer?</h2>
               <Row className="align-items-center">
