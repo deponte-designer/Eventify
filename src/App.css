@@ -331,9 +331,24 @@ button .artist-link-more {
     display: flex !important;
     align-items: flex-start;
     flex-direction: column;
+    object-fit: cover;
+    padding: 0px 0px;
+    /* height: 100%; */
+    background-position: center top;
+    /* margin-bottom: 500px; */
+
 }
 
-
+.carousel-img {
+    height: calc(100vh - (85.63px + 56px));
+    object-fit: cover;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    position: center bottom;
+}
 
 
 
@@ -354,4 +369,35 @@ button .artist-link-more {
 
 .ftr-icon:hover {
     color: var(--purpleLight);
+}
+
+
+/* * ==================== BREAK POINT ==================== */
+
+/* * --- Media Query for Tablets --- */
+/* applies to medium devices (tablets, less than 991px) */
+@media only screen and (max-width: 991px) {
+
+    .contact-page-bg {
+        /* color: #8d97ad !important; */
+        /* font-weight: 300; */
+        padding: 60px 0;
+        margin-bottom: 370px;
+        background-position: center top;
+    }
+    
+    .contact-page-bg .contact-container {
+        position: relative;
+        top: 200px;
+    }
+
+/* 
+    .contact-container {
+        margin-bottom: 200px;
+    } */
+
+    .contact-details-margin-down {
+        margin-bottom: 100px;
+    }
+
 }

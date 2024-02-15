@@ -6,14 +6,14 @@ import ContactImg from '../assets/images/contact-img2.jpg';
 
 function Contact() {
     return (
-        <div className="contact-page-bg" style={{ backgroundImage: `url(${ContactMap})` }} id="contact">
+        <div className="contact-page-bg" style={{ backgroundImage: `url(${ContactMap})`, borderRadius: "6px" }} id="contact">
             <Container className="contact-container">
                 <Row>
                     <Col lg={12}>
-                        <Card className="contact-card card-shadow border-0 mb-4" data-bs-theme="dark">
+                        <Card className="contact-card card-shadow border-0 mb-4 p-3" data-bs-theme="dark">
                             <Row>
-                                <Col lg={8}>
-                                    <div className="contact-box p-4">
+                                <Col lg={8} className="contact-box p-4">
+                                    {/* <div className="contact-box p-4"> */}
                                         <h4 className="title">Contact Us</h4>
                                         <Form>
                                             <Row>
@@ -42,15 +42,15 @@ function Contact() {
                                                 </Col>
                                             </Row>
                                         </Form>
-                                    </div>
+                                    {/* </div> */}
                                 </Col>
-                                <Col lg={4} className="bg-image contact-details d-flex" style={{ backgroundImage: `url(${ContactImg})` }}>
-                                    <section className=" p-4 ">
+                                <Col lg={4} className="contact-details d-flex" style={{ backgroundImage: `url(${ContactImg}) ` }}>
+                                    <section className="p-4 ">
                                         <h5 className="text-white font-weight-light mb-3">ADDRESS</h5>
                                         <p className="text-white op-7">Carnaby Street,
                                             <br /> London, UK</p>
                                         <h5 className="text-white font-weight-light mb-3 mt-4">CALL US</h5>
-                                        <p className="text-white op-7">01212 123123</p>
+                                        <p className="contact-details-margin-down" >01212 123123</p>
                                     </section>
                                 </Col>
                             </Row>
