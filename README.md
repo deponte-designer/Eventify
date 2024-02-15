@@ -52,7 +52,17 @@ https://go-eventify.netlify.app/
 
 ## Screenshots
 
+Screenshot of a searched for artist:
+<img width="1440" alt="screenshot-of-blank-form" src="./assets/images/screenshot_kygo.PNG">
 
+Screenshot of the typo modal:
+<img width="1440" alt="screenshot-of-blank-form" src="./assets/images/screenshot_typo.PNG">
+
+Screenshot of the search error:
+<img width="1440" alt="screenshot-of-blank-form" src="./assets/images/screenshot_searcherror.PNG">
+
+Screenshot of the contact form:
+<img width="1440" alt="screenshot-of-blank-form" src="./assets/images/screenshot_contact.png">
 
 ## License
 
