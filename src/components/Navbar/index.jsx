@@ -45,7 +45,6 @@ let CustomNavbar = ({ onSearchSubmit }) => {
             <NavLink className="nav-link" to="/" end>Home</NavLink>
             <NavLink className="nav-link" to="/artists" end>Artists</NavLink>
             <NavLink className="nav-link" to="/contact" end>Contact</NavLink>
-
           </Nav>
         </Navbar.Collapse>
         <Form onSubmit={handleSearchSubmit} className="d-lg-flex d-none">
