@@ -341,7 +341,7 @@ button .artist-link-more {
 
 /* ! To delete at the end of the project ==================== */
 /* Styling border sections  */
-/* .border-yellow {
+.border-yellow {
     border: 5px solid yellow;
 }
 
@@ -365,7 +365,7 @@ button .artist-link-more {
 
 .border-blue {
     border: 5px solid blue;
-} */
+}
 
 
 
@@ -409,6 +409,11 @@ button .artist-link-more {
 
     .contact-details-margin-down {
         margin-bottom: 100px;
+    }
+
+    .contact-card {
+        margin-bottom: 200px;
+        /* backdrop-filter: blur(5px); */
     }
 
 }

@@ -39,7 +39,7 @@ function Contact() {
             <Container className="contact-container">
                 <Row>
                     <Col lg={12}>
-                        <Card className="contact-card card-shadow border-0 mb-4 p-3" data-bs-theme="dark">
+                        <Card className="contact-card card-shadow border-0 p-3" data-bs-theme="dark">
                             <Row>
                                 <Col lg={8} className="contact-box p-4">
                                     {/* <div className="contact-box p-4"> */}
