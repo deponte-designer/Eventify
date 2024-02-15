@@ -3,7 +3,7 @@ import { Navbar, Nav, Container, Form, Button, Image } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import NavLogo from '../../assets/images/eventify-logo-nav.svg';
-
+import LogoNav from '../LogoNav';
 
 let CustomNavbar = ({ onSearchSubmit }) => {
   let [searchQuery, setSearchQuery] = useState('');
@@ -26,14 +26,17 @@ let CustomNavbar = ({ onSearchSubmit }) => {
 
         {/* <Navbar.Brand className="" href="#">Eventify</Navbar.Brand> */}
 
-        <Navbar.Brand className="" href="#">
-          <Image
+        <Navbar.Brand className="" href="/">
+         <LogoNav />
+        </Navbar.Brand>
+
+
+        {/* <Image
             className="d-inline-block align-top"
             src={NavLogo}
             alt="Eventify logo"
             height="35px"
-          />
-        </Navbar.Brand>
+          /> */}
 
         {/* <Container>
           <Navbar.Brand href="#home">
