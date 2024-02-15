@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import './style.css';
 import { BsCaretRightFill, Bs1CircleFill, Bs2CircleFill, Bs3CircleFill, Bs4CircleFill, Bs5CircleFill } from 'react-icons/bs';
 import { Card, Button } from 'react-bootstrap';
 import { Container, Row, Col, Image } from 'react-bootstrap';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
 import Albums from './Albums'
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
@@ -61,10 +58,11 @@ let ArtistSection = ({ artistData }) => {
   console.log('albums:', topalbums);
   console.log('tracks:', toptracks);
   console.log('image:', artistImage);
+
   return (
     <Container className="mt-5">
       <div className="artist-section">
-        <Container className="p-2 mb-4" rounded style={{ background: '' }} >
+        <Container className="mb-4" style={{ background: '' }} >
 
           <Card className="artist-bio-card p-4" data-bs-theme="dark">
             <Row>
@@ -112,8 +110,8 @@ let ArtistSection = ({ artistData }) => {
                     {expanded && <button onClick={handleHideBio} variant="outline-success" className="btn-outline-purple">Hide</button>}
                   </p>
                   <Button variant="outline-success" className="btn-outline-purple" size="sm" style={{ borderRadius: '1rem' }}>
-                    <a href={artist.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'var(--purpleGhost)'}}>More about</a>
-                    <FaArrowUpRightFromSquare style={{ marginLeft: '5px'}} />
+                    <a href={artist.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'var(--purpleGhost)' }}>More about</a>
+                    <FaArrowUpRightFromSquare style={{ marginLeft: '5px' }} />
                   </Button>
                 </div>
               )}
@@ -123,11 +121,10 @@ let ArtistSection = ({ artistData }) => {
 
 
         {/* Album section */}
-
-        <Container className="">
-          <h3>Top Albums</h3>
+        <Container fluid className="mb-4">
+          <h3 className="text-center">Top Albums</h3>
           <Card className="artist-albums p-4" data-bs-theme="dark">
-          
+
             <Row className="album-list">
               {topAlbumData.map((album, i) => (
                 <Albums album={album} key={i} />
@@ -137,12 +134,11 @@ let ArtistSection = ({ artistData }) => {
         </Container>
 
 
-
         {/* <Container fluid className="album-list-container">
           <h3 className="text-center">Top Albums</h3>
-          <Row xs={1} md={2} lg={3} className="g-4">
+          <Row className="g-4">
             {topAlbumData.map((album, i) => (
-              <Col key={i}>
+              <Col key={i} xs={12} md={6} lg={4}>
                 <Card className="h-100">
                   <Card.Img variant="top" src={album.cover} alt={album.title} />
                   <Card.Body>
@@ -154,6 +150,7 @@ let ArtistSection = ({ artistData }) => {
             ))}
           </Row>
         </Container> */}
+
 
 
         {/* Genres section */}
