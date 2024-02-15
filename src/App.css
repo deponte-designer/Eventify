@@ -5,7 +5,7 @@
 
 /* ! To delete at the end of the project ==================== */
 /* Styling border sections  */
-.border-yellow {
+/* .border-yellow {
     border: 5px solid yellow;
 }
 
@@ -25,7 +25,9 @@
 
 .border-blue {
     border: 5px solid blue;
-}
+} */
+
+
 /* ! To delete at the end of the project ==================== */
 
 
@@ -104,12 +106,12 @@ body,
 
 /* * ========== Navbar STYLE ========== */
 [data-bs-theme=dark] {
-    color-scheme: dark;
-    --bs-body-bg: rgba(33, 37, 41, 0.7) !important;
+    color-scheme: dark; 
 }
 
 .nav-opacity {
 	background: rgba(0, 0, 0, 0.7);
+    --bs-body-bg: rgba(33, 37, 41, 0.473) !important;
     backdrop-filter: blur(5px);
 }
 
@@ -206,6 +208,19 @@ color: var(--purpleLight);
 
 
 /* * ========== ARTISTS STYLE ========== */
+
+
+.artist-name h2 {
+    font-size: 50pt !important;
+    font-weight: bold;
+}
+
+.artist-name p {
+    /* font-size: 50pt !important; */
+    font-weight: bold;
+}
+
+
 
 .album-list {
     list-style: none;
