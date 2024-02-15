@@ -252,7 +252,7 @@ color: var(--purpleLight);
 
 /* * ========== CONTACT STYLE ========== */
 
-.contact-page {
+.contact-page-bg {
     /* color: #8d97ad !important; */
     /* font-weight: 300; */
     padding: 60px 0;
@@ -260,13 +260,22 @@ color: var(--purpleLight);
     background-position: center top;
 }
 
-.contact-page .contact-container {
+.contact-page-bg .contact-container {
     position: relative;
     top: 200px;
 }
 
 
+.contact-card {
+/* margin-bottom: 1000px; */
+backdrop-filter: blur(5px);
+}
 
+.contact-details {
+    display: flex!important;
+    align-items: flex-start;
+    flex-direction: column;
+}
 
 
 
