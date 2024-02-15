@@ -53,14 +53,11 @@ let Artists = ({ searchQuery }) => {
           <SimilarSection artistData={artistData} />
         </>
       )}
-
-
+      
       <ModalComponentError show={showModal} toggleModal={toggleModal} />
 
-
-
       <ModalComponentTypo show={showTypoModal} toggleTypoModal={toggleTypoModal} artistName={searchQuery} />
-
+     
     </div>
   );
 };

@@ -61,7 +61,6 @@ let CustomNavbar = ({ onSearchSubmit }) => {
           />
           <Button variant="outline-success" className="btn-outline-purple" type="submit">Search</Button>
         </Form>
-
       </Container>
     </Navbar>
 

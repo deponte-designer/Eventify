@@ -16,6 +16,7 @@ Lastly, via the Ticketmaster API, the user can see the next 4 confirmed events f
 - [User Story](#UserStory)
 - [Credits](#credits)
 - [Deployment](#deployment)
+- [Screenshots](#Screenshots)
 - [License](#license)
 - [Badges](#badges)
 
@@ -44,9 +45,13 @@ https://git.bootcampcontent.com/uk-edx-16-week/UK-VIRT-FE-PT-10-2023-U-LOLC/-/bl
 
 ## Deployment
 
-This project is deployed and accessible at the following URLs:
+This project is deployed and accessible at the following URL:
 
 https://go-eventify.netlify.app/
+
+
+## Screenshots
+
 
 
 ## License
