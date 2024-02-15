@@ -24,11 +24,12 @@ let CustomNavbar = ({ onSearchSubmit }) => {
     <Navbar className="bg-body-tertiary-opacity nav-opacity mb-3" expand="lg" data-bs-theme="dark" fixed="top">
       <Container>
         <Navbar.Brand className="" href="/">
-         <LogoNav />
+          <LogoNav />
         </Navbar.Brand>
 
         <Form onSubmit={handleSearchSubmit} className="d-flex d-lg-none">
           <Form.Control
+            id="searchField"
             type="search"
             placeholder="Search by Artist..."
             className="me-2"
@@ -49,6 +50,7 @@ let CustomNavbar = ({ onSearchSubmit }) => {
         </Navbar.Collapse>
         <Form onSubmit={handleSearchSubmit} className="d-lg-flex d-none">
           <Form.Control
+            id="searchField"
             type="search"
             placeholder="Search by Artist..."
             className="me-2"

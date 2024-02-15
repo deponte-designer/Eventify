@@ -53,11 +53,11 @@ let ArtistSection = ({ artistData }) => {
   // Format the number of playcount with commas
   let formattedPlaycount = parseInt(artist.stats.playcount, 10).toLocaleString();
   //DELETE THESE WHEN WE'RE HAPPY THEY WORK
-  console.log('artistData:', artistData);
-  console.log('artist:', artist);
-  console.log('albums:', topalbums);
-  console.log('tracks:', toptracks);
-  console.log('image:', artistImage);
+  // console.log('artistData:', artistData);
+  // console.log('artist:', artist);
+  // console.log('albums:', topalbums);
+  // console.log('tracks:', toptracks);
+  // console.log('image:', artistImage);
 
   return (
     <Container className="mt-5">
@@ -121,16 +121,15 @@ let ArtistSection = ({ artistData }) => {
 
 
         {/* Album section */}
-        <Container fluid className="mb-4">
+        <Container className="mb-4 border-green">
           <h3 className="text-center">Top Albums</h3>
-          <Card className="artist-albums p-4" data-bs-theme="dark">
 
-            <Row className="album-list">
+            <Row className="album-list border-blue">
               {topAlbumData.map((album, i) => (
                 <Albums album={album} key={i} />
               ))}
             </Row>
-          </Card>
+
         </Container>
 
 
@@ -152,12 +151,14 @@ let ArtistSection = ({ artistData }) => {
         </Container> */}
 
 
-
         {/* Genres section */}
+
+
         {artist.tags && (
-          <div>
-            <h3>Genres:</h3>
-            <Container className="genre-list-container">
+          <Container fluid className="mb-4">
+            <h3 className="text-center">Genres</h3>
+            <Card className="artist-albums p-4" data-bs-theme="dark">
+
               <Row className='genres-list'>
                 {artist.tags.tag.map((tag, index) => (
                   <Col key={index}>
@@ -166,12 +167,13 @@ let ArtistSection = ({ artistData }) => {
                   </Col>
                 ))}
               </Row>
-            </Container>
-          </div>
+            </Card>
+          </Container>
+
         )}
 
       </div>
-    </Container>
+    </Container >
   );
 };
 export default ArtistSection;

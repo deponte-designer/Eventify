@@ -5,12 +5,12 @@
 
 /* ! To delete at the end of the project ==================== */
 /* Styling border sections  */
-/* .border-yellow {
+.border-yellow {
     border: 5px solid yellow;
 }
 
-.border-green {
-    border: 5px solid green;
+.border-orange {
+    border: 5px solid orange;
 }
 
 
@@ -23,9 +23,13 @@
     border: 5px solid red;
 }
 
+.border-green {
+    border: 5px solid green;
+}
+
 .border-blue {
     border: 5px solid blue;
-} */
+}
 
 
 /* ! To delete at the end of the project ==================== */
@@ -267,7 +271,7 @@ button .artist-link-more {
 
 .genres-list {
     list-style-type: none;
-    padding-left: 0;
+    /* padding-left: 0; */
 }
 
 
