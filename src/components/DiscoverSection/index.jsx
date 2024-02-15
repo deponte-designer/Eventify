@@ -45,9 +45,9 @@ const DiscoverSection = ({ artistData }) => {
   }
 
   return (
-    <Container className="discover-section-container text-center" style={discoverBorder}>
+    <Container className="discover-section-container text-center mb-4" style={discoverBorder}>
       <h3>Discover</h3>
-      <h4>Upcoming Events</h4>
+      <h5 style={{ fontWeight: '200' }}>Upcoming Events</h5>
       <Row className="g-4">
         {events.slice(0, 4).map(event => (
           <Col key={event.id} sm={12} md={12} className="mb-3">

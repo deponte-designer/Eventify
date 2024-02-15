@@ -30,16 +30,17 @@ const SimilarSection = ({ artistData }) => {
 
 
 
-    <Container className="similar-section text-center">
+    <Container className="similar-section text-center" style={{ marginBottom: '150px' }}>
       {/* <div className="similar-section text"> */}
       <h2>Similar Artists</h2>
       <ul className="similar-artists-list">
         {similarArtists.map((artist, index) => (
 
-          <Card key={index} data-bs-theme="dark" >
-            <BsCaretRightFill className="icon" />
-            {artist.name}
-          <br /></Card>
+          <Card key={index} className="p-3 " data-bs-theme="dark" >
+            {/* <BsCaretRightFill className="icon" /> */}
+            <h5 style={{ fontWeight: '300' }}>{artist.name}</h5>
+          {/* <br /> */}
+          </Card>
         ))}
       </ul>
       {/* </div> */}
