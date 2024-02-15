@@ -123,42 +123,19 @@ let ArtistSection = ({ artistData }) => {
         {/* Album section */}
         <Container className="mb-4 border-green">
           <h3 className="text-center">Top Albums</h3>
-
             <Row className="g-4 album-list border-blue">
               {topAlbumData.map((album, i) => (
                 <Albums album={album} key={i} />
               ))}
             </Row>
-
         </Container>
 
 
-        {/* <Container fluid className="album-list-container">
-          <h3 className="text-center">Top Albums</h3>
-          <Row className="g-4">
-            {topAlbumData.map((album, i) => (
-              <Col key={i} xs={12} md={6} lg={4}>
-                <Card className="h-100">
-                  <Card.Img variant="top" src={album.cover} alt={album.title} />
-                  <Card.Body>
-                    <Card.Title>{album.title}</Card.Title>
-                    <Card.Text>{album.artist}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Container> */}
-
-
         {/* Genres section */}
-
-
         {artist.tags && (
-          <Container fluid className="mb-4">
+          <Container fluid className="mb-4 border-yellow">
             <h3 className="text-center">Genres</h3>
-            <Card className="artist-albums p-4" data-bs-theme="dark">
-
+            <Card className="artist-genres p-4" data-bs-theme="dark">
               <Row className='genres-list'>
                 {artist.tags.tag.map((tag, index) => (
                   <Col key={index}>

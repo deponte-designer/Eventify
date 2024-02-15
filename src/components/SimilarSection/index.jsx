@@ -13,18 +13,36 @@ const SimilarSection = ({ artistData }) => {
   const similarArtists = artistData.lastfm.artist.similar.artist;
 
   return (
-    <Container>
-      <div className="similar-section">
-        <h2>Similar Artists</h2>
-        <ul className="similar-artists-list">
-          {similarArtists.map((artist, index) => (
-            <li key={index}>
-              <BsCaretRightFill className="icon" />
-              {artist.name}
-            </li>
-          ))}
-        </ul>
-      </div>
+    // <Container className="similar-section text-center">
+    //   {/* <div className="similar-section text"> */}
+    //     <h2>Similar Artists</h2>
+    //     <ul className="similar-artists-list">
+    //       {similarArtists.map((artist, index) => (
+
+    //         <li key={index}>
+    //           <BsCaretRightFill className="icon" />
+    //           {artist.name}
+    //         </li>
+    //       ))}
+    //     </ul>
+    //   {/* </div> */}
+    // </Container>
+
+
+
+    <Container className="similar-section text-center">
+      {/* <div className="similar-section text"> */}
+      <h2>Similar Artists</h2>
+      <ul className="similar-artists-list">
+        {similarArtists.map((artist, index) => (
+
+          <Card key={index} data-bs-theme="dark" >
+            <BsCaretRightFill className="icon" />
+            {artist.name}
+          <br /></Card>
+        ))}
+      </ul>
+      {/* </div> */}
     </Container>
   );
 };

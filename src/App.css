@@ -284,20 +284,25 @@ button .artist-link-more {
 
 /* Similar Section Style */
 
-.similar-artists-list {
-    list-style-type: none;
-    padding-left: 0;
+.similar-section {
+    margin-bottom: 90px;
 }
 
-.similar-artists-list li {
+
+.similar-artists-list {
+    list-style-type: none;
+    /* padding-left: 0; */
+}
+
+/* .similar-artists-list li {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-}
+} */
 
-.icon {
+/* .icon {
     margin-right: 5px;
-}
+} */
 
 
 
