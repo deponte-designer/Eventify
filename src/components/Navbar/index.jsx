@@ -22,8 +22,8 @@ let CustomNavbar = ({ onSearchSubmit }) => {
 
   return (
     <Navbar className="bg-body-tertiary-opacity nav-opacity mb-3" expand="lg" data-bs-theme="dark" fixed="top">
-      <Container>
-        <Navbar.Brand className="" href="/">
+      <Container className="navbar-container">
+        <Navbar.Brand className="navbar-logo" href="/">
           <LogoNav />
         </Navbar.Brand>
 

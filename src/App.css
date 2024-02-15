@@ -3,36 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* ! To delete at the end of the project ==================== */
-/* Styling border sections  */
-.border-yellow {
-    border: 5px solid yellow;
-}
 
-.border-orange {
-    border: 5px solid orange;
-}
-
-
-.border-pink {
-    border: 5px solid pink;
-
-}
-
-.border-red {
-    border: 5px solid red;
-}
-
-.border-green {
-    border: 5px solid green;
-}
-
-.border-blue {
-    border: 5px solid blue;
-}
-
-
-/* ! To delete at the end of the project ==================== */
 
 
 /* Defined main css */
@@ -277,8 +248,13 @@ button .artist-link-more {
     /* padding-left: 0; */
 }
 
-
-
+.events-list {
+    list-style: none;
+    /* padding-left: 10px; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 
 
@@ -291,7 +267,7 @@ button .artist-link-more {
 
 .similar-artists-list {
     list-style-type: none;
-    /* padding-left: 0; */
+    padding-left: 0;
 }
 
 /* .similar-artists-list li {
@@ -339,16 +315,6 @@ button .artist-link-more {
 
 }
 
-.carousel-img {
-    height: calc(100vh - (85.63px + 56px));
-    object-fit: cover;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0.5;
-    position: center bottom;
-}
 
 
 
@@ -370,6 +336,51 @@ button .artist-link-more {
 .ftr-icon:hover {
     color: var(--purpleLight);
 }
+
+
+
+/* ! To delete at the end of the project ==================== */
+/* Styling border sections  */
+/* .border-yellow {
+    border: 5px solid yellow;
+}
+
+.border-orange {
+    border: 5px solid orange;
+}
+
+
+.border-pink {
+    border: 5px solid pink;
+
+}
+
+.border-red {
+    border: 5px solid red;
+}
+
+.border-green {
+    border: 5px solid green;
+}
+
+.border-blue {
+    border: 5px solid blue;
+} */
+
+
+
+/* ! To delete at the end of the project ==================== */
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* * ==================== BREAK POINT ==================== */
