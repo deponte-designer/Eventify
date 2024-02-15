@@ -3,7 +3,7 @@ import { Container, Card, Row, Col, Image } from 'react-bootstrap';
 function Albums({ album, index }) {
     return (
         // <Col key={index} xs={12} md={6} lg={4} className="album-item text-center border-orange">
-            <Card key={index} xs={12} md={6} lg={4} className="artist-albums album-item text-center p-3 mb-3" data-bs-theme="dark" style={{ width: '18rem' }}>
+            <Card key={index} xs={12} md={6} lg={4} className="artist-albums album-item text-center p-3 me-2" data-bs-theme="dark" style={{ width: '18rem' }}>
                     <Card.Img src={album.image[2]['#text']} alt={album.name} />
                 <Card.Body>
                     <Card.Title className="album-name">{album.name}</Card.Title>
