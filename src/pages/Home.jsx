@@ -25,7 +25,7 @@ function Home() {
           <Container className="carousel-content">
             <Carousel.Caption className="carousel-caption-custom">
               <h2>Millions of Artists</h2>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <p>From all countries and genres. </p>
             </Carousel.Caption>
           </Container>
         </Carousel.Item>
@@ -39,7 +39,7 @@ function Home() {
           <Container className="carousel-content">
             <Carousel.Caption className="carousel-caption-custom">
               <h2>Events for all</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>All styles from all over the world.</p>
             </Carousel.Caption>
           </Container>
         </Carousel.Item>

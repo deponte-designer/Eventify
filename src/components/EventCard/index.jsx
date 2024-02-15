@@ -41,7 +41,7 @@ const EventCard = (props) => {
                             )}
                         </Card.Text>
 
-                        {props.eventBuyTicket && (<Button variant="outline-success" className="btn-outline-purple" href={props.eventBuyTicket} size="sm" style={{ borderRadius: '1rem' }}>
+                        {props.eventBuyTicket && (<Button variant="outline-success" className="btn-outline-purple" href={props.eventBuyTicket} target="_blank" size="sm" style={{ borderRadius: '1rem' }}>
                             Find Tickets <FaArrowUpRightFromSquare style={{ marginLeft: '5px' }} />
                         </Button>)}
 
