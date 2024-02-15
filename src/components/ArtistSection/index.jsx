@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
 import { BsCaretRightFill, Bs1CircleFill, Bs2CircleFill, Bs3CircleFill, Bs4CircleFill, Bs5CircleFill } from 'react-icons/bs';
 import { Card, Button } from 'react-bootstrap';
-// import { Container } from 'react-bootstrap/lib/Tab.js';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import Albums from './Albums'
+import { RiVerifiedBadgeFill } from "react-icons/ri";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 
 let ArtistSection = ({ artistData }) => {
@@ -55,104 +53,104 @@ let ArtistSection = ({ artistData }) => {
   // Format the number of playcount with commas
   let formattedPlaycount = parseInt(artist.stats.playcount, 10).toLocaleString();
   //DELETE THESE WHEN WE'RE HAPPY THEY WORK
-  console.log('artistData:', artistData);
-  console.log('artist:', artist);
-  console.log('albums:', topalbums);
-  console.log('tracks:', toptracks);
-  console.log('image:', artistImage);
+  // console.log('artistData:', artistData);
+  // console.log('artist:', artist);
+  // console.log('albums:', topalbums);
+  // console.log('tracks:', toptracks);
+  // console.log('image:', artistImage);
+
   return (
+    <Container className="mt-5">
+      <div className="artist-section">
+        <Container className="mb-4" style={{ background: '' }} >
 
-    <div className="artist-section">
-      <div>
-        {/* Artist name */}
-        <h2>{artist.name}</h2>
-      </div>
-      <Container>
-
-        <Row>
-          {/* Image */}
-          <Col sm={12} md={4}>
-            <div className="artist-image">
-              {artistImage && (
-                <img src={artistImage} alt={artist.name} className="img-fluid" style={{ marginLeft: 0, marginRight: 0 }} />
-              )}
-            </div>
-          </Col>
-          {/* Listeners, playcount and top 5 songs */}
-          <Col sm={12} md={8}>
+          <Card className="artist-bio-card p-4" data-bs-theme="dark">
             <Row>
-              <Col sm={12} md={6}>
+              <Col sm={12} md={3} className="artist-img">
+                {artistImage && (
+                  <Image src={artistImage} alt={artist.name} className="img-fluid" style={{ width: '300px', objectFit: 'cover', marginLeft: 0, marginRight: 0 }} />
+                )}
+              </Col>
+
+              <Col sm={12} md={5} className="artist-name" >
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <RiVerifiedBadgeFill style={{ color: 'var(--purpleSoft)', marginRight: '5px', marginBottom: '10px' }} />
+                  <p style={{ margin: '0' }}>Profile</p>
+                </div>
+                <h2 style={{ color: 'var(--orangeGold)' }}>{artist.name}</h2>
                 <div className="listeners-playcount">
-                  <h3>Listeners:</h3>
-                  <p>{formattedListeners}</p>
-                  <h3>Playcount:</h3>
-                  <p>{formattedPlaycount}</p>
+                  <p style={{ marginTop: '-5px' }}> {formattedListeners} <span style={{ fontWeight: "200" }}>Listeners </span> &sdot; {formattedPlaycount} <span style={{ fontWeight: "200" }}>Playcount</span></p>
                 </div>
               </Col>
-              <Col sm={12} md={6}>
-                <div className="top-songs">
-                  <h3>Top 5 Songs:</h3>
-                  <ul className="track-list">
-                    {topTracks.map((track, index) => (
-                      <li key={track.name}>
-                        {index === 0 && <Bs1CircleFill className="icon" />}
-                        {index === 1 && <Bs2CircleFill className="icon" />}
-                        {index === 2 && <Bs3CircleFill className="icon" />}
-                        {index === 3 && <Bs4CircleFill className="icon" />}
-                        {index === 4 && <Bs5CircleFill className="icon" />}
-                        <span>{track.name}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+
+              <Col sm={12} md={4} className="artist-top-songs">
+                <h3>Top 5 Songs</h3>
+                <ul className="track-list">
+                  {topTracks.map((track, index) => (
+                    <li key={track.name}>
+                      {index === 0 && <Bs1CircleFill className="icon" />}
+                      {index === 1 && <Bs2CircleFill className="icon" />}
+                      {index === 2 && <Bs3CircleFill className="icon" />}
+                      {index === 3 && <Bs4CircleFill className="icon" />}
+                      {index === 4 && <Bs5CircleFill className="icon" />}
+                      <span>{track.name}</span>
+                    </li>
+                  ))}
+                </ul>
               </Col>
             </Row>
-          </Col>
-        </Row>
-      </Container>
-      {/* Biography */}
-      {artist.bio && (
-        <div>
-        <h3>Biography:</h3>
-        <p>
-          {bio}
-          {!expanded && <button onClick={handleReadMore}>Read More</button>}
-          {expanded && <button onClick={handleHideBio}>Hide</button>}
-        </p>
-        <a href={artist.url} target="_blank" rel="noopener noreferrer">Learn more</a>
-      </div>
-      )}
 
-      {/* Album section */}
-      <div>
-        <h3>Top Albums:</h3>
-        <Container className="album-list-container">
-          <Row className="album-list">
-            {topAlbumData.map((album, i) => (
-              <Albums album={album} key={i} />
-            ))}
-          </Row>
+            <Row>
+              {artist.bio && (
+                <div>
+                  <h3>Biography</h3>
+                  <p>
+                    {bio}&nbsp;&nbsp;&nbsp;
+                    {!expanded && <button onClick={handleReadMore} variant="outline-success" className="btn-outline-purple">Read More</button>}
+                    {expanded && <button onClick={handleHideBio} variant="outline-success" className="btn-outline-purple">Hide</button>}
+                  </p>
+                  <Button variant="outline-success" className="btn-outline-purple" size="sm" style={{ borderRadius: '1rem' }}>
+                    <a href={artist.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'var(--purpleGhost)' }}>More about</a>
+                    <FaArrowUpRightFromSquare style={{ marginLeft: '5px' }} />
+                  </Button>
+                </div>
+              )}
+            </Row>
+          </Card>
         </Container>
-      </div>
 
-      {/* Genres section */}
-      {artist.tags && (
-        <div>
-          <h3>Genres:</h3>
-          <Container className="genre-list-container">
-            <Row className='genres-list'>
-              {artist.tags.tag.map((tag, index) => (
-                <Col key={index}>
-                  <BsCaretRightFill className="icon" />
-                  {tag.name}
-                </Col>
+
+        {/* Album section */}
+        <Container className="mb-4 border-green">
+          <h3 className="text-center">Top Albums</h3>
+            <Row className="g-4 album-list border-blue">
+              {topAlbumData.map((album, i) => (
+                <Albums album={album} key={i} />
               ))}
             </Row>
-          </Container>
-        </div>
-      )}
+        </Container>
 
-    </div>
+
+        {/* Genres section */}
+        {artist.tags && (
+          <Container fluid className="mb-4 border-yellow">
+            <h3 className="text-center">Genres</h3>
+            <Card className="artist-genres p-4" data-bs-theme="dark">
+              <Row className='genres-list'>
+                {artist.tags.tag.map((tag, index) => (
+                  <Col key={index}>
+                    <BsCaretRightFill className="icon" />
+                    {tag.name}
+                  </Col>
+                ))}
+              </Row>
+            </Card>
+          </Container>
+
+        )}
+
+      </div>
+    </Container >
   );
 };
 export default ArtistSection;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ArtistSection from '../components/ArtistSection';
 import DiscoverSection from '../components/DiscoverSection';
-import SuggestionsSection from '../components/SuggestionsSection';
-import {ModalComponentError, ModalComponentTypo} from '../components/ModalComponent';
+import SimilarSection from '../components/SimilarSection';
+import { ModalComponentError, ModalComponentTypo } from '../components/ModalComponent';
 import { runScript } from '../utils/Api';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,14 +19,14 @@ let Artists = ({ searchQuery }) => {
         let data = await runScript(searchQuery);
         setArtistData(data);
         // Check if artist not found and toggle modal accordingly
-        if 
-        (data && data.lastfm === "The artist you supplied could not be found") {
+        if
+          (data && data.lastfm === "The artist you supplied could not be found") {
           setShowModal(true);
         }
-        else if (data && data.typoCheck!==null){
+        else if (data && data.typoCheck !== null) {
           setShowTypoModal(true);
-          }
-        } catch (error) {
+        }
+      } catch (error) {
         console.error('Error fetching artist data:', error);
       }
     };
@@ -50,13 +50,13 @@ let Artists = ({ searchQuery }) => {
         <>
           <ArtistSection artistData={artistData} />
           <DiscoverSection artistData={artistData} />
-          <SuggestionsSection artistData={artistData} />
+          <SimilarSection artistData={artistData} />
         </>
       )}
       
-        <ModalComponentError show={showModal} toggleModal={toggleModal} />
-      
-        <ModalComponentTypo show={showTypoModal} toggleTypoModal={toggleTypoModal} artistName={searchQuery} />
+      <ModalComponentError show={showModal} toggleModal={toggleModal} />
+
+      <ModalComponentTypo show={showTypoModal} toggleTypoModal={toggleTypoModal} artistName={searchQuery} />
      
     </div>
   );

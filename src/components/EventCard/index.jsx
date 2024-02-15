@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { FiClock, FiMapPin } from "react-icons/fi";
 import { BsMusicNote } from "react-icons/bs";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 const EventCard = (props) => {
     return (
@@ -39,9 +40,12 @@ const EventCard = (props) => {
                                 </>
                             )}
                         </Card.Text>
-                        {/* TODO: Add data to this link */}
-                        <Card.Link className="links-style" href="#">More about</Card.Link>{" | "}
-                        {props.eventBuyTicket && (<Card.Link variant="primary" as="a" target="_blank" href={props.eventBuyTicket}>Buy Tickets</Card.Link>)}
+
+                        {props.eventBuyTicket && (<Button variant="outline-success" className="btn-outline-purple" href={props.eventBuyTicket} size="sm" style={{ borderRadius: '1rem' }}>
+                            Find Tickets <FaArrowUpRightFromSquare style={{ marginLeft: '5px' }} />
+                        </Button>)}
+
+
                     </Card.Body>
                 </Card>
             ))}

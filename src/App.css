@@ -3,30 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* ! To delete at the end of the project ==================== */
-/* Styling border sections  */
-.border-yellow {
-    border: 5px solid yellow;
-}
 
-.border-green {
-    border: 5px solid green;
-}
-
-
-.border-pink {
-    border: 5px solid pink;
-
-}
-
-.border-red {
-    border: 5px solid red;
-}
-
-.border-blue {
-    border: 5px solid blue;
-}
-/* ! To delete at the end of the project ==================== */
 
 
 /* Defined main css */
@@ -38,7 +15,8 @@
     --purpleGhost: #F6EBF9;
     --ghostWhite: #fbfbff;
     --silver: #A2A2A2;
-    --gold: #F7BD39; 
+    --gold: #F7BD39;
+    --orangeGold: #d38d00;
 }
 
 .bold {
@@ -49,14 +27,15 @@
 
 
 /* * ========== LAYOUT STYLE ========== */
-body, 
+body,
 #home,
 #artists,
 #contact {
     font-family: 'Poppins', sans-serif !important;
     background-color: var(--bs-gray-800) !important;
     color: var(--ghostWhite) !important;
-    margin-bottom: 85.63px; /* less the footer size */
+    margin-bottom: 85.63px;
+    /* less the footer size */
     /* height: 100%; */
     /* overflow-x: hidden; */
 }
@@ -64,20 +43,20 @@ body,
 /* scrollbar custom style */
 ::-webkit-scrollbar {
     width: 12px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background-color: var(--silver); 
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--purpleLight); 
-    border-radius: 6px; 
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--purpleSoft); 
-  }
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--silver);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--purpleLight);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--purpleSoft);
+}
 
 .btn-outline-purple {
     --bs-btn-color: var(--purpleGhost) !important;
@@ -105,11 +84,11 @@ body,
 /* * ========== Navbar STYLE ========== */
 [data-bs-theme=dark] {
     color-scheme: dark;
-    --bs-body-bg: rgba(33, 37, 41, 0.7) !important;
 }
 
 .nav-opacity {
-	background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
+    --bs-body-bg: rgba(33, 37, 41, 0.473) !important;
     backdrop-filter: blur(5px);
 }
 
@@ -133,31 +112,41 @@ body,
     left: 0;
     right: 0;
     opacity: 0.5;
+    position: center bottom;
 }
 
 .carousel-caption-custom h2 {
-    font-family: 'Poppins', sans-serif; 
-    font-weight: 700; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     /* font-size: 4rem;  DO NOT DELETE, YET */
     font-size: 6vw;
     letter-spacing: 1pt;
-    margin-bottom: 10px; 
-    margin-top: 20rem; 
-  }
+    /* margin-bottom: 10px;  */
+    margin-top: 20rem;
+}
 
-  .carousel-caption-custom {
+.carousel-caption-custom p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    /* font-size: 4rem;  DO NOT DELETE, YET */
+    font-size: 2vw;
+    letter-spacing: 1pt;
+}
+
+.carousel-caption-custom {
     text-align: center;
     margin-bottom: -7rem;
-  }
+}
 
-  .carousel-content {
+.carousel-content {
     position: absolute;
     top: 50%;
     left: 0;
     right: 0;
     transform: translateY(-50%);
-    z-index: 0; /* Ensure the content appears above the control icons */
-  }
+    z-index: 0;
+    /* Ensure the content appears above the control icons */
+}
 
 /* Section Offers style */
 .home-offers {
@@ -174,15 +163,15 @@ body,
 
 .offers-text-custom h2 {
     color: var(--purpleLight);
-    font-weight: 800; 
-    font-size: 25pt; 
+    font-weight: 800;
+    font-size: 25pt;
     letter-spacing: 1pt;
 }
 
 .offers-text-custom h3 {
     /* font-family: 'Roboto', sans-serif; */
     font-style: italic;
-    font-weight: 600; 
+    font-weight: 600;
 }
 
 .offers-text-custom p {
@@ -190,22 +179,141 @@ body,
 }
 
 .offers-icon {
-margin-right: 20px;
-color: var(--purpleLight);
+    margin-right: 20px;
+    color: var(--purpleLight);
 }
+
+
+
+/* * ========== ARTISTS STYLE ========== */
+
+.artist-img {
+    margin-bottom: 2rem;
+}
+
+.artist-name .artist-img,
+.artist-top-songs {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.artist-name h2 {
+    font-size: 50pt !important;
+    font-weight: bold;
+}
+
+.artist-name p {
+    /* font-size: 50pt !important; */
+    font-weight: 400;
+}
+
+/* .artist-top-songs {} */
+
+button .artist-link-more {
+    border-radius: 1rem !important;
+}
+
+.artist-link-more {
+    color: var(--purpleSoft);
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.artist-link-more:hover {
+    color: var(--purpleMid);
+}
+
+.album-list {
+    list-style: none;
+    /* padding-left: 10px; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.track-list {
+    list-style: none;
+    /* padding-left: 10px; */
+}
+
+.genres-list {
+    list-style-type: none;
+    /* padding-left: 0; */
+}
+
+.events-list {
+    list-style: none;
+    /* padding-left: 10px; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+/* Similar Section Style */
+
+.similar-section {
+    margin-bottom: 90px;
+}
+
+
+.similar-artists-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* .similar-artists-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+} */
+
+/* .icon {
+    margin-right: 5px;
+} */
 
 
 
 /* * ========== CONTACT STYLE ========== */
 
-.contact2 .contact-container {
+.contact-page-bg {
+    /* color: #8d97ad !important; */
+    /* font-weight: 300; */
+    padding: 60px 0;
+    margin-bottom: 170px;
+    background-position: center top;
+}
+
+.contact-page-bg .contact-container {
     position: relative;
     top: 200px;
 }
 
 
+.contact-card {
+    /* margin-bottom: 1000px; */
+    backdrop-filter: blur(5px);
+}
 
+.contact-details {
+    display: flex !important;
+    align-items: flex-start;
+    flex-direction: column;
+    object-fit: cover;
+    padding: 0px 0px;
+    /* height: 100%; */
+    background-position: center top;
+    /* margin-bottom: 500px; */
 
+}
 
 
 
@@ -220,10 +328,87 @@ color: var(--purpleLight);
 }
 
 .ftr-icon {
-font-size: 18pt;
-color: var(--purpleSoft);
+    font-size: 18pt;
+    color: var(--purpleSoft);
+    transition: color 0.3s ease;
 }
 
 .ftr-icon:hover {
     color: var(--purpleLight);
+}
+
+
+
+/* ! To delete at the end of the project ==================== */
+/* Styling border sections  */
+/* .border-yellow {
+    border: 5px solid yellow;
+}
+
+.border-orange {
+    border: 5px solid orange;
+}
+
+
+.border-pink {
+    border: 5px solid pink;
+
+}
+
+.border-red {
+    border: 5px solid red;
+}
+
+.border-green {
+    border: 5px solid green;
+}
+
+.border-blue {
+    border: 5px solid blue;
+} */
+
+
+
+/* ! To delete at the end of the project ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* * ==================== BREAK POINT ==================== */
+
+/* * --- Media Query for Tablets --- */
+/* applies to medium devices (tablets, less than 991px) */
+@media only screen and (max-width: 991px) {
+
+    .contact-page-bg {
+        /* color: #8d97ad !important; */
+        /* font-weight: 300; */
+        padding: 60px 0;
+        margin-bottom: 370px;
+        background-position: center top;
+    }
+    
+    .contact-page-bg .contact-container {
+        position: relative;
+        top: 200px;
+    }
+
+/* 
+    .contact-container {
+        margin-bottom: 200px;
+    } */
+
+    .contact-details-margin-down {
+        margin-bottom: 100px;
+    }
+
 }
