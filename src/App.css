@@ -4,8 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-
-
 /* Defined main css */
 :root {
     --purpleDark: #210d27;
@@ -24,8 +22,6 @@
 }
 
 
-
-
 /* * ========== LAYOUT STYLE ========== */
 body,
 #home,
@@ -34,8 +30,7 @@ body,
     font-family: 'Poppins', sans-serif !important;
     background-color: var(--bs-gray-800) !important;
     color: var(--ghostWhite) !important;
-    margin-bottom: 85.63px;
-    /* less the footer size */
+    margin-bottom: 85.63px;  /* less the footer size */
     /* height: 100%; */
     /* overflow-x: hidden; */
 }
@@ -77,7 +72,7 @@ body,
 }
 
 .form-control {
-    --bs-border-radius: 2rem;
+    --bs-border-radius: 1.1rem;
 }
 
 
@@ -91,6 +86,18 @@ body,
     --bs-body-bg: rgba(33, 37, 41, 0.473) !important;
     backdrop-filter: blur(5px);
 }
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-search-form {
+margin: 0px 15px 0px 15px;
+}
+
 
 /* * ========== HOME STYLE ========== */
 .bg-home {
@@ -145,7 +152,7 @@ body,
     right: 0;
     transform: translateY(-50%);
     z-index: 0;
-    /* Ensure the content appears above the control icons */
+
 }
 
 /* Section Offers style */
@@ -174,19 +181,13 @@ body,
     font-weight: 600;
 }
 
-.offers-text-custom p {
-    /* font-family: 'Roboto', sans-serif; */
-}
-
 .offers-icon {
     margin-right: 20px;
     color: var(--purpleLight);
 }
 
 
-
 /* * ========== ARTISTS STYLE ========== */
-
 .artist-img {
     margin-bottom: 2rem;
 }
@@ -257,9 +258,7 @@ button .artist-link-more {
 }
 
 
-
 /* Similar Section Style */
-
 .similar-section {
     margin-bottom: 90px;
 }
@@ -297,9 +296,7 @@ button .artist-link-more {
     top: 200px;
 }
 
-
 .contact-card {
-    /* margin-bottom: 1000px; */
     backdrop-filter: blur(5px);
 }
 
@@ -319,7 +316,6 @@ button .artist-link-more {
 
 
 /* * ========== FOOTER STYLE ========== */
-
 .footer-custom {
     background-color: var(--bs-gray-900);
     text-align: center;
@@ -341,6 +337,7 @@ button .artist-link-more {
 
 /* ! To delete at the end of the project ==================== */
 /* Styling border sections  */
+
 /* .border-yellow {
     border: 5px solid yellow;
 }
@@ -349,10 +346,8 @@ button .artist-link-more {
     border: 5px solid orange;
 }
 
-
 .border-pink {
     border: 5px solid pink;
-
 }
 
 .border-red {
@@ -368,10 +363,7 @@ button .artist-link-more {
 } */
 
 
-
 /* ! To delete at the end of the project ==================== */
-
-
 
 
 
@@ -389,9 +381,15 @@ button .artist-link-more {
 /* applies to medium devices (tablets, less than 991px) */
 @media only screen and (max-width: 991px) {
 
+    .navbar-logo {
+        padding-bottom: 10px;
+    }
+    
+    /* .carousel-custom {
+        height: calc(100vh - (106.63px + 56px));
+    } */
+    
     .contact-page-bg {
-        /* color: #8d97ad !important; */
-        /* font-weight: 300; */
         padding: 60px 0;
         margin-bottom: 370px;
         background-position: center top;
@@ -402,13 +400,12 @@ button .artist-link-more {
         top: 200px;
     }
 
-/* 
-    .contact-container {
-        margin-bottom: 200px;
-    } */
-
     .contact-details-margin-down {
         margin-bottom: 100px;
+    }
+
+    .contact-card {
+        margin-bottom: 200px;
     }
 
 }
