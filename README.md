@@ -64,17 +64,20 @@ Discover similar artists based on the selected artist.
 
 
 ## Screenshots  
-<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_kygo.png">
-*Screenshot of a searched for artist*  
 
-<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_typo.png">
-*Screenshot of the typo modal*  
+ ![Eventify Dashboard Screenshot](./src/assets/images/screenshot_kygo.PNG) 
+*The above image illustrates a screenshot of a searched-for artist.* 
 
-<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_searcherror.png">
-*Screenshot of the search error*  
 
-<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_contact.png">
-*Screenshot of the contact form*  
+Screenshot of the typo modal
+<img width="1440" alt="Screenshot of the typo modal" src="./src/assets/images/screenshot_typo.PNG">
+
+Screenshot of the search error
+<img width="1440" alt="Screenshot of the typo modal" src="./src/assets/images/screenshot_searcherror.PNG">
+
+Screenshot of the contact form
+<img width="1440" alt="Screenshot of the contact form" src="./src/assets/images/screenshot_contact.png">
+
 
 
 ## Credits
@@ -115,7 +118,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
