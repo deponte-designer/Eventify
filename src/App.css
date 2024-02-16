@@ -77,7 +77,7 @@ body,
 }
 
 .form-control {
-    --bs-border-radius: 2rem;
+    --bs-border-radius: 1.1rem;
 }
 
 
@@ -379,15 +379,33 @@ button .artist-link-more {
 
 
 
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
+.nav-search-form {
+margin: 0px 15px 0px 15px;
+}
 
 /* * ==================== BREAK POINT ==================== */
 
 /* * --- Media Query for Tablets --- */
 /* applies to medium devices (tablets, less than 991px) */
 @media only screen and (max-width: 991px) {
+
+    .navbar-logo {
+        padding-bottom: 10px;
+    }
+    
+    .carousel-custom {
+        height: calc(100vh - (106.63px + 56px));
+    }
+    
 
     .contact-page-bg {
         /* color: #8d97ad !important; */

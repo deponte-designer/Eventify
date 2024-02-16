@@ -37,9 +37,9 @@ function Contact() {
     return (
         <div className="contact-page-bg" style={{ backgroundImage: `url(${ContactMap})`, borderRadius: "6px" }} id="contact">
             <Container className="contact-container">
-                <Row>
-                    <Col lg={12}>
-                        <Card className="contact-card card-shadow border-0 p-3" data-bs-theme="dark">
+                {/* <Row>
+                    <Col lg={12}> */}
+                        <Card lg={12} className="contact-card card-shadow border-0 p-3" data-bs-theme="dark">
                             <Row>
                                 <Col lg={8} className="contact-box p-4">
                                     {/* <div className="contact-box p-4"> */}
@@ -84,8 +84,8 @@ function Contact() {
                                 </Col>
                             </Row>
                         </Card>
-                    </Col>
-                </Row>
+                    {/* </Col>
+                </Row> */}
             </Container>
             <ModalContact show={showContactModal} toggleContactModal={() => setShowContactModal(!showContactModal)} formError={formError} />
         </div>

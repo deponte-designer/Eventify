@@ -27,7 +27,7 @@ let CustomNavbar = ({ onSearchSubmit }) => {
           <LogoNav />
         </Navbar.Brand>
 
-        <Form onSubmit={handleSearchSubmit} className="d-flex d-lg-none">
+        <Form id="search-form" onSubmit={handleSearchSubmit} className="form nav-search-form d-flex d-lg-none">
           <Form.Control
             id="searchField"
             type="search"
