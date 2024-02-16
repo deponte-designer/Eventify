@@ -30,8 +30,26 @@ Users can install the project by cloning the repository from GitHub and running 
 
 
 ## Usage
-The search input is displayed at the top of the page, when a valid music artist is entered and selected the Artist page is populated, user can view information about the selected artist including biography (which can be extended by  clicking the button), read more information about the artist, playcount information including most popular albums showing the album covers and suggestions of similar artists.
-Users can view the next four upcoming events for the artist and click on the button to find tickets in tird-party e-commerce pages to book tickets.
+1. Search for an Artist: Start by entering the name of a music artist in the search input located at the top of the page.
+
+2. Explore Artist Information:
+- Once a valid artist is entered and selected, the Artist page will be populated with comprehensive information about the selected artist.
+- Access the artist's profile, which includes the number of listeners and playcounts, top 5 songs, and read the artist's biography. Click the "Read More" button to extend the biography.
+- Additionally, find a button to direct the user to a third-party page with more information about the artist.
+
+3. Discover Music:
+Explore the artist's most popular albums and related genres.
+
+4. Upcoming Events:
+- Check out the next four upcoming events for the artist, including detailed information about the event.
+- Find a link to purchase tickets for these events by clicking the "Find Tickets" button, which will redirect you to third-party e-commerce pages for ticket booking.
+
+5. Similar Artists:
+Discover similar artists based on the selected artist.
+
+6. Additional Information:
+- On the home page, find general information about Eventify.
+- On the contact page, there is a form to get in touch.
 
 
 ## Technologies Used
@@ -48,18 +66,17 @@ Users can view the next four upcoming events for the artist and click on the but
 
 
 ## Screenshots
-Screenshot of a searched for artist:
 <img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_kygo.png">
+*Screenshot of a searched for artist*
 
-Screenshot of the typo modal:
 <img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_typo.png">
+*Screenshot of the typo modal*
 
-Screenshot of the search error:
 <img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_searcherror.png">
+*Screenshot of the search error*
 
-Screenshot of the contact form:
 <img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_contact.png">
-
+*Screenshot of the contact form*
 
 
 ## Credits
@@ -70,19 +87,21 @@ Screenshot of the contact form:
 
 ## Deployment
 
-This project is deployed and accessible at the following URL:
+This project is deployed and accessible at the following URLs:
 
-https://go-eventify.netlify.app/
+- [Live Application](https://go-eventify.netlify.app/): Visit this link to explore the Eventify App.
+- [GitHub Repository](https://github.com/deponte-designer/Eventify): Visit this repository for project details, including comprehensive README.
 
+
+## Starred Project
+⭐ Your support by clicking on the star icon located at the top right of the project page and adding it to your favourites list would be greatly appreciated!
 
 
 ## License
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2024 Developed by Moment 12 - contributors [Skilton, J.](https://github.com/jsskilton) | [Ponte, N.](https://github.com/deponte-designer) | [Rainforth, S.](https://github.com/Meisterstu) | [Sodeke, A.](https://github.com/abbysod)
  
-
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -105,7 +124,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
 ![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)
+
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
