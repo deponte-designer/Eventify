@@ -13,6 +13,7 @@ Eventify is a music dashboard application that provides users with comprehensive
 - [Screenshots](#screenshots)
 - [Credits](#credits)
 - [Deployment](#deployment)
+- [Starred Project](starred-project)
 - [License](#license)
 - [Badges](#badges)
 
