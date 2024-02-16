@@ -1,46 +1,71 @@
 # Eventify
 
-Explore your favourite music artists and check out their upcoming live events at Eventify.
-
 
 ## Description
-
 This project aims to create a music dashboard with form inputs. When a user searches for a music artist or band they are presented with information including band biography, and play count data including their most played albums (and album artwork) using the LastFM API. 
 User is also presented with a list of alternative suggested artists based on their selection.
-Lastly, via the Ticketmaster API, the user can see the next 4 confirmed events for the artist and follow the link to the Ticketmaster website to book tickets.
+Lastly, via the Ticketmaster API, the user can see the next four confirmed events for the artist and follow the link to the one e-commerce website to book tickets.
 
 
 ## Table of Contents
-
+- [User Story](#user-story)
+- [Installation](#installation)
 - [Usage](#usage)
-- [User Story](#UserStory)
+- [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
 - [Credits](#credits)
 - [Deployment](#deployment)
-- [Screenshots](#Screenshots)
 - [License](#license)
 - [Badges](#badges)
 
 
 ## User Story
+As A music lover,  
+I WANT to be able to search for my favourite artists and check what events they have coming up,  
+SO THAT I can find out more about the artists and book their shows.
 
-As a music lover I WANT to be able to search for my favourite artists and check what events they have coming up SO THAT I can find out more about the artists and book their shows.
+
+## Installation
+Users can install the project by cloning the repository from GitHub and running `npm install` to install the required dependencies.
 
 
 ## Usage
+The search input is displayed at the top of the page, when a valid music artist is entered and selected the Artist page is populated, user can view information about the selected artist including biography (which can be extended by  clicking the button), read more information about the artist, playcount information including most popular albums showing the album covers and suggestions of similar artists.
+Users can view the next four upcoming events for the artist and click on the button to find tickets in tird-party e-commerce pages to book tickets.
 
-The search bar is displayed at the top of the landing page, when a valid music artist is entered and selected the Artist page is populated, user can view information about the selected artist including biography (which can be extended by  clicking the button) playcount information including most popular albums showing the album covers and suggestions of similar artists.
-Users can view the next 5 upcoming events for the artist and follow the link to the Ticketmaster page to book tickets.
+
+## Technologies Used
+- React
+- Vite
+- Node
+- React-Router-Dom
+- Popper
+- Axios
+- Dayjs
+- React-Bootstrap: Carousel, Modal, Card, Button, etc.
+- React-Icons
+- Google Fonts
+
+
+## Screenshots
+Screenshot of a searched for artist:
+<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_kygo.png">
+
+Screenshot of the typo modal:
+<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_typo.png">
+
+Screenshot of the search error:
+<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_searcherror.png">
+
+Screenshot of the contact form:
+<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_contact.png">
+
 
 
 ## Credits
-npm Inquirer.js
-Jestjs.io
-Badges Documentation by Shields.io
-
-
-This README was created by following the Good-README Guide on git. Bootcamp content:
-
-https://git.bootcampcontent.com/uk-edx-16-week/UK-VIRT-FE-PT-10-2023-U-LOLC/-/blob/main/01-html-git-github-module/04-code-refactor-lesson/challenge/Good-README-Guide.md
+- Team Moment 12
+- Pratikto - Best tutor ever! 
+- Badges documentation by Shields.io
 
 
 ## Deployment
@@ -50,19 +75,6 @@ This project is deployed and accessible at the following URL:
 https://go-eventify.netlify.app/
 
 
-## Screenshots
-
-Screenshot of a searched for artist:
-<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_kygo.PNG">
-
-Screenshot of the typo modal:
-<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_typo.PNG">
-
-Screenshot of the search error:
-<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_searcherror.PNG">
-
-Screenshot of the contact form:
-<img width="1440" alt="screenshot-of-blank-form" src="./src/assets/images/screenshot_contact.png">
 
 ## License
 
@@ -79,7 +91,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ## Badges
-
 ![edX](https://img.shields.io/badge/edX-%2302262B.svg?style=for-the-badge&logo=edX&logoColor=white)
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -98,12 +109,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
-
-## React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
